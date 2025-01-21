@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <util/util_camera.h>
+#include <util/util_log.h>
 
 UtilCamera::UtilCamera() :m_camera_position() {}
 
@@ -8,17 +9,16 @@ void UtilCamera::init(SDL_Renderer* renderer) {
     m_renderer = renderer;
 }
 
-void UtilCamera::render_texture(SDL_Texture* texture, const SDL_Rect* src_rect, const SDL_Rect* dst_rect) 
+void UtilCamera::render_texture(SDL_Texture* texture, const SDL_Rect* src_rect, const SDL_Rect* dst_rect)
 {
     if (texture == nullptr)
     {
-        std::cout << "ERROR: texture is nullptr" << std::endl;
+        UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "texture is nullptr!"));
         return;
     }
     int check_render = SDL_RenderCopy(m_renderer, texture, src_rect, dst_rect);
     if (check_render != 0)
     {
-        std::cout << "Erender copy error:" << SDL_GetError() << std::endl;
+        UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "render texture failed!"));
     }
-    std::cout << "render texture successfully!" << std::endl;
 }

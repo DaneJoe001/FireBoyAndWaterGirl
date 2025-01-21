@@ -11,10 +11,12 @@
 #define FUNCTION_INFO __PRETTY_FUNCTION__
 #endif
 
-//TODO: 增加时间戳
+#define DANEJOE_TIME (DaneJoeUtil::get_time_str())
+
 //构建日志字符串
 #define LOG_STR(type, info) \
-    (std::ostringstream() << "[ FILE ]: " << __FILE__ << "\n" \
+    (std::ostringstream() << "[ TIME ]: "<< DANEJOE_TIME \
+                          << "[ FILE ]: " << __FILE__ << "\n" \
                           << "[ LINE ]: " << __LINE__ << "\n" \
                           << "[ FUNCTION ]: " << FUNCTION_INFO << "\n" \
                           << "[ " << type << " ]: " << info << "\n").str()
@@ -79,5 +81,11 @@ namespace DaneJoeUtil
             }
         }
         os << " }" << std::endl;
+    }
+    inline std::string get_time_str()
+    {
+        auto now = std::chrono::system_clock::now();
+        auto in_time_t = std::chrono::system_clock::to_time_t(now);
+        return std::ctime(&in_time_t);
     }
 };

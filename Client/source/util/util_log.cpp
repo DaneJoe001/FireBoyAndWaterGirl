@@ -20,7 +20,7 @@ void UtilLog::log(LogLevel level, std::string info)
         std::fstream fout(m_developer_log_path, std::ios::app);
         if (!fout.is_open())
         {
-            std::cout << "ERROR: Failed to open developer log file." << std::endl;
+            std::cout << "[ ERROR ]: Failed to open developer log file." << std::endl;
             return;
         }
         fout << info << std::endl;
@@ -29,16 +29,32 @@ void UtilLog::log(LogLevel level, std::string info)
     else if (level == LogLevel::USER)
     {
         std::lock_guard<std::mutex> lock(m_mutex);
-        std::fstream fout(m_developer_log_path, std::ios::app);
+        std::fstream fout(m_user_log_path, std::ios::app);
         if (!fout.is_open())
         {
-            std::cout << "ERROR: Failed to open developer log file." << std::endl;
+            std::cout << "[ ERROR ]: Failed to open developer log file." << std::endl;
             return;
         }
         fout << info << std::endl;
         fout.close();
     }
 
+}
+
+void UtilLog::clear_log(LogLevel level)
+{
+    if (level == LogLevel::DEVELOPPER)
+    {
+        std::lock_guard<std::mutex> lock(m_mutex);
+        std::ofstream fout(m_developer_log_path, std::ios::trunc);
+        fout.close();
+    }
+    else if (level == LogLevel::USER)
+    {
+        std::lock_guard<std::mutex> lock(m_mutex);
+        std::ofstream fout(m_user_log_path, std::ios::trunc);
+        fout.close();
+    }
 }
 
 std::string UtilLog::m_developer_log_path = RESOURCE_DIR"/logs/developer.log";

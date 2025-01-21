@@ -3,15 +3,9 @@
 
 #include <util/util_vector.h>
 
-UtilVector::UtilVector() :x(-1), y(-1) 
-{
-    std::cout << "UtilVector()" << std::endl;
-}
+UtilVector::UtilVector() :x(-1), y(-1) {}
 
-UtilVector::UtilVector(double x, double y) :x(x), y(y) 
-{
-    std::cout << "UtilVector(" << x << ", " << y << ")" << std::endl;
-}
+UtilVector::UtilVector(double x, double y) :x(x), y(y) {}
 
 void UtilVector::set_vector(double x, double y)
 {

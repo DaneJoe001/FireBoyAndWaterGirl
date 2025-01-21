@@ -1,5 +1,5 @@
 #include <util/util_parse_sprite_sheet.h>
-
+#include <util/util_log.h>
 UtilParseSpriteSheet::UtilParseSpriteSheet(const std::string& file_path) : file_path(file_path) {}
 
 SpriteSheet UtilParseSpriteSheet::parse_data()
@@ -7,7 +7,7 @@ SpriteSheet UtilParseSpriteSheet::parse_data()
     std::ifstream fin(file_path);
     if (!fin.is_open())
     {
-        std::cerr << "Error: Failed to open file: " << file_path << std::endl;
+        UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "Failed to open file " + file_path + "\n"));
         return SpriteSheet();
     }
 

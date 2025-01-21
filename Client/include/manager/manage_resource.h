@@ -9,6 +9,7 @@
 #include <SDL_image.h>
 
 #include <resource/resource_atlas.h>
+#include <resource/resource_definition.h>
 #include <util/util_vector.h>
 #include <util/util_parse_sprite_sheet.h>
 
@@ -19,8 +20,12 @@ public:
     //在初始化renderer之后才能初始化资源
     void load_resource();
     static void init(SDL_Renderer* renderer);
+    static void set_window_size(const UtilVector& size);
+    static UtilVector get_window_size();
     SDL_Texture* get_texture(const std::string& image_name);
     SDL_Surface* get_surface(const std::string& image_name);
+    SurfaceInfo& get_surface_info(const std::string& image_name);
+    TextureInfo& get_texture_info(const std::string& image_name);
 private:
     ManageResource();
     ~ManageResource();
@@ -30,8 +35,10 @@ private:
     ManageResource& operator=(ManageResource&&) = delete;
     void load_altas(const std::string& path_temp, int num);
     void load_atlas(SpriteSheet& sprite_sheet);
-    void load_texture(const std::string image_name, const std::string& path_temp);
-    void load_surface(const std::string image_name, const std::string& path_temp);
+    void load_texture(const std::string& image_name, const std::string& path_temp);
+    void load_surface(const std::string& image_name, const std::string& path_temp);
+    void load_texture_info(const std::string& path, FrameInfo& frame_info);
+    void load_surface_info(const std::string& path, FrameInfo& frame_info);
 
 private:
     static std::mutex m_mutex;
@@ -39,5 +46,9 @@ private:
     std::unordered_map<std::string, std::shared_ptr<ResourceAtlas>> m_resource_atlas_map;
     std::unordered_map<std::string, SDL_Texture*> m_texture_map;
     std::unordered_map<std::string, SDL_Surface*> m_surface_map;
+    std::unordered_map<std::string, TextureInfo> m_texture_info_map;
+    std::unordered_map<std::string, SurfaceInfo> m_surface_info_map;
+    static UtilVector m_window_size;
+    //TODO: 重写下图集类
 
 };

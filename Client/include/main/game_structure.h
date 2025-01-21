@@ -21,7 +21,6 @@ public:
     void circle();
     void update();
     void render();
-    void release();
 
 private:
     ManageResource& m_resource_manager;
@@ -33,7 +32,5 @@ private:
     SDL_Event m_event;
     std::string m_title = u8"新·森林冰火人";
     std::size_t m_fps = 25;
-    const int m_width = 1080;
-    const int m_height = 720;
     bool is_running = true;
 };

@@ -18,6 +18,7 @@ class UtilLog
 public:
     static void set_log_path(LogLevel level, std::string path);
     static void log(LogLevel level, std::string info);
+    static void clear_log(LogLevel level);
 
 private:
     UtilLog() = delete;
