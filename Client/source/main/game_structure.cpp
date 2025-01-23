@@ -10,7 +10,7 @@ GameStructure::~GameStructure() {}
 
 bool GameStructure::init()
 {
-    UtilVector size = ManageResource::get_window_size();
+    UtilVector<int> size = ManageResource::get_window_size();
     m_window = SDL_CreateWindow(m_title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, int(size.x), int(size.y), SDL_WINDOW_SHOWN);
     if (!m_window)
     {
@@ -90,10 +90,15 @@ void GameStructure::circle()
                 //std::cout<<"clicked"<<std::endl;
                 if (m_event.button.button == SDL_BUTTON_LEFT)
                 {
-                    std::cout << "left clicked" << std::endl;
-                    UtilVector mouse_pos = UtilVector(m_event.button.x, m_event.button.y);
-                    std::cout<<mouse_pos.x<<","<<mouse_pos.y<<std::endl;
-                    m_button_manager.check_clicked(mouse_pos);
+                    UtilVector<int> mouse_pos = UtilVector<int>(m_event.button.x, m_event.button.y);
+                    m_button_manager.check_press(mouse_pos);
+                }
+                break;
+            case SDL_MOUSEBUTTONUP:
+                if (m_event.button.button == SDL_BUTTON_LEFT)
+                {
+                    UtilVector<int> mouse_pos = UtilVector<int>(m_event.button.x, m_event.button.y);
+                    m_button_manager.check_release(mouse_pos);
                 }
                 break;
             }

@@ -9,8 +9,8 @@
 #include <util/util_vector.h>
 
 struct ImageArea {
-    UtilVector pos;// 帧图起始位置
-    UtilVector size;// 帧尺寸
+    UtilVector<int> pos;// 帧图起始位置
+    UtilVector<int> size;// 帧尺寸
 };
 
 struct FrameInfo {
@@ -19,7 +19,7 @@ struct FrameInfo {
     bool rotated;
     bool trimmed;
     ImageArea spriteSourceSize;// 帧尺寸
-    UtilVector sourceSize; // 帧尺寸
+    UtilVector<int> sourceSize; // 帧尺寸
 };
 
 struct Meta {

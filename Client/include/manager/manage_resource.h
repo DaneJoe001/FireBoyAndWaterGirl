@@ -22,8 +22,8 @@ public:
     //在初始化renderer之后才能初始化资源
     void load_resource();
     static void init(SDL_Renderer* renderer);
-    static void set_window_size(const UtilVector& size);
-    static UtilVector get_window_size();
+    static void set_window_size(const UtilVector<int>& size);
+    static UtilVector<int> get_window_size();
     SDL_Texture* get_texture(const std::string& image_name);
     SDL_Surface* get_surface(const std::string& image_name);
     SurfaceInfo& get_surface_info(const std::string& image_name);
@@ -56,7 +56,7 @@ private:
     std::unordered_map<std::string, SDL_Surface*> m_surface_map;
     std::unordered_map<std::string, TextureInfo> m_texture_info_map;
     std::unordered_map<std::string, SurfaceInfo> m_surface_info_map;
-    static UtilVector m_window_size;
+    static UtilVector<int> m_window_size;
     //TODO: 重写下图集类
     std::unordered_map<std::string, Mix_Music*> m_music_map;
 

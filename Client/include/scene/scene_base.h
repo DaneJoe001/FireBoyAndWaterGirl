@@ -1,7 +1,6 @@
 ﻿#pragma once
 
 #include <vector>
-
 #include <manager/manage_resource.h>
 #include <util/util_camera.h>
 //写一个连接管理类，连接信号与槽

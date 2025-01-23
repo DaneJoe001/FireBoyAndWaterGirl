@@ -9,7 +9,10 @@ SceneMain::SceneMain()
 	m_title = m_resource_manager.get_texture("title_crystal");
 	m_beam_cone_shaped = m_resource_manager.get_texture("beam_cone_shaped");
 
-	ButtonBase* button = new ButtonBase(this,{200,200});
+	ButtonBase* button = new ButtonBase(this, { 490,480 }, [&]()
+		{
+			std::cout << "Start the game!" << std::endl;
+		});
 	add_button(button);
 }
 
@@ -24,7 +27,6 @@ SceneMain::~SceneMain()
 
 void SceneMain::enter()
 {
-	std::cout << "Enter the main scene!" << std::endl;
 	for (auto& button : m_button_list)
 	{
 		button->set_valid(true);
@@ -47,14 +49,14 @@ void SceneMain::update()
 
 void SceneMain::draw(UtilCamera* camera)
 {
-	UtilVector window_size = ManageResource::get_window_size();
+	UtilVector<int> window_size = ManageResource::get_window_size();
 	SDL_Rect background_rect = { 0, 0, window_size.x, window_size.y };
 
-	UtilVector title_pos;
+	UtilVector<int> title_pos;
 	title_pos.set_vector(window_size.x / 2 - 430, window_size.y / 3 - 135);
 	SDL_Rect ttile_rect = { title_pos.x,title_pos.y, 860, 270 };
 
-	UtilVector beam_cone_shaped_pos;
+	UtilVector<int> beam_cone_shaped_pos;
 	beam_cone_shaped_pos.set_vector(window_size.x / 2 - 80, window_size.y - 846);
 	SDL_Rect beam_cone_shaped_rect = { beam_cone_shaped_pos.x,beam_cone_shaped_pos.y, 159, 846 };
 

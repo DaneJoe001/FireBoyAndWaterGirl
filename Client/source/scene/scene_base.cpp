@@ -1,5 +1,6 @@
 ﻿#include <scene/scene_base.h>
 #include <button/button_base.h>
+#include <manager/manage_scene.h>
 void SceneBase::add_button(ButtonBase* button)
 {
     if (button != nullptr)

@@ -65,12 +65,12 @@ Mix_Music* ManageResource::get_music(const std::string& music_name)
 	return m_music_map.at(music_name);
 }
 
-void ManageResource::set_window_size(const UtilVector& size)
+void ManageResource::set_window_size(const UtilVector<int>& size)
 {
 	m_window_size = size;
 }
 
-UtilVector ManageResource::get_window_size()
+UtilVector<int> ManageResource::get_window_size()
 {
 	return m_window_size;
 }
@@ -212,4 +212,4 @@ std::mutex ManageResource::m_mutex;
 
 SDL_Renderer* ManageResource::m_renderer = nullptr;
 
-UtilVector ManageResource::m_window_size = UtilVector(1080, 720);
+UtilVector<int> ManageResource::m_window_size = UtilVector<int>(1080, 720);

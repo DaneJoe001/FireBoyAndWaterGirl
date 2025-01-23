@@ -1,22 +1,24 @@
 ﻿#include <button/button_base.h>
 #include <scene/scene_base.h>
 
-ButtonBase::ButtonBase(SceneBase* scene,UtilVector pos)
+ButtonBase::ButtonBase(SceneBase* scene,UtilVector<int> pos, std::function<void()>call_back)
 {
     scene->add_button(this);
     
     m_pos = pos;
     m_normal_texture = m_resource_manager.get_texture("button_normal");
     m_pressed_texture = m_resource_manager.get_texture("button_pressed");
+    m_on_clicked = call_back;
     m_button_manager.add_button(this);
 }
 
-ButtonBase::ButtonBase(SceneBase* scene, SDL_Texture* normal_texture, SDL_Texture* pressed_texture, UtilVector pos, UtilVector size)
+ButtonBase::ButtonBase(SceneBase* scene, SDL_Texture* normal_texture, SDL_Texture* pressed_texture, UtilVector<int> pos, UtilVector<int> size, std::function<void()>call_back)
 {
     scene->add_button(this);
     m_normal_texture = normal_texture;
     m_pressed_texture = pressed_texture;
     m_pos = pos;
+    m_on_clicked = call_back;
     m_button_manager.add_button(this);
 }
 
@@ -25,14 +27,22 @@ ButtonBase::~ButtonBase()
 
 }
 
-void ButtonBase::on_clicked()
+void ButtonBase::on_press()
 {
     std::cout << "ButtonBase::on_clicked()" << std::endl;
+    m_is_pressed = !m_is_pressed;
 }
 
-bool ButtonBase::is_pressed(UtilVector mouse_pos)
+void ButtonBase::on_release()
 {
-    return m_pos.is_within(mouse_pos, m_pos + m_size);
+    std::cout << "ButtonBase::on_release()" << std::endl;
+    m_is_pressed = !m_is_pressed;
+    m_on_clicked();
+}
+
+bool ButtonBase::is_on_button(UtilVector<int> mouse_pos)
+{
+    return mouse_pos.is_within(m_pos, m_pos + m_size);
 }
 
 bool ButtonBase::is_valid()

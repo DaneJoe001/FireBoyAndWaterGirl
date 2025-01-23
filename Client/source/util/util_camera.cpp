@@ -23,7 +23,7 @@ void UtilCamera::render_texture(SDL_Texture* texture, const SDL_Rect* src_rect, 
     }
 }
 
-void UtilCamera::adaptive_render_texture(TextureInfo& texture_info, UtilVector pos)
+void UtilCamera::adaptive_render_texture(TextureInfo& texture_info, UtilVector<int> pos)
 {
     if (texture_info.texture == nullptr)
     {
