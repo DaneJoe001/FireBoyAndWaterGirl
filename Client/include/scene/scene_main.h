@@ -5,6 +5,7 @@ class SceneMain :public SceneBase
 {
 public:
 	SceneMain();
+	~SceneMain();
 	void enter()override;
 	void exit()override;
 	void update()override;
@@ -12,4 +13,5 @@ public:
 private:
 	SDL_Texture* m_background = nullptr;
 	SDL_Texture* m_title = nullptr;
+	SDL_Texture* m_beam_cone_shaped = nullptr;
 };

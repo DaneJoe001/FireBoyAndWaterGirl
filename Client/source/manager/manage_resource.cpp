@@ -15,22 +15,64 @@ void ManageResource::init(SDL_Renderer* renderer)
 
 SDL_Surface* ManageResource::get_surface(const std::string& image_name)
 {
+	if (m_surface_map.find(image_name) == m_surface_map.end())
+	{
+		UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "image not found"));
+		return nullptr;
+	}
 	return m_surface_map.at(image_name);
 }
 
 SDL_Texture* ManageResource::get_texture(const std::string& image_name)
 {
+	if (m_texture_map.find(image_name) == m_texture_map.end())
+	{
+		UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "image not found"));
+		return nullptr;
+	}
 	return m_texture_map.at(image_name);
 }
 
 TextureInfo& ManageResource::get_texture_info(const std::string& image_name)
 {
+	if (m_texture_info_map.find(image_name) == m_texture_info_map.end())
+	{
+		UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "image not found"));
+		//处理一下空引用返回
+		//return TextureInfo();
+	}
 	return m_texture_info_map.at(image_name);
 }
 
 SurfaceInfo& ManageResource::get_surface_info(const std::string& image_name)
 {
+	if (m_surface_info_map.find(image_name) == m_surface_info_map.end())
+	{
+		UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "image not found"));
+		//处理一下空引用返回
+		//return SurfaceInfo();
+	}
 	return m_surface_info_map.at(image_name);
+}
+
+Mix_Music* ManageResource::get_music(const std::string& music_name)
+{
+	if (m_music_map.find(music_name) == m_music_map.end())
+	{
+		UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "music not found"));
+		return nullptr;
+	}
+	return m_music_map.at(music_name);
+}
+
+void ManageResource::set_window_size(const UtilVector& size)
+{
+	m_window_size = size;
+}
+
+UtilVector ManageResource::get_window_size()
+{
+	return m_window_size;
 }
 
 ManageResource::ManageResource() {}
@@ -60,20 +102,28 @@ void ManageResource::load_resource()
 {
 	//加载图片资源和音频资源
 	load_surface("window_icon", RESOURCE_DIR"/assets/images/window_icon.png");
-	load_texture("Beam", RESOURCE_DIR"/assets/images/Beam.png");
-	load_texture("GameNameCrystal", RESOURCE_DIR"/assets/images/GameNameCrystal.png");
-	load_texture("GameNameElements", RESOURCE_DIR"/assets/images/GameNameElements.png");
-	load_texture("GameNameForest", RESOURCE_DIR"/assets/images/GameNameForest.png");
-	load_texture("GameNameIce", RESOURCE_DIR"/assets/images/GameNameIce.png");
-	load_texture("GameNameLight", RESOURCE_DIR"/assets/images/GameNameLight.png");
-	load_texture("TempleHall", RESOURCE_DIR"/assets/images/TempleHall.png");
-	load_texture("TempleHallCrystal", RESOURCE_DIR"/assets/images/TempleHallCrystal.png");
-	load_texture("TempleHallFire", RESOURCE_DIR"/assets/images/TempleHallFire.png");
-	load_texture("TempleHallForest", RESOURCE_DIR"/assets/images/TempleHallForest.png");
-	load_texture("TempleHallIce", RESOURCE_DIR"/assets/images/TempleHallIce.png");
-	load_texture("TempleHallLight", RESOURCE_DIR"/assets/images/TempleHallLight.png");
-	load_texture("TempleHallWater", RESOURCE_DIR"/assets/images/TempleHallWater.png");
-	load_texture("TempleHallWind", RESOURCE_DIR"/assets/images/TempleHallWind.png");
+	load_texture("background_1", RESOURCE_DIR"/assets/images/background_1.png");
+	load_texture("background_2", RESOURCE_DIR"/assets/images/background_2.png");
+	load_texture("background_3", RESOURCE_DIR"/assets/images/background_3.png");
+	load_texture("background_4", RESOURCE_DIR"/assets/images/background_4.png");
+	load_texture("background_5", RESOURCE_DIR"/assets/images/background_5.png");
+	load_texture("background_6", RESOURCE_DIR"/assets/images/background_6.png");
+	load_texture("background_7", RESOURCE_DIR"/assets/images/background_7.png");
+	load_texture("background_8", RESOURCE_DIR"/assets/images/background_8.png");
+
+	load_texture("title_crystal", RESOURCE_DIR"/assets/images/title_crystal.png");
+	load_texture("title_elements", RESOURCE_DIR"/assets/images/title_elements.png");
+	load_texture("title_forest", RESOURCE_DIR"/assets/images/title_forest.png");
+	load_texture("title_ice", RESOURCE_DIR"/assets/images/titleIce.png");
+	load_texture("title_light", RESOURCE_DIR"/assets/images/title_light.png");
+
+	load_texture("beam_cone_shaped", RESOURCE_DIR"/assets/images/beam_cone_shaped.png");
+
+	load_texture("button_normal", RESOURCE_DIR"/assets/images/button_normal.png");
+	load_texture("button_pressed", RESOURCE_DIR"/assets/images/button_pressed.png");
+
+	load_music("background", RESOURCE_DIR"/assets/audio/background.ogg");
+
 }
 
 void ManageResource::load_altas(const std::string& path_temp, int num)
@@ -137,14 +187,25 @@ void ManageResource::load_texture_info(const std::string& path, FrameInfo& frame
 	m_texture_info_map[frame_info.filename] = texture_info;
 }
 
-void ManageResource::set_window_size(const UtilVector& size)
+void ManageResource::load_sprite_sheet(const std::string& path, SpriteSheet& sprite_sheet)
 {
-	m_window_size = size;
+	std::string full_path = path + sprite_sheet.meta.image;
+	for (auto& frame_info : sprite_sheet.frames)
+	{
+		load_texture_info(frame_info.filename, frame_info);
+	}
+
 }
 
-UtilVector ManageResource::get_window_size()
+void ManageResource::load_music(const std::string& music_name, const std::string& path)
 {
-	return m_window_size;
+	Mix_Music* music = Mix_LoadMUS(path.c_str());
+	if (music == nullptr)
+	{
+		UtilLog::log(LogLevel::USER, LOG_STR("ERROR", Mix_GetError()));
+		return;
+	}
+	m_music_map[music_name] = music;
 }
 
 std::mutex ManageResource::m_mutex;

@@ -22,3 +22,27 @@ void UtilCamera::render_texture(SDL_Texture* texture, const SDL_Rect* src_rect, 
         UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "render texture failed!"));
     }
 }
+
+void UtilCamera::adaptive_render_texture(TextureInfo& texture_info, UtilVector pos)
+{
+    if (texture_info.texture == nullptr)
+    {
+        UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "texture is nullptr!"));
+        return;
+    }
+    SDL_Rect dst_rect;
+    dst_rect.x = pos.x;
+    dst_rect.y = pos.y;
+    dst_rect.w = texture_info.dst.size.x;
+    dst_rect.h = texture_info.dst.size.y;
+    SDL_Rect src_rect;
+    src_rect.x = texture_info.src.pos.x;
+    src_rect.y = texture_info.src.pos.y;
+    src_rect.w = texture_info.src.size.x;
+    src_rect.h = texture_info.src.size.y;
+    int check_render = SDL_RenderCopy(m_renderer, texture_info.texture, &src_rect, &dst_rect);
+    if (check_render != 0)
+    {
+        UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "render texture failed!"));
+    }
+}

@@ -4,9 +4,12 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_mixer.h>
 
 #include <manager/manage_resource.h>
 #include <manager/manage_scene.h>
+#include <manager/manage_button.h>
 #include <util/util_camera.h>
 
 
@@ -25,6 +28,7 @@ public:
 private:
     ManageResource& m_resource_manager;
     ManageScene& m_scene_manager;
+    ManageButton& m_button_manager;
     UtilCamera* m_camera = nullptr;
     SDL_Window* m_window = nullptr;
     SDL_Renderer* m_renderer = nullptr;

@@ -9,25 +9,25 @@
 #include <util/util_vector.h>
 
 struct ImageArea {
-    UtilVector pos;
-    UtilVector size;
+    UtilVector pos;// 帧图起始位置
+    UtilVector size;// 帧尺寸
 };
 
 struct FrameInfo {
-    std::string filename;
-    ImageArea frame;
+    std::string filename;// 帧图名
+    ImageArea frame;// 帧图位置及尺寸
     bool rotated;
     bool trimmed;
-    ImageArea spriteSourceSize;
-    UtilVector sourceSize;
+    ImageArea spriteSourceSize;// 帧尺寸
+    UtilVector sourceSize; // 帧尺寸
 };
 
 struct Meta {
-    std::string app;
-    std::string version;
-    std::string image;
-    std::string format;
-    ImageArea size;
+    std::string app;// 工具
+    std::string version; // 版本
+    std::string image;// 图片名
+    std::string format;// 图片格式
+    ImageArea size;// 图片尺寸
     std::string scale;
 };
 
@@ -41,8 +41,8 @@ struct SpriteSheet
 struct TextureInfo
 {
     SDL_Texture* texture;
-    ImageArea src;
-    ImageArea dst;
+    ImageArea src;// 帧图位置及尺寸
+    ImageArea dst;// 目标帧图位置及尺寸
 };
 
 struct SurfaceInfo

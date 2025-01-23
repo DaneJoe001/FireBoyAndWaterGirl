@@ -18,6 +18,13 @@ double UtilVector::get_distance(const UtilVector& other) const
     return std::sqrt(std::pow(other.x - x, 2) + std::pow(other.y - y, 2));
 }
 
+bool UtilVector::is_within(const UtilVector& begin, const UtilVector& end)
+{
+    bool check_x = begin.x <= this->x && this->x <= end.x;
+    bool check_y = begin.y <= this->y && this->y <= end.y;
+    return check_x && check_y;
+}
+
 UtilVector UtilVector::operator+(const UtilVector& other) const
 {
     return UtilVector(x + other.x, y + other.y);

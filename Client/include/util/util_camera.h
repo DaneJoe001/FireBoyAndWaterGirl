@@ -16,7 +16,7 @@ public:
     // void set_camera_position(SDL_Rect rect);
     // void set_camera_position(SDL_Point point);
     // void set_camera_position(SDL_FPoint point);
-    void adaptive_draw();
+    void adaptive_render_texture(TextureInfo& texture_info, UtilVector pos);
 private:
     SDL_Renderer* m_renderer = nullptr;
     UtilVector m_camera_position;

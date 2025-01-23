@@ -4,7 +4,7 @@
 #include <main/game_structure.h>
 #include <util/util_log.h>
 
-GameStructure::GameStructure() :m_resource_manager(ManageResource::get_instance()), m_scene_manager(ManageScene::get_instance()) {}
+GameStructure::GameStructure() :m_resource_manager(ManageResource::get_instance()), m_scene_manager(ManageScene::get_instance()), m_button_manager(ManageButton::get_instance()) {}
 
 GameStructure::~GameStructure() {}
 
@@ -21,6 +21,20 @@ bool GameStructure::init()
     if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG))
     {
         UtilLog::log(LogLevel::DEVELOPPER, LOG_STR("ERROR", IMG_GetError()));
+        SDL_DestroyWindow(m_window);
+        SDL_Quit();
+        return false;
+    }
+    if (SDL_Init(SDL_INIT_AUDIO) < 0)
+    {
+        UtilLog::log(LogLevel::DEVELOPPER, LOG_STR("ERROR", SDL_GetError()));
+        SDL_DestroyWindow(m_window);
+        SDL_Quit();
+        return false;
+    }
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+    {
+        UtilLog::log(LogLevel::DEVELOPPER, LOG_STR("ERROR", Mix_GetError()));
         SDL_DestroyWindow(m_window);
         SDL_Quit();
         return false;
@@ -57,6 +71,11 @@ void GameStructure::circle()
     {
         return;
     }
+    Mix_Music* music = m_resource_manager.get_music("background");
+    if (Mix_PlayMusic(music, -1) == -1)
+    {
+        std::cerr << "Failed to play music! SDL_mixer Error: " << Mix_GetError() << std::endl;
+    }
     while (is_running)
     {
         Uint32 frame_start = SDL_GetTicks();
@@ -67,9 +86,20 @@ void GameStructure::circle()
             case SDL_QUIT:
                 is_running = false;
                 break;
+            case SDL_MOUSEBUTTONDOWN:
+                //std::cout<<"clicked"<<std::endl;
+                if (m_event.button.button == SDL_BUTTON_LEFT)
+                {
+                    std::cout << "left clicked" << std::endl;
+                    UtilVector mouse_pos = UtilVector(m_event.button.x, m_event.button.y);
+                    std::cout<<mouse_pos.x<<","<<mouse_pos.y<<std::endl;
+                    m_button_manager.check_clicked(mouse_pos);
+                }
+                break;
             }
         }
         SDL_RenderClear(m_renderer);
+        m_scene_manager.get_current_scene()->enter();
         m_scene_manager.get_current_scene()->update();
         m_scene_manager.get_current_scene()->draw(m_camera);
         SDL_RenderPresent(m_renderer);
@@ -91,6 +121,7 @@ void GameStructure::quit()
     SDL_FreeSurface(m_icon);
     SDL_DestroyRenderer(m_renderer);
     SDL_DestroyWindow(m_window);
+    Mix_CloseAudio();
     IMG_Quit();
     SDL_Quit();
 }
