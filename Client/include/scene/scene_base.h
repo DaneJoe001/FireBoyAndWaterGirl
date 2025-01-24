@@ -6,16 +6,20 @@
 //写一个连接管理类，连接信号与槽
 
 class ButtonBase;
+class EventKeyboard;
 
 class SceneBase
 {
 public:
+	~SceneBase();
 	virtual void enter() = 0;
 	virtual void exit() = 0;
 	virtual void update() = 0;
 	virtual void draw(UtilCamera* camera) = 0;
 	void add_button(ButtonBase* button);
 	void remove_button(ButtonBase* button);
+	void add_keyboard_event(EventKeyboard* key_event);
+    void remove_keyboard_event(EventKeyboard* key_event);
 protected:
 	// 需要遍历按钮列表，检查是否有按钮被触发
 	// 按钮本身和场景是关联的
@@ -24,5 +28,6 @@ protected:
 	// 最好将处理函数放在按钮的类成员中
 	// 可能会存在一个问题，按钮的实现函数可能要访问场景成员等其他内容，可能会缺少权限
 	std::vector<ButtonBase*> m_button_list;
+    std::vector<EventKeyboard*> m_event_list;
 
 };

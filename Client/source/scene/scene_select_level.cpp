@@ -1,6 +1,7 @@
 ﻿#include <manager/manage_resource.h>
 #include <manager/manage_scene.h>
 #include <button/button_base.h>
+#include <event/event_keyboard.h>
 #include <scene/scene_select_level.h>
 
 SceneSelectLevel::SceneSelectLevel()
@@ -9,6 +10,13 @@ SceneSelectLevel::SceneSelectLevel()
     ButtonBase* button = new ButtonBase(this, { 30,30 }, [&]()
         {
             ManageScene::get_instance().set_current_scene(SceneType::MAIN);
+        });
+    EventKeyboard* key_event = new EventKeyboard(this, [&](SDL_Keycode key)
+        {
+            if (key == SDLK_ESCAPE)
+            {
+                ManageScene::get_instance().set_current_scene(SceneType::MAIN);
+            }
         });
 }
 
@@ -33,7 +41,7 @@ void SceneSelectLevel::enter()
 {
     for (auto& button : m_button_list)
     {
-        button->set_valid(true);
+        button->set_status(true);
     }
 }
 
@@ -41,7 +49,7 @@ void SceneSelectLevel::exit()
 {
     for (auto& button : m_button_list)
     {
-        button->set_valid(false);
+        button->set_status(false);
     }
 }
 

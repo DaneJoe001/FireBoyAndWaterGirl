@@ -1,5 +1,7 @@
 ﻿#pragma once
 
+#include <cmath>
+
 template<class T>
 class UtilVector
 {

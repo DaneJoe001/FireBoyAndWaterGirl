@@ -59,7 +59,9 @@ private:
     std::unordered_map<std::string, TextureInfo> m_texture_info_map;
     std::unordered_map<std::string, SurfaceInfo> m_surface_info_map;
     static UtilVector<int> m_window_size;
-    //TODO: 重写下图集类
+    //TODO: 重写下图集类，map<std::string atlas_name,Atlas>
+    //TODO: 根据帧名分出图集
     std::unordered_map<std::string, Mix_Music*> m_music_map;
+
 
 };

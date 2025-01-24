@@ -21,6 +21,15 @@ void UtilCamera::render_texture(SDL_Texture* texture, const SDL_Rect* src_rect, 
     {
         UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "render texture failed!"));
     }
+    if (m_is_development_mode)
+    {
+        SDL_SetRenderDrawColor(m_renderer, 255, 0, 0, 255);
+        int check_rect = SDL_RenderDrawRect(m_renderer, dst_rect);
+        if (check_rect != 0)
+        {
+            UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "render rect failed!"));
+        }
+    }
 }
 
 void UtilCamera::adaptive_render_texture(TextureInfo& texture_info, UtilVector<int> pos)
@@ -45,4 +54,18 @@ void UtilCamera::adaptive_render_texture(TextureInfo& texture_info, UtilVector<i
     {
         UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "render texture failed!"));
     }
+    if (m_is_development_mode)
+    {
+        SDL_SetRenderDrawColor(m_renderer, 255, 0, 0, 255);
+        int check_rect = SDL_RenderDrawRect(m_renderer, &dst_rect);
+        if (check_rect != 0)
+        {
+            UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "render rect failed!"));
+        }
+    }
+}
+
+void UtilCamera::switch_development_mode()
+{
+    m_is_development_mode = !m_is_development_mode;
 }

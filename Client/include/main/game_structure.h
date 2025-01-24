@@ -21,6 +21,12 @@ public:
 
     bool init();
     void quit();
+    /**
+    * @brief 游戏主循环。
+    *
+    * 在循环中执行事务处理，绘制，帧率设置。
+    *
+    */
     void circle();
     void update();
     void render();
@@ -30,7 +36,7 @@ private:
     SDL_Window* m_window = nullptr;
     SDL_Renderer* m_renderer = nullptr;
     SDL_Surface* m_icon = nullptr;
-    SDL_Event m_event= SDL_Event();
+    SDL_Event m_event = SDL_Event();
     std::string m_title = u8"新·森林冰火人";
     std::size_t m_fps = 25;
     bool is_running = true;

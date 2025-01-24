@@ -1,4 +1,4 @@
-﻿#include <scene/scene_base.h>
+﻿#pragma once
 
 class SceneSelectLevel :public SceneBase
 {

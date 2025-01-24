@@ -32,14 +32,12 @@ ButtonBase::~ButtonBase()
 
 void ButtonBase::on_press()
 {
-    std::cout << "ButtonBase::on_clicked()" << std::endl;
-    m_is_pressed = !m_is_pressed;
+    m_is_pressed = true;
 }
 
 void ButtonBase::on_release()
 {
-    std::cout << "ButtonBase::on_release()" << std::endl;
-    m_is_pressed = !m_is_pressed;
+    m_is_pressed = false;
     m_on_clicked();
 }
 
@@ -53,7 +51,7 @@ bool ButtonBase::is_valid()
     return m_is_valid;
 }
 
-void ButtonBase::set_valid(bool is_valid)
+void ButtonBase::set_status(bool is_valid)
 {
     m_is_valid = is_valid;
 }

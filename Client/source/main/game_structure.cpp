@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <chrono>
+#include <manager/manage_key_event.h>
 #include <manager/manage_button.h>
 #include <manager/manage_scene.h>
 #include <manager/manage_resource.h>
@@ -64,7 +65,9 @@ bool GameStructure::init()
     ManageScene::get_instance().set_current_scene(SceneType::MAIN);
     return true;
 }
-
+/*
+ * @brief 游戏主循环
+ */
 void GameStructure::circle()
 {
     int frame_time = 1000 / m_fps;
@@ -86,7 +89,6 @@ void GameStructure::circle()
             switch (m_event.type)
             {
             case SDL_QUIT:
-                std::cout << "quit" << std::endl;
                 is_running = false;
                 break;
             case SDL_MOUSEBUTTONDOWN:
@@ -103,6 +105,17 @@ void GameStructure::circle()
                     UtilVector<int> mouse_pos = UtilVector<int>(m_event.button.x, m_event.button.y);
                     ManageButton::get_instance().check_release(mouse_pos);
                 }
+                break;
+            case SDL_KEYDOWN:
+                std::cout << "key down" << std::endl;
+                if (m_event.key.keysym.sym == SDLK_F4)
+                {
+                    m_camera->switch_development_mode();
+                }
+                ManageKeyEvent::get_instance().check_key_press(m_event.key.keysym.sym);
+                break;
+            case SDL_KEYUP:
+                ManageKeyEvent::get_instance().check_key_release(m_event.key.keysym.sym);
                 break;
             }
         }

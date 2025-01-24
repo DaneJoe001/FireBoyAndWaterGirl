@@ -25,7 +25,7 @@ public:
 	virtual void on_release();
 	bool is_on_button(UtilVector<int> mouse_pos);
 	bool is_valid();
-	void set_valid(bool is_valid);
+	void set_status(bool status);
 	void draw(UtilCamera* camera);
 
 protected:

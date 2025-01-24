@@ -2,6 +2,7 @@
 
 #include <scene/scene_main.h>
 #include <button/button_base.h>
+#include <event/event_keyboard.h>
 #include <manager/manage_resource.h>
 #include <manager/manage_scene.h>
 
@@ -18,20 +19,13 @@ SceneMain::SceneMain()
 		});
 }
 
-SceneMain::~SceneMain()
-{
-	// 调整基类析构和派生类析构
-	for (auto& button : m_button_list)
-	{
-		remove_button(button);
-	}
-}
+SceneMain::~SceneMain(){}
 
 void SceneMain::enter()
 {
 	for (auto& button : m_button_list)
 	{
-		button->set_valid(true);
+		button->set_status(true);
 	}
 }
 
@@ -39,7 +33,7 @@ void SceneMain::exit()
 {
 	for (auto& button : m_button_list)
 	{
-		button->set_valid(false);
+		button->set_status(false);
 	}
 	std::cout << "Exit the main scene!" << std::endl;
 }
