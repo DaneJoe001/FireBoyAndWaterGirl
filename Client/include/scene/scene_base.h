@@ -17,7 +17,6 @@ public:
 	void add_button(ButtonBase* button);
 	void remove_button(ButtonBase* button);
 protected:
-	ManageResource& m_resource_manager = ManageResource::get_instance();
 	// 需要遍历按钮列表，检查是否有按钮被触发
 	// 按钮本身和场景是关联的
 	// 所以连接函数可以放在场景基类中

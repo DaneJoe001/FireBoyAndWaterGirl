@@ -1,10 +1,12 @@
 ﻿#include <iostream>
 #include <chrono>
-
+#include <manager/manage_button.h>
+#include <manager/manage_scene.h>
+#include <manager/manage_resource.h>
 #include <main/game_structure.h>
 #include <util/util_log.h>
 
-GameStructure::GameStructure() :m_resource_manager(ManageResource::get_instance()), m_scene_manager(ManageScene::get_instance()), m_button_manager(ManageButton::get_instance()) {}
+GameStructure::GameStructure() {}
 
 GameStructure::~GameStructure() {}
 
@@ -49,7 +51,7 @@ bool GameStructure::init()
     }
     ManageResource::init(m_renderer);
     ManageResource::get_instance().load_resource();
-    m_icon = m_resource_manager.get_surface("window_icon");
+    m_icon = ManageResource::get_instance().get_surface("window_icon");
     if (!m_icon)
     {
         UtilLog::log(LogLevel::DEVELOPPER, LOG_STR("ERROR", SDL_GetError()));
@@ -58,8 +60,8 @@ bool GameStructure::init()
     m_camera = new UtilCamera();
     m_camera->init(m_renderer);
 
-    m_scene_manager.init();
-    m_scene_manager.set_current_scene(SceneType::MAIN);
+    ManageScene::get_instance().init();
+    ManageScene::get_instance().set_current_scene(SceneType::MAIN);
     return true;
 }
 
@@ -71,10 +73,10 @@ void GameStructure::circle()
     {
         return;
     }
-    Mix_Music* music = m_resource_manager.get_music("background");
+    Mix_Music* music = ManageResource::get_instance().get_music("background");
     if (Mix_PlayMusic(music, -1) == -1)
     {
-        std::cerr << "Failed to play music! SDL_mixer Error: " << Mix_GetError() << std::endl;
+        UtilLog::log(LogLevel::DEVELOPPER, LOG_STR("ERROR", Mix_GetError()));
     }
     while (is_running)
     {
@@ -84,6 +86,7 @@ void GameStructure::circle()
             switch (m_event.type)
             {
             case SDL_QUIT:
+                std::cout << "quit" << std::endl;
                 is_running = false;
                 break;
             case SDL_MOUSEBUTTONDOWN:
@@ -91,22 +94,22 @@ void GameStructure::circle()
                 if (m_event.button.button == SDL_BUTTON_LEFT)
                 {
                     UtilVector<int> mouse_pos = UtilVector<int>(m_event.button.x, m_event.button.y);
-                    m_button_manager.check_press(mouse_pos);
+                    ManageButton::get_instance().check_press(mouse_pos);
                 }
                 break;
             case SDL_MOUSEBUTTONUP:
                 if (m_event.button.button == SDL_BUTTON_LEFT)
                 {
                     UtilVector<int> mouse_pos = UtilVector<int>(m_event.button.x, m_event.button.y);
-                    m_button_manager.check_release(mouse_pos);
+                    ManageButton::get_instance().check_release(mouse_pos);
                 }
                 break;
             }
         }
         SDL_RenderClear(m_renderer);
-        m_scene_manager.get_current_scene()->enter();
-        m_scene_manager.get_current_scene()->update();
-        m_scene_manager.get_current_scene()->draw(m_camera);
+        ManageScene::get_instance().get_current_scene()->enter();
+        ManageScene::get_instance().get_current_scene()->update();
+        ManageScene::get_instance().get_current_scene()->draw(m_camera);
         SDL_RenderPresent(m_renderer);
         Uint32 frame_end = SDL_GetTicks();
         if (frame_end - frame_start < frame_time)

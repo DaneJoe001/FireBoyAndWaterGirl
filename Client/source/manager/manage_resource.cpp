@@ -1,4 +1,6 @@
-﻿#include <util/util_log.h>
+﻿#include <exception>
+
+#include <util/util_log.h>
 #include <manager/manage_resource.h>
 
 ManageResource& ManageResource::get_instance()
@@ -35,24 +37,24 @@ SDL_Texture* ManageResource::get_texture(const std::string& image_name)
 
 TextureInfo& ManageResource::get_texture_info(const std::string& image_name)
 {
-	if (m_texture_info_map.find(image_name) == m_texture_info_map.end())
+	auto it = m_texture_info_map.find(image_name);
+	if (it == m_texture_info_map.end())
 	{
 		UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "image not found"));
-		//处理一下空引用返回
-		//return TextureInfo();
+		throw std::runtime_error("Image not found: " + image_name);
 	}
-	return m_texture_info_map.at(image_name);
+	return it->second;
 }
 
 SurfaceInfo& ManageResource::get_surface_info(const std::string& image_name)
 {
-	if (m_surface_info_map.find(image_name) == m_surface_info_map.end())
+	auto it = m_surface_info_map.find(image_name);
+	if (it == m_surface_info_map.end())
 	{
 		UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "image not found"));
-		//处理一下空引用返回
-		//return SurfaceInfo();
+		throw std::runtime_error("Image not found: " + image_name);
 	}
-	return m_surface_info_map.at(image_name);
+	return it->second;
 }
 
 Mix_Music* ManageResource::get_music(const std::string& music_name)
@@ -82,19 +84,19 @@ ManageResource::~ManageResource()
 	//释放图片资源和音频资源
 	for (auto& item : m_texture_map)
 	{
+		if (item.second != nullptr)
+		{
+			continue;
+		}
 		SDL_DestroyTexture(item.second);
 	}
 	for (auto& item : m_surface_map)
 	{
+		if (item.second != nullptr)
+		{
+			continue;
+		}
 		SDL_FreeSurface(item.second);
-	}
-	for (auto& item : m_texture_info_map)
-	{
-		SDL_DestroyTexture(item.second.texture);
-	}
-	for (auto& item : m_surface_info_map)
-	{
-		SDL_FreeSurface(item.second.surface);
 	}
 }
 
@@ -114,7 +116,7 @@ void ManageResource::load_resource()
 	load_texture("title_crystal", RESOURCE_DIR"/assets/images/title_crystal.png");
 	load_texture("title_elements", RESOURCE_DIR"/assets/images/title_elements.png");
 	load_texture("title_forest", RESOURCE_DIR"/assets/images/title_forest.png");
-	load_texture("title_ice", RESOURCE_DIR"/assets/images/titleIce.png");
+	load_texture("title_ice", RESOURCE_DIR"/assets/images/title_ice.png");
 	load_texture("title_light", RESOURCE_DIR"/assets/images/title_light.png");
 
 	load_texture("beam_cone_shaped", RESOURCE_DIR"/assets/images/beam_cone_shaped.png");

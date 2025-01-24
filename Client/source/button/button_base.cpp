@@ -1,4 +1,7 @@
-﻿#include <button/button_base.h>
+﻿#include <manager/manage_resource.h>
+#include <manager/manage_button.h>
+#include <manager/manage_scene.h>
+#include <button/button_base.h>
 #include <scene/scene_base.h>
 
 ButtonBase::ButtonBase(SceneBase* scene,UtilVector<int> pos, std::function<void()>call_back)
@@ -6,10 +9,10 @@ ButtonBase::ButtonBase(SceneBase* scene,UtilVector<int> pos, std::function<void(
     scene->add_button(this);
     
     m_pos = pos;
-    m_normal_texture = m_resource_manager.get_texture("button_normal");
-    m_pressed_texture = m_resource_manager.get_texture("button_pressed");
+    m_normal_texture = ManageResource::get_instance().get_texture("button_normal");
+    m_pressed_texture = ManageResource::get_instance().get_texture("button_pressed");
     m_on_clicked = call_back;
-    m_button_manager.add_button(this);
+    ManageButton::get_instance().add_button(this);
 }
 
 ButtonBase::ButtonBase(SceneBase* scene, SDL_Texture* normal_texture, SDL_Texture* pressed_texture, UtilVector<int> pos, UtilVector<int> size, std::function<void()>call_back)
@@ -19,7 +22,7 @@ ButtonBase::ButtonBase(SceneBase* scene, SDL_Texture* normal_texture, SDL_Textur
     m_pressed_texture = pressed_texture;
     m_pos = pos;
     m_on_clicked = call_back;
-    m_button_manager.add_button(this);
+    ManageButton::get_instance().add_button(this);
 }
 
 ButtonBase::~ButtonBase()

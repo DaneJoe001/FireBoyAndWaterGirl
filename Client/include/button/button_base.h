@@ -7,18 +7,11 @@
 
 #include <util/util_vector.h>
 #include <util/util_camera.h>
-#include <manager/manage_resource.h>
-#include <manager/manage_button.h>
-#include <manager/manage_scene.h>
 
 class SceneBase;
 
 class ButtonBase
 {
-public:
-	ManageResource& m_resource_manager = ManageResource::get_instance();
-	ManageButton& m_button_manager = ManageButton::get_instance();
-	ManageScene& m_scene_manager = ManageScene::get_instance();
 public:
 	//引入场景指针，标识按钮所有权
 	ButtonBase(SceneBase* scene, UtilVector<int> pos,std::function<void()>call_back);

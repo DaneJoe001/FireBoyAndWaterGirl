@@ -5,12 +5,14 @@
 
 #include <scene/scene_base.h>
 #include <scene/scene_main.h>
+#include <scene/scene_select_level.h>
 #include <scene/scene_setting.h>
 
 enum class SceneType
 {
 	MAIN = 0,
 	SETTING = 1,
+	SELECT_LEVEL = 2,
 };
 
 class ManageScene

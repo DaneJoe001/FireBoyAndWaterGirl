@@ -1,6 +1,0 @@
-[ TIME ]: Thu Jan 23 23:59:48 2025
-[ FILE ]: E:\CodingProject\C++Game\FireBoyAndWaterGirl\Client\source\manager\manage_resource.cpp
-[ LINE ]: 148
-[ FUNCTION ]: void __cdecl ManageResource::load_texture(const class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,const class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)
-[ ERROR ]: Couldn't open E:/CodingProject/C++Game/FireBoyAndWaterGirl/Client/resource/assets/images/titleIce.png
-

@@ -2,18 +2,20 @@
 
 #include <scene/scene_main.h>
 #include <button/button_base.h>
+#include <manager/manage_resource.h>
+#include <manager/manage_scene.h>
 
 SceneMain::SceneMain()
 {
-	m_background = m_resource_manager.get_texture("background_1");
-	m_title = m_resource_manager.get_texture("title_crystal");
-	m_beam_cone_shaped = m_resource_manager.get_texture("beam_cone_shaped");
+	m_background = ManageResource::get_instance().get_texture("background_1");
+	m_title = ManageResource::get_instance().get_texture("title_crystal");
+	m_beam_cone_shaped = ManageResource::get_instance().get_texture("beam_cone_shaped");
 
 	ButtonBase* button = new ButtonBase(this, { 490,480 }, [&]()
 		{
-			std::cout << "Start the game!" << std::endl;
+			std::cout << "Enter Level Selection!" << std::endl;
+			ManageScene::get_instance().set_current_scene(SceneType::SELECT_LEVEL);
 		});
-	add_button(button);
 }
 
 SceneMain::~SceneMain()
@@ -35,11 +37,11 @@ void SceneMain::enter()
 
 void SceneMain::exit()
 {
-	std::cout << "Exit the main scene!" << std::endl;
 	for (auto& button : m_button_list)
 	{
 		button->set_valid(false);
 	}
+	std::cout << "Exit the main scene!" << std::endl;
 }
 
 void SceneMain::update()
@@ -63,7 +65,6 @@ void SceneMain::draw(UtilCamera* camera)
 	camera->render_texture(m_background, nullptr, &background_rect);
 	camera->render_texture(m_beam_cone_shaped, nullptr, &beam_cone_shaped_rect);
 	camera->render_texture(m_title, nullptr, &ttile_rect);
-
 	for (auto button : m_button_list)
 	{
 		button->draw(camera);

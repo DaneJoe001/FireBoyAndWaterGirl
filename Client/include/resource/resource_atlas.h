@@ -13,7 +13,7 @@ public:
 	ResourceAtlas();
 	~ResourceAtlas();
 	void add_texture(SDL_Texture* texture);
-	void ResourceAtlas::init_atlas(SDL_Renderer* renderer, std::string path);
+	void init_atlas(SDL_Renderer* renderer, std::string path);
 private:
 	std::vector<SDL_Texture*> m_textures;
 };

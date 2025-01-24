@@ -3,6 +3,7 @@
 #include <memory>
 #include <mutex>
 #include <string>
+#include <optional>
 #include <unordered_map>
 
 #include <SDL.h>
@@ -54,6 +55,7 @@ private:
     //texture_info 和 surface_info 的映射用于存放实际帧信息
     std::unordered_map<std::string, SDL_Texture*> m_texture_map;
     std::unordered_map<std::string, SDL_Surface*> m_surface_map;
+    // texture_info 和 surface_info 的映射用于存放对应图片池中的图片引用和位置尺寸信息
     std::unordered_map<std::string, TextureInfo> m_texture_info_map;
     std::unordered_map<std::string, SurfaceInfo> m_surface_info_map;
     static UtilVector<int> m_window_size;
