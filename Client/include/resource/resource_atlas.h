@@ -1,19 +1,19 @@
 #pragma once
 
-#include <vector>
+#include <list>
 #include <string>
 
 #define SDL_MAIN_HANDLED
 #include <SDL2/SDL.h>
 #include <SDL_image.h>
 
+class AtlasFrame;
 class ResourceAtlas
 {
 public:
 	ResourceAtlas();
 	~ResourceAtlas();
-	void add_texture(SDL_Texture* texture);
-	void init_atlas(SDL_Renderer* renderer, std::string path);
+	void add_frame_info(AtlasFrame& info);
 private:
-	std::vector<SDL_Texture*> m_textures;
+	std::list<AtlasFrame&> m_atlas;
 };

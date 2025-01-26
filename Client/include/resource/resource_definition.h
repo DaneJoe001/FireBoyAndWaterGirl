@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <string>
 #include <vector>
@@ -50,5 +50,11 @@ struct SurfaceInfo
     SDL_Surface* surface;
     ImageArea src;
     ImageArea dst;
+};
+
+struct AtlasFrame
+{
+    TextureInfo& texture;
+    std::size_t index;
 };
 

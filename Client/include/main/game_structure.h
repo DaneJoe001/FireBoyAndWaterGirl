@@ -38,6 +38,6 @@ private:
     SDL_Surface* m_icon = nullptr;
     SDL_Event m_event = SDL_Event();
     std::string m_title = u8"新·森林冰火人";
-    std::size_t m_fps = 25;
+    std::size_t m_fps = 15;
     bool is_running = true;
 };

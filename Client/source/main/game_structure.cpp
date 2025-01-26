@@ -123,6 +123,7 @@ void GameStructure::circle()
         ManageScene::get_instance().get_current_scene()->enter();
         ManageScene::get_instance().get_current_scene()->update();
         ManageScene::get_instance().get_current_scene()->draw(m_camera);
+        m_camera->adaptive_render_texture(ManageResource::get_instance().randon_get_texture(), {0,0});
         SDL_RenderPresent(m_renderer);
         Uint32 frame_end = SDL_GetTicks();
         if (frame_end - frame_start < frame_time)
