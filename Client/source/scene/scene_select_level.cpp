@@ -3,19 +3,46 @@
 #include <button/button_base.h>
 #include <event/event_keyboard.h>
 #include <scene/scene_select_level.h>
+#include <util/util_animation.h>
 
 SceneSelectLevel::SceneSelectLevel()
 {
     m_background = ManageResource::get_instance().get_texture("background_3");
+    m_animation = new UtilAnimation(
+        &ManageResource::get_instance().get_atlas("water_head_idle"), true
+    );
+    m_animation->set_position(pos);
     ButtonBase* button = new ButtonBase(this, { 30,30 }, [&]()
         {
             ManageScene::get_instance().set_current_scene(SceneType::MAIN);
         });
-    EventKeyboard* key_event = new EventKeyboard(this, [&](SDL_Keycode key)
+    EventKeyboard* key_event_esc = new EventKeyboard(this, [&](SDL_Keycode key)
         {
             if (key == SDLK_ESCAPE)
             {
                 ManageScene::get_instance().set_current_scene(SceneType::MAIN);
+            }
+        });
+    EventKeyboard* key_event_direct = new EventKeyboard(this, [&](SDL_Keycode key)
+        {
+            switch (key)
+            {
+            case SDLK_UP:
+                pos += UtilVector<int>(0, -5);
+                m_animation->set_position(pos);
+                break;
+            case SDLK_DOWN:
+                pos += UtilVector<int>(0, 5);
+                m_animation->set_position(pos);
+                break;
+            case SDLK_LEFT:
+                pos += UtilVector<int>(-5, 0);
+                m_animation->set_position(pos);
+                break;
+            case SDLK_RIGHT:
+                pos += UtilVector<int>(5, 0);
+                m_animation->set_position(pos);
+                break;
             }
         });
 }
@@ -35,6 +62,7 @@ void SceneSelectLevel::draw(UtilCamera* camera)
     {
         button->draw(camera);
     }
+    m_animation->draw_frame(camera);
 }
 
 void SceneSelectLevel::enter()
@@ -55,5 +83,5 @@ void SceneSelectLevel::exit()
 
 void SceneSelectLevel::update()
 {
-
+    m_animation->on_update();
 }

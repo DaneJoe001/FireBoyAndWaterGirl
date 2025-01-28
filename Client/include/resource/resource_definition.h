@@ -11,6 +11,10 @@
 struct ImageArea {
     UtilVector<int> pos;// 帧图起始位置
     UtilVector<int> size;// 帧尺寸
+    SDL_Rect to_rect()
+    {
+        return{ pos.x,pos.y,size.x,size.y };
+    }
 };
 
 struct FrameInfo {
@@ -54,7 +58,7 @@ struct SurfaceInfo
 
 struct AtlasFrame
 {
-    TextureInfo& texture;
-    std::size_t index;
+    TextureInfo texture;
+    int index;
 };
 

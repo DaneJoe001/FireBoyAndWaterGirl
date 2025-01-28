@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <chrono>
+
 #include <manager/manage_key_event.h>
 #include <manager/manage_button.h>
 #include <manager/manage_scene.h>
@@ -70,7 +71,6 @@ bool GameStructure::init()
  */
 void GameStructure::circle()
 {
-    int frame_time = 1000 / m_fps;
     bool is_init = init();
     if (!is_init)
     {
@@ -81,9 +81,10 @@ void GameStructure::circle()
     {
         UtilLog::log(LogLevel::DEVELOPPER, LOG_STR("ERROR", Mix_GetError()));
     }
+    //设置帧率
+    m_frame_rate_control.set_fps(15);
     while (is_running)
     {
-        Uint32 frame_start = SDL_GetTicks();
         while (SDL_PollEvent(&m_event))
         {
             switch (m_event.type)
@@ -92,7 +93,6 @@ void GameStructure::circle()
                 is_running = false;
                 break;
             case SDL_MOUSEBUTTONDOWN:
-                //std::cout<<"clicked"<<std::endl;
                 if (m_event.button.button == SDL_BUTTON_LEFT)
                 {
                     UtilVector<int> mouse_pos = UtilVector<int>(m_event.button.x, m_event.button.y);
@@ -123,13 +123,9 @@ void GameStructure::circle()
         ManageScene::get_instance().get_current_scene()->enter();
         ManageScene::get_instance().get_current_scene()->update();
         ManageScene::get_instance().get_current_scene()->draw(m_camera);
-        m_camera->adaptive_render_texture(ManageResource::get_instance().randon_get_texture(), {0,0});
+        /*m_camera->adaptive_render_texture(ManageResource::get_instance().randon_get_texture(), {0,0});*/
         SDL_RenderPresent(m_renderer);
-        Uint32 frame_end = SDL_GetTicks();
-        if (frame_end - frame_start < frame_time)
-        {
-            SDL_Delay(frame_time - (frame_end - frame_start));
-        }
+        m_frame_rate_control.wait_update();
     }
     quit();
 }

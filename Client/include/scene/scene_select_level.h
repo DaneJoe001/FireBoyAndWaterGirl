@@ -1,5 +1,9 @@
 ﻿#pragma once
 
+#include <util/util_vector.h>
+
+class UtilAnimation;
+
 class SceneSelectLevel :public SceneBase
 {
 public:
@@ -11,4 +15,6 @@ public:
     void update()override;
 private:
     SDL_Texture* m_background = nullptr;
+    UtilAnimation* m_animation = nullptr;
+    UtilVector<int> pos{ 50,50 };
 };

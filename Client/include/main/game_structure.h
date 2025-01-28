@@ -11,6 +11,7 @@
 #include <manager/manage_scene.h>
 #include <manager/manage_button.h>
 #include <util/util_camera.h>
+#include <util/util_timer.h>
 
 
 class GameStructure
@@ -38,6 +39,7 @@ private:
     SDL_Surface* m_icon = nullptr;
     SDL_Event m_event = SDL_Event();
     std::string m_title = u8"新·森林冰火人";
-    std::size_t m_fps = 15;
+    //std::size_t m_fps = 15;
+    UtilTimer m_frame_rate_control;
     bool is_running = true;
 };

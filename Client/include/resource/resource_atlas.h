@@ -1,6 +1,6 @@
-#pragma once
+﻿#pragma once
 
-#include <list>
+#include <vector>
 #include <string>
 
 #define SDL_MAIN_HANDLED
@@ -14,6 +14,8 @@ public:
 	ResourceAtlas();
 	~ResourceAtlas();
 	void add_frame_info(AtlasFrame& info);
+	AtlasFrame get_frame(int index);
+	int get_frame_quantity();
 private:
-	std::list<AtlasFrame&> m_atlas;
+	std::vector<AtlasFrame> m_atlas;
 };

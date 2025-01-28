@@ -48,6 +48,7 @@ public:
     SDL_Surface* get_surface(const std::string& image_name);
     SurfaceInfo& get_surface_info(const std::string& image_name);
     TextureInfo& get_texture_info(const std::string& image_name);
+    ResourceAtlas& get_atlas(const std::string& atlas_name);
     Mix_Music* get_music(const std::string& music_name);
     //遍历素材，用于检查
     TextureInfo& randon_get_texture();

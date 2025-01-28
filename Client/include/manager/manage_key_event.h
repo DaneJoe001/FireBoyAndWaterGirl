@@ -2,7 +2,7 @@
 
 #include <list>
 
-#include <SDL2/sdl.h>
+#include <SDL2/SDL.h>
 
 class EventKeyboard;
 

@@ -58,6 +58,17 @@ SurfaceInfo& ManageResource::get_surface_info(const std::string& image_name)
 	return it->second;
 }
 
+ResourceAtlas& ManageResource::get_atlas(const std::string& atlas_name)
+{
+	auto it = m_resource_atlas_map.find(atlas_name);
+	if (it == m_resource_atlas_map.end())
+	{
+		UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "atlas not found"));
+		throw std::runtime_error("Image not found: " + atlas_name);
+	}
+	return it->second;
+}
+
 Mix_Music* ManageResource::get_music(const std::string& music_name)
 {
 	if (m_music_map.find(music_name) == m_music_map.end())
@@ -146,8 +157,10 @@ void ManageResource::load_atlas(SpriteSheet& info)
 	{
 		std::string& filename = it->filename;
 
-		std::string& frame_name = filename.substr(0, filename.length() - 4);
-		int frame_index= atoi(filename.substr(filename.length() - 4,4).c_str());
+		std::string frame_name = filename.substr(0, filename.length() - 4);
+		int frame_index = (std::size_t)atoi(filename.substr(filename.length() - 4, 4).c_str());
+		std::cout << filename << std::endl;
+		std::cout << frame_name <<'\t'<<frame_index << std::endl;
 
 		auto temp = m_resource_atlas_map.find(frame_name);
 
