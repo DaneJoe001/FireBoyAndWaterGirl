@@ -4,3 +4,6 @@ out/
 build/
 *.filters
 *.vcxproj
+*.cmake
+CMakeSettings.json
+CMakeFiles/
