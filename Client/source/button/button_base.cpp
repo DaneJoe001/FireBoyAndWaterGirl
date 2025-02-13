@@ -9,26 +9,32 @@ ButtonBase::ButtonBase(SceneBase* scene,UtilVector<int> pos, std::function<void(
     scene->add_button(this);
     
     m_pos = pos;
-    m_normal_texture = ManageResource::get_instance().get_texture("button_normal");
-    m_pressed_texture = ManageResource::get_instance().get_texture("button_pressed");
+    m_normal_texture = ManageResource::get_instance().get_texture_info("button_normal");
+    m_pressed_texture = ManageResource::get_instance().get_texture_info("button_pressed");
+    m_size = m_normal_texture->dst.size;
+
     m_on_clicked = call_back;
     ManageButton::get_instance().add_button(this);
 }
 
-ButtonBase::ButtonBase(SceneBase* scene, SDL_Texture* normal_texture, SDL_Texture* pressed_texture, UtilVector<int> pos, UtilVector<int> size, std::function<void()>call_back)
+ButtonBase::ButtonBase(SceneBase* scene,
+    TextureInfo* normal_texture_info,
+    TextureInfo* pressed_texture_info,
+    UtilVector<int> pos,
+    std::function<void()>call_back)
 {
     scene->add_button(this);
-    m_normal_texture = normal_texture;
-    m_pressed_texture = pressed_texture;
     m_pos = pos;
+    m_normal_texture = normal_texture_info;
+    m_pressed_texture = pressed_texture_info;
+
+    m_size = m_normal_texture->dst.size;
+
     m_on_clicked = call_back;
     ManageButton::get_instance().add_button(this);
 }
 
-ButtonBase::~ButtonBase()
-{
-
-}
+ButtonBase::~ButtonBase(){}
 
 void ButtonBase::on_press()
 {
@@ -63,11 +69,11 @@ void ButtonBase::draw(UtilCamera* camera)
     {
         if (m_is_pressed)
         {
-            camera->render_texture(m_pressed_texture, nullptr, &m_pressed_dst);
+            camera->adaptive_render_texture(m_pressed_texture, m_pos);
         }
         else
         {
-            camera->render_texture(m_normal_texture, nullptr, &m_pressed_dst);
+            camera->adaptive_render_texture(m_normal_texture, m_pos);
         }
         return;
     }

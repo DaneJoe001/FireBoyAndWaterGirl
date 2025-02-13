@@ -12,11 +12,14 @@ SceneMain::SceneMain()
 	m_title = ManageResource::get_instance().get_texture("title_crystal");
 	m_beam_cone_shaped = ManageResource::get_instance().get_texture("beam_cone_shaped");
 
-	ButtonBase* button = new ButtonBase(this, { 490,480 }, [&]()
+	ButtonBase* button = new ButtonBase(this,
+		ManageResource::get_instance().get_texture_info("ToggleControlButtonSingle0000"),
+		ManageResource::get_instance().get_texture_info("ToggleControlButtonSingle0001"),
+		{ 465,460 },[&]()
 		{
 			std::cout << "Enter Level Selection!" << std::endl;
 			ManageScene::get_instance().set_current_scene(SceneType::SELECT_LEVEL);
-		});
+		}); 
 }
 
 SceneMain::~SceneMain(){}

@@ -8,41 +8,30 @@
 SceneSelectLevel::SceneSelectLevel()
 {
     m_background = ManageResource::get_instance().get_texture("background_3");
-    m_animation = new UtilAnimation(
-        &ManageResource::get_instance().get_atlas("water_head_idle"), true
+    m_board= new UtilAnimation(
+        ManageResource::get_instance().get_atlas("PopupBackground"), true
     );
-    m_animation->set_position(pos);
-    ButtonBase* button = new ButtonBase(this, { 30,30 }, [&]()
+    m_board->set_position({ 0, 80 });
+    ButtonBase* button = new ButtonBase(this, 
+        ManageResource::get_instance().get_texture_info("BackButtonFull0000"),
+        ManageResource::get_instance().get_texture_info("BackButtonFull0001"),
+        { 20,10 }, [&]()
         {
             ManageScene::get_instance().set_current_scene(SceneType::MAIN);
+        });
+    ButtonBase* button_level_teaching = new ButtonBase(this,
+        ManageResource::get_instance().get_texture_info("FinishStone0000"),
+        ManageResource::get_instance().get_texture_info("FinishStone0021"),
+        { 120,180 }, [&]()
+        {
+           /* ManageScene::get_instance().set_current_scene(SceneType::LEVEL_TEACHING);*/
+            std::cout<<"enter level teaching"<<std::endl;
         });
     EventKeyboard* key_event_esc = new EventKeyboard(this, [&](SDL_Keycode key)
         {
             if (key == SDLK_ESCAPE)
             {
                 ManageScene::get_instance().set_current_scene(SceneType::MAIN);
-            }
-        });
-    EventKeyboard* key_event_direct = new EventKeyboard(this, [&](SDL_Keycode key)
-        {
-            switch (key)
-            {
-            case SDLK_UP:
-                pos += UtilVector<int>(0, -5);
-                m_animation->set_position(pos);
-                break;
-            case SDLK_DOWN:
-                pos += UtilVector<int>(0, 5);
-                m_animation->set_position(pos);
-                break;
-            case SDLK_LEFT:
-                pos += UtilVector<int>(-5, 0);
-                m_animation->set_position(pos);
-                break;
-            case SDLK_RIGHT:
-                pos += UtilVector<int>(5, 0);
-                m_animation->set_position(pos);
-                break;
             }
         });
 }
@@ -58,11 +47,13 @@ void SceneSelectLevel::draw(UtilCamera* camera)
     SDL_Rect background_rect = { 0, 0, window_size.x, window_size.y };
 
     camera->render_texture(m_background, nullptr, &background_rect);
+    
+    m_board->draw_frame(camera);
+    
     for (auto button : m_button_list)
     {
         button->draw(camera);
     }
-    m_animation->draw_frame(camera);
 }
 
 void SceneSelectLevel::enter()
@@ -83,5 +74,5 @@ void SceneSelectLevel::exit()
 
 void SceneSelectLevel::update()
 {
-    m_animation->on_update();
+
 }

@@ -36,37 +36,37 @@ SDL_Texture* ManageResource::get_texture(const std::string& image_name)
 	return m_texture_map.at(image_name);
 }
 
-TextureInfo& ManageResource::get_texture_info(const std::string& image_name)
+TextureInfo* ManageResource::get_texture_info(const std::string& image_name)
 {
 	auto it = m_texture_info_map.find(image_name);
 	if (it == m_texture_info_map.end())
 	{
 		UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "image not found"));
-		throw std::runtime_error("Image not found: " + image_name);
+		return nullptr;
 	}
-	return it->second;
+	return &(it->second);
 }
 
-SurfaceInfo& ManageResource::get_surface_info(const std::string& image_name)
+SurfaceInfo* ManageResource::get_surface_info(const std::string& image_name)
 {
 	auto it = m_surface_info_map.find(image_name);
 	if (it == m_surface_info_map.end())
 	{
 		UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "image not found"));
-		throw std::runtime_error("Image not found: " + image_name);
+		return nullptr;
 	}
-	return it->second;
+	return &(it->second);
 }
 
-ResourceAtlas& ManageResource::get_atlas(const std::string& atlas_name)
+ResourceAtlas* ManageResource::get_atlas(const std::string& atlas_name)
 {
 	auto it = m_resource_atlas_map.find(atlas_name);
 	if (it == m_resource_atlas_map.end())
 	{
 		UtilLog::log(LogLevel::USER, LOG_STR("ERROR", "atlas not found"));
-		throw std::runtime_error("Image not found: " + atlas_name);
+		return nullptr;
 	}
-	return it->second;
+	return &(it->second);
 }
 
 Mix_Music* ManageResource::get_music(const std::string& music_name)
@@ -84,21 +84,21 @@ void ManageResource::set_window_size(const UtilVector<int>& size)
 	m_window_size = size;
 }
 
-TextureInfo& ManageResource::randon_get_texture()
+TextureInfo* ManageResource::randon_get_texture()
 {
 	static auto it = m_texture_info_map.begin();
 	if (it != m_texture_info_map.end())
 	{
 		TextureInfo& info = it->second;
 		it++;
-		return info;
+		return &info;
 	}
 	else
 	{
 		it = m_texture_info_map.begin();
 		TextureInfo& info = it->second;
 		it++;
-		return info;
+		return &info;
 	}
 }
 
@@ -128,6 +128,22 @@ ManageResource::~ManageResource()
 		}
 		SDL_FreeSurface(item.second);
 	}
+	for (auto& item : m_music_map)
+	{
+		if (item.second == nullptr)
+		{
+			continue;
+		}
+        Mix_FreeMusic(item.second);
+	}
+	for (auto& item : m_ttf_font_map)
+	{
+		if (item.second == nullptr)
+		{
+			continue;
+		}	
+        TTF_CloseFont(item.second);
+	}
 }
 
 void ManageResource::load_resource()
@@ -138,6 +154,8 @@ void ManageResource::load_resource()
 	auto_load_directory_resource(RESOURCE_DIR"/assets/audio", FileFormat::OGG,FileLoadMode::UNSPECIFIED);
 	auto_load_directory_resource(RESOURCE_DIR"/assets/images", FileFormat::PNG, FileLoadMode::TEXTURE);
 	auto_load_directory_resource(RESOURCE_DIR"/assets/atlasses", FileFormat::JSON, FileLoadMode::SPRITE_SHEET);
+	load_texture_info("button_normal",{100,50});
+	load_texture_info("button_pressed",{100,50});
 
 	for (auto it = m_sprite_sheet_map.begin(); it != m_sprite_sheet_map.end(); it++)
 	{
@@ -156,20 +174,15 @@ void ManageResource::load_atlas(SpriteSheet& info)
 	for (auto it = info.frames.begin(); it != info.frames.end(); it++)
 	{
 		std::string& filename = it->filename;
-
 		std::string frame_name = filename.substr(0, filename.length() - 4);
 		int frame_index = (std::size_t)atoi(filename.substr(filename.length() - 4, 4).c_str());
-		std::cout << filename << std::endl;
-		std::cout << frame_name <<'\t'<<frame_index << std::endl;
-
 		auto temp = m_resource_atlas_map.find(frame_name);
 
-		TextureInfo& info = get_texture_info(filename);
-		AtlasFrame atlas_frame = { info,frame_index };
+		TextureInfo* info = get_texture_info(filename);
+		AtlasFrame atlas_frame = { *info,frame_index };
 
 		if ( temp!= m_resource_atlas_map.end())
 		{
-			
 			temp->second.add_frame_info(atlas_frame);
 		}
 		else
@@ -244,6 +257,15 @@ void ManageResource::load_texture_info(SDL_Texture* texture, FrameInfo& frame_in
 	m_texture_info_map[frame_info.filename] = texture_info;
 }
 
+void ManageResource::load_texture_info(const std::string& image_name, UtilVector<int> size)
+{
+	TextureInfo texture_info;
+	texture_info.texture=get_texture(image_name);
+	texture_info.src = { {0,0},size };
+	texture_info.dst = { {0,0},size };
+	m_texture_info_map[image_name] = texture_info;
+}
+
 void ManageResource::load_sprite_sheet(const std::string& json_path)
 {
 	UtilParseSpriteSheet parse(json_path);
@@ -275,6 +297,26 @@ void ManageResource::load_music(const std::string& music_name, const std::string
 		return;
 	}
 	m_music_map[music_name] = music;
+}
+
+void ManageResource::load_fnt(const std::string& path, const std::string& font_name)
+{
+	std::ifstream fin(path);
+	if (!fin.is_open())
+	{
+		return;
+	}
+}
+
+void ManageResource::load_ttf(const std::string& path, std::size_t size, const std::string& font_name)
+{
+	TTF_Font* font = TTF_OpenFont(path.c_str(), size);
+	if (font == nullptr)
+	{
+        UtilLog::log(LogLevel::USER, LOG_STR("ERROR", TTF_GetError()));
+		return;
+	}
+	m_ttf_font_map[font_name] = font;
 }
 
 void ManageResource::auto_load_directory_resource(const fs::path& path, FileFormat extension, FileLoadMode mode)
@@ -326,6 +368,19 @@ void ManageResource::auto_load_directory_resource(const fs::path& path, FileForm
 				break;
 			}
 			break;
+		case FileFormat::FNT:
+			if (entry.path().extension().string() != ".fnt")
+			{
+				continue;
+			}
+            load_fnt(entry.path().string(), entry.path().stem().string());
+			break;
+		case FileFormat::TTF:
+             if (entry.path().extension().string() != ".ttf")
+             {
+                 continue;
+             }
+			 load_ttf(entry.path().string(), 20, entry.path().stem().string());
 		default:
 			break;
 		}

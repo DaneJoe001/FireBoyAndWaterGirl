@@ -29,7 +29,8 @@ void UtilAnimation::draw_frame(UtilCamera* camera)
 	}
 	TextureInfo& info = frame.texture;
 	SDL_Rect dst = { m_pos.x,m_pos.y,info.dst.size.x,info.dst.size.y };
-	camera->render_texture(info.texture, &info.src.to_rect(), &dst);
+	SDL_Rect src = info.src.to_rect();
+	camera->render_texture(info.texture, &src, &dst);
 }
 
 void UtilAnimation::on_update()

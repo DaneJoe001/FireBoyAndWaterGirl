@@ -13,27 +13,36 @@
 
 #define DANEJOE_TIME (DaneJoeUtil::get_time_str())
 
-//构建日志字符串
-#define LOG_STR(type, info) \
-    (std::ostringstream() << "[ TIME ]: "<< DANEJOE_TIME \
-                          << "[ FILE ]: " << __FILE__ << "\n" \
-                          << "[ LINE ]: " << __LINE__ << "\n" \
-                          << "[ FUNCTION ]: " << FUNCTION_INFO << "\n" \
-                          << "[ " << type << " ]: " << info << "\n").str()
-
-//可用于打印日志的宏
-//__FILE__用于打印整个文件的路径
-//__LINE__用于打印当前行号
-//__func__用于打印函数名
-//__PRETTY_FUNCTION__用于打印函数名，包括返回值和参数
-//__PRETTY_FUNCTION__可以打印模板参数
+/**
+* @brief 用于打印日志的宏
+* @param type 日志类型
+* @param info 日志信息
+* @return 返回一个字符串
+**/
+#define LOG_STR(type, info) (std::ostringstream() \
+    << "[ TIME ]: "<< DANEJOE_TIME \
+    << "[ FILE ]: " << __FILE__ << "\n" \
+    << "[ LINE ]: " << __LINE__ << "\n" \
+    << "[ FUNCTION ]: " << FUNCTION_INFO << "\n" \
+    << "[ " << type << " ]: " << info << "\n").str()
+/**
+* @brief 用于打印日志的宏
+* @param stream 用于打印日志的流
+* @param type 日志类型
+* @param info 日志信息
+* @return 返回一个字符串
+**/
 #define DANEJOE_LOG(stream,type,info)(stream\
     LOG_STR(type, info))
 
 namespace DaneJoeUtil
 {
 #if defined(__GNUC__)||(__clang__)
-    //用于打印任意变量类型的函数(MSVC不适用)
+    /**
+    * @brief 获取类型名称
+    * @param data 数据
+    * @return 返回类型名称
+    **/
     template<class T>
     std::string get_type_name(T data)
     {
@@ -57,7 +66,9 @@ namespace DaneJoeUtil
         return result;
     }
 #endif
-
+    /**
+    * @brief 打印数组
+    **/
     template<class T>
     void print_array(std::ostream& os, const T& array, const std::string tip = "")
     {
@@ -82,6 +93,9 @@ namespace DaneJoeUtil
         }
         os << " }" << std::endl;
     }
+    /**
+    * @brief 获取当前时间字符串
+    **/
     inline std::string get_time_str()
     {
         auto now = std::chrono::system_clock::now();

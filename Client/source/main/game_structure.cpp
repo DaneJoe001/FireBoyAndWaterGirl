@@ -136,7 +136,6 @@ void GameStructure::quit()
     {
         delete m_camera;
     }
-    SDL_FreeSurface(m_icon);
     SDL_DestroyRenderer(m_renderer);
     SDL_DestroyWindow(m_window);
     Mix_CloseAudio();
