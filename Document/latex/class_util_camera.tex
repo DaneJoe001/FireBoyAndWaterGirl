@@ -1,0 +1,89 @@
+\doxysection{Util\+Camera类 参考}
+\hypertarget{class_util_camera}{}\label{class_util_camera}\index{UtilCamera@{UtilCamera}}
+
+
+摄像机类  
+
+
+
+
+{\ttfamily \#include $<$util\+\_\+camera.\+h$>$}
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_util_camera_a6a805e2b968b81de37aef2cece812c87}\label{class_util_camera_a6a805e2b968b81de37aef2cece812c87} 
+{\bfseries Util\+Camera} ()
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_util_camera_aed71d86138c9531379bdd97c348d4c74}{init}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em 初始化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_util_camera_a391901d61d7edb941cf2bb3981efe0a4}{render\+\_\+texture}} (SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}texture, const SDL\+\_\+\+Rect \texorpdfstring{$\ast$}{*}src\+\_\+rect, const SDL\+\_\+\+Rect \texorpdfstring{$\ast$}{*}dst\+\_\+rect)
+\begin{DoxyCompactList}\small\item\em 渲染 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_util_camera_a14c274d695035ecf15ed6e6920c5ff8e}{adaptive\+\_\+render\+\_\+texture}} (\mbox{\hyperlink{struct_texture_info}{Texture\+Info}} \texorpdfstring{$\ast$}{*}texture\+\_\+info, \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ pos)
+\begin{DoxyCompactList}\small\item\em 适配渲染 \end{DoxyCompactList}\item 
+\Hypertarget{class_util_camera_a1e096d0e793d0e22f145bd6cfdd8d46e}\label{class_util_camera_a1e096d0e793d0e22f145bd6cfdd8d46e} 
+void {\bfseries switch\+\_\+development\+\_\+mode} ()
+\begin{DoxyCompactList}\small\item\em 开发者模式开关 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+摄像机类 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_util_camera_a14c274d695035ecf15ed6e6920c5ff8e}\index{UtilCamera@{UtilCamera}!adaptive\_render\_texture@{adaptive\_render\_texture}}
+\index{adaptive\_render\_texture@{adaptive\_render\_texture}!UtilCamera@{UtilCamera}}
+\doxysubsubsection{\texorpdfstring{adaptive\_render\_texture()}{adaptive\_render\_texture()}}
+{\footnotesize\ttfamily \label{class_util_camera_a14c274d695035ecf15ed6e6920c5ff8e} 
+void Util\+Camera\+::adaptive\+\_\+render\+\_\+texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_texture_info}{Texture\+Info}} \texorpdfstring{$\ast$}{*}}]{texture\+\_\+info}{, }\item[{\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+适配渲染 
+
+
+\begin{DoxyParams}{参数}
+{\em texture\+\_\+info} & 纹理信息 \\
+\hline
+{\em pos} & 位置 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_camera_aed71d86138c9531379bdd97c348d4c74}\index{UtilCamera@{UtilCamera}!init@{init}}
+\index{init@{init}!UtilCamera@{UtilCamera}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_util_camera_aed71d86138c9531379bdd97c348d4c74} 
+void Util\+Camera\+::init (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})}
+
+
+
+初始化 
+
+
+\begin{DoxyParams}{参数}
+{\em renderer} & 渲染器 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_camera_a391901d61d7edb941cf2bb3981efe0a4}\index{UtilCamera@{UtilCamera}!render\_texture@{render\_texture}}
+\index{render\_texture@{render\_texture}!UtilCamera@{UtilCamera}}
+\doxysubsubsection{\texorpdfstring{render\_texture()}{render\_texture()}}
+{\footnotesize\ttfamily \label{class_util_camera_a391901d61d7edb941cf2bb3981efe0a4} 
+void Util\+Camera\+::render\+\_\+texture (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{texture}{, }\item[{const SDL\+\_\+\+Rect \texorpdfstring{$\ast$}{*}}]{src\+\_\+rect}{, }\item[{const SDL\+\_\+\+Rect \texorpdfstring{$\ast$}{*}}]{dst\+\_\+rect}{}\end{DoxyParamCaption})}
+
+
+
+渲染 
+
+
+\begin{DoxyParams}{参数}
+{\em texture} & 纹理 \\
+\hline
+{\em src\+\_\+rect} & 源矩形 \\
+\hline
+{\em dst\+\_\+rect} & 目标矩形 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/util/util\+\_\+camera.\+h\item 
+Client/source/util/util\+\_\+camera.\+cpp\end{DoxyCompactItemize}

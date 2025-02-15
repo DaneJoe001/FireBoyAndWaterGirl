@@ -55,3 +55,8 @@ void UtilAnimation::set_position(UtilVector<int> pos)
 {
 	m_pos = pos;
 }
+
+void UtilAnimation::update_position(UtilVector<int> velocity)
+{
+	m_pos += velocity;
+}

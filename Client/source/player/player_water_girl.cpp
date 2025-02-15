@@ -1,0 +1,1 @@
+#include <player/player_fire_boy.h>

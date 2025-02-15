@@ -1,0 +1,38 @@
+\doxysection{event\+\_\+keyboard.\+h}
+\hypertarget{event__keyboard_8h_source}{}\label{event__keyboard_8h_source}\index{Client/include/event/event\_keyboard.h@{Client/include/event/event\_keyboard.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene_base}{SceneBase}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event_keyboard_a14881b463045f9a3d346be64c807511a}{EventKeyboard}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_event_keyboard_a14881b463045f9a3d346be64c807511a}{EventKeyboard}}(\mbox{\hyperlink{class_scene_base}{SceneBase}}*\ scene,std::function<\textcolor{keywordtype}{void}(SDL\_Keycode)>\ \mbox{\hyperlink{class_event_keyboard_ae26c41ef43993222901e164f92ec6c4e}{on\_press}});}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_event_keyboard_a9b4eb8f0d7d65eb5c9da10c508f28b75}{\string~EventKeyboard}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_keyboard_ae26c41ef43993222901e164f92ec6c4e}{on\_press}}(SDL\_Keycode\ key);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_keyboard_a0f727c755da2131ad93f68a59ec529f2}{on\_release}}(SDL\_Keycode\ key);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_event_keyboard_a9f1fb5a1b72c9842429efa8ec2944519}{is\_active}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_event_keyboard_a1148146515d73bf63054c4bf42e58cdf}{is\_set\_on\_press}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_event_keyboard_af5a5bb4da8f21adecd92f6f7b84db0c9}{is\_set\_on\_release}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_keyboard_a87a9ac986507bbd9440b85392df96358}{set\_status}}(\textcolor{keywordtype}{bool}\ status);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ 是否处于激活状态}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_is\_active\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ 是否设置了按下事件}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_is\_set\_on\_press\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ 是否设置了松开事件}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_is\_set\_on\_release\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ 按下事件的回调函数}}
+\DoxyCodeLine{00061\ \ \ \ \ std::function<void(SDL\_Keycode)>\ m\_on\_press;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ 松开事件的回调函数}}
+\DoxyCodeLine{00063\ \ \ \ \ std::function<void(SDL\_Keycode)>\ m\_on\_release;}
+\DoxyCodeLine{00064\ \};}
+
+\end{DoxyCode}

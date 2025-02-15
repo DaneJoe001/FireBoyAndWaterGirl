@@ -1,0 +1,116 @@
+\doxysection{manage\+\_\+resource.\+h}
+\hypertarget{manage__resource_8h_source}{}\label{manage__resource_8h_source}\index{Client/include/manager/manage\_resource.h@{Client/include/manager/manage\_resource.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <SDL\_image.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <SDL\_ttf.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <SDL\_mixer.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <resource/resource\_atlas.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <resource/resource\_definition.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <util/util\_vector.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <util/util\_parse\_sprite\_sheet.h>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_file_format}{FileFormat}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ PNG=0,}
+\DoxyCodeLine{00029\ \ \ \ \ OGG=1,}
+\DoxyCodeLine{00030\ \ \ \ \ JSON=2,}
+\DoxyCodeLine{00031\ \ \ \ \ FNT=3,}
+\DoxyCodeLine{00032\ \ \ \ \ TTF=4,}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_file_load_mode}{FileLoadMode}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ 未指定}}
+\DoxyCodeLine{00042\ \ \ \ \ UNSPECIFIED=0,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ 纹理}}
+\DoxyCodeLine{00044\ \ \ \ \ TEXTURE\ =\ 1,}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ 表面}}
+\DoxyCodeLine{00046\ \ \ \ \ SURFACE\ =\ 2,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ 精灵图}}
+\DoxyCodeLine{00048\ \ \ \ \ SPRITE\_SHEET=3,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ 配置文件}}
+\DoxyCodeLine{00050\ \ \ \ \ CONFIGURATION=4,}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//TODO:考虑直接遍历texture\_info列表，将名称相同但序号不同的按照序号排列成帧图集}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }ManageResource}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{static}\ ManageResource\&\ \mbox{\hyperlink{class_manage_resource_a8e31eb573fc7966ef007ceac878d16d8}{get\_instance}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_manage_resource_a3e27fdef722703c99b7d49663d957939}{load\_resource}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_manage_resource_a80ec6344e55cbbd81fb236f4dcc4d6ea}{init}}(SDL\_Renderer*\ renderer);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_manage_resource_a97eb93ac93c171667f5cf9e762335a62}{set\_window\_size}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\&\ size);}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ \mbox{\hyperlink{class_manage_resource_abf0656db7d705d0df8ebd2fa35b91490}{get\_window\_size}}();}
+\DoxyCodeLine{00088\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{class_manage_resource_af043764b95763a1ab643bc7f0fbb2172}{get\_texture}}(\textcolor{keyword}{const}\ std::string\&\ image\_name);}
+\DoxyCodeLine{00093\ \ \ \ \ SDL\_Surface*\ \mbox{\hyperlink{class_manage_resource_a055199b0b90f8cd8843d137bf7bd5138}{get\_surface}}(\textcolor{keyword}{const}\ std::string\&\ image\_name);}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{struct_surface_info}{SurfaceInfo}}*\ \mbox{\hyperlink{class_manage_resource_abc5fce685a338447caae2a1c0d7374fc}{get\_surface\_info}}(\textcolor{keyword}{const}\ std::string\&\ image\_name);}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{struct_texture_info}{TextureInfo}}*\ \mbox{\hyperlink{class_manage_resource_a9bb7696e73c7b53ddf9dbeced0c202af}{get\_texture\_info}}(\textcolor{keyword}{const}\ std::string\&\ image\_name);}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{class_resource_atlas}{ResourceAtlas}}*\ \mbox{\hyperlink{class_manage_resource_afd09fd5fc89a3837133b558ab5660da0}{get\_atlas}}(\textcolor{keyword}{const}\ std::string\&\ atlas\_name);}
+\DoxyCodeLine{00113\ \ \ \ \ Mix\_Music*\ \mbox{\hyperlink{class_manage_resource_a07c814cb2214c6fe5450b8142142f0c8}{get\_music}}(\textcolor{keyword}{const}\ std::string\&\ music\_name);}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{struct_texture_info}{TextureInfo}}*\ \mbox{\hyperlink{class_manage_resource_a4ac92179708dcb6e99876087d05432d4}{randon\_get\_texture}}();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00120\ \ \ \ \ ManageResource();}
+\DoxyCodeLine{00124\ \ \ \ \ \string~ManageResource();}
+\DoxyCodeLine{00125\ \ \ \ \ ManageResource(\textcolor{keyword}{const}\ ManageResource\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00126\ \ \ \ \ ManageResource\&\ operator=(\textcolor{keyword}{const}\ ManageResource\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00127\ \ \ \ \ ManageResource(ManageResource\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00128\ \ \ \ \ ManageResource\&\ operator=(ManageResource\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_altas(\textcolor{keyword}{const}\ std::string\&\ path\_temp,\ \textcolor{keywordtype}{int}\ num);}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_atlas(\mbox{\hyperlink{struct_sprite_sheet}{SpriteSheet}}\&\ info);}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_texture(\textcolor{keyword}{const}\ std::string\&\ image\_name,\ \textcolor{keyword}{const}\ std::string\&\ path\_temp);}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_surface(\textcolor{keyword}{const}\ std::string\&\ image\_name,\ \textcolor{keyword}{const}\ std::string\&\ path\_temp);}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_texture\_info(\textcolor{keyword}{const}\ std::string\&\ path,\ \mbox{\hyperlink{struct_frame_info}{FrameInfo}}\&\ frame\_info);}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_texture\_info(\textcolor{keyword}{const}\ std::string\&\ image\_name,\mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ size);}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_texture\_info(SDL\_Texture*\ texture,\ \mbox{\hyperlink{struct_frame_info}{FrameInfo}}\&\ frame\_info);}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_surface\_info(\textcolor{keyword}{const}\ std::string\&\ path,\ \mbox{\hyperlink{struct_frame_info}{FrameInfo}}\&\ frame\_info);}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_sprite\_sheet(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_music(\textcolor{keyword}{const}\ std::string\&\ music\_name,\ \textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_fnt(\textcolor{keyword}{const}\ std::string\&\ path,\ \textcolor{keyword}{const}\ std::string\&\ font\_name);}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_ttf(\textcolor{keyword}{const}\ std::string\&\ path,\ std::size\_t\ size,\ \textcolor{keyword}{const}\ std::string\&\ font\_name);}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{void}\ auto\_load\_directory\_resource(\textcolor{keyword}{const}\ fs::path\&,\ FileFormat\ extension,FileLoadMode\ mode);}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{comment}{//\ 互斥锁,保证线程安全}}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keyword}{static}\ std::mutex\ m\_mutex;}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{comment}{//\ 渲染器}}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{static}\ SDL\_Renderer*\ m\_renderer;}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{comment}{//图集资源}}
+\DoxyCodeLine{00214\ \ \ \ \ std::unordered\_map<std::string,\ ResourceAtlas>\ m\_resource\_atlas\_map;}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{comment}{//\ 纹理指针资源}}
+\DoxyCodeLine{00216\ \ \ \ \ std::unordered\_map<std::string,\ SDL\_Texture*>\ m\_texture\_map;}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{comment}{//\ 表面指针资源}}
+\DoxyCodeLine{00218\ \ \ \ \ std::unordered\_map<std::string,\ SDL\_Surface*>\ m\_surface\_map;}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{comment}{//\ 纹理信息资源}}
+\DoxyCodeLine{00220\ \ \ \ \ std::unordered\_map<std::string,\ TextureInfo>\ m\_texture\_info\_map;}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{comment}{//\ 表面信息资源}}
+\DoxyCodeLine{00222\ \ \ \ \ std::unordered\_map<std::string,\ SurfaceInfo>\ m\_surface\_info\_map;}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{comment}{//\ 精灵图资源}}
+\DoxyCodeLine{00224\ \ \ \ \ std::unordered\_map<std::string,\ SpriteSheet>m\_sprite\_sheet\_map;}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{comment}{//\ 窗口大小}}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ m\_window\_size;}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{comment}{//\ 音乐资源}}
+\DoxyCodeLine{00228\ \ \ \ \ std::unordered\_map<std::string,\ Mix\_Music*>\ m\_music\_map;}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{comment}{//\ fnt字体资源}}
+\DoxyCodeLine{00230\ \ \ \ \ std::unordered\_map<std::string,\ std::unordered\_map<char,TextureInfo>>\ m\_fnt\_font\_map;}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{comment}{//\ ttf字体资源}}
+\DoxyCodeLine{00232\ \ \ \ \ std::unordered\_map<std::string,\ TTF\_Font*>\ m\_ttf\_font\_map;}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \};}
+
+\end{DoxyCode}

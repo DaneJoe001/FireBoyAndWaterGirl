@@ -1,0 +1,177 @@
+\doxysection{Manage\+Resource类 参考}
+\hypertarget{class_manage_resource}{}\label{class_manage_resource}\index{ManageResource@{ManageResource}}
+
+
+资源管理类，在初始化renderer之后才能初始化资源  
+
+
+
+
+{\ttfamily \#include $<$manage\+\_\+resource.\+h$>$}
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_manage_resource_a3e27fdef722703c99b7d49663d957939}\label{class_manage_resource_a3e27fdef722703c99b7d49663d957939} 
+void {\bfseries load\+\_\+resource} ()
+\begin{DoxyCompactList}\small\item\em 加载资源。 \end{DoxyCompactList}\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_manage_resource_af043764b95763a1ab643bc7f0fbb2172}{get\+\_\+texture}} (const std\+::string \&image\+\_\+name)
+\begin{DoxyCompactList}\small\item\em 获取纹理 \end{DoxyCompactList}\item 
+SDL\+\_\+\+Surface \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_manage_resource_a055199b0b90f8cd8843d137bf7bd5138}{get\+\_\+surface}} (const std\+::string \&image\+\_\+name)
+\begin{DoxyCompactList}\small\item\em 获取表面 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_surface_info}{Surface\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_manage_resource_abc5fce685a338447caae2a1c0d7374fc}{get\+\_\+surface\+\_\+info}} (const std\+::string \&image\+\_\+name)
+\begin{DoxyCompactList}\small\item\em 获取表面信息 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_texture_info}{Texture\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_manage_resource_a9bb7696e73c7b53ddf9dbeced0c202af}{get\+\_\+texture\+\_\+info}} (const std\+::string \&image\+\_\+name)
+\begin{DoxyCompactList}\small\item\em 获取纹理信息 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_resource_atlas}{Resource\+Atlas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_manage_resource_afd09fd5fc89a3837133b558ab5660da0}{get\+\_\+atlas}} (const std\+::string \&atlas\+\_\+name)
+\begin{DoxyCompactList}\small\item\em 获取图集 \end{DoxyCompactList}\item 
+Mix\+\_\+\+Music \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_manage_resource_a07c814cb2214c6fe5450b8142142f0c8}{get\+\_\+music}} (const std\+::string \&music\+\_\+name)
+\begin{DoxyCompactList}\small\item\em 获取音乐 \end{DoxyCompactList}\item 
+\Hypertarget{class_manage_resource_a4ac92179708dcb6e99876087d05432d4}\label{class_manage_resource_a4ac92179708dcb6e99876087d05432d4} 
+\mbox{\hyperlink{struct_texture_info}{Texture\+Info}} \texorpdfstring{$\ast$}{*} {\bfseries randon\+\_\+get\+\_\+texture} ()
+\begin{DoxyCompactList}\small\item\em 获取随机纹理,用于检查纹理加载状态 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_manage_resource_a8e31eb573fc7966ef007ceac878d16d8}\label{class_manage_resource_a8e31eb573fc7966ef007ceac878d16d8} 
+static \mbox{\hyperlink{class_manage_resource}{Manage\+Resource}} \& {\bfseries get\+\_\+instance} ()
+\begin{DoxyCompactList}\small\item\em 获取资源管理类单例对象引用 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_manage_resource_a80ec6344e55cbbd81fb236f4dcc4d6ea}{init}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em 初始化资源管理类，在初始化renderer之后才能初始化资源 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_manage_resource_a97eb93ac93c171667f5cf9e762335a62}{set\+\_\+window\+\_\+size}} (const \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ \&size)
+\begin{DoxyCompactList}\small\item\em 设置窗口大小 \end{DoxyCompactList}\item 
+\Hypertarget{class_manage_resource_abf0656db7d705d0df8ebd2fa35b91490}\label{class_manage_resource_abf0656db7d705d0df8ebd2fa35b91490} 
+static \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ {\bfseries get\+\_\+window\+\_\+size} ()
+\begin{DoxyCompactList}\small\item\em 获取窗口大小 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+资源管理类，在初始化renderer之后才能初始化资源 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_manage_resource_afd09fd5fc89a3837133b558ab5660da0}\index{ManageResource@{ManageResource}!get\_atlas@{get\_atlas}}
+\index{get\_atlas@{get\_atlas}!ManageResource@{ManageResource}}
+\doxysubsubsection{\texorpdfstring{get\_atlas()}{get\_atlas()}}
+{\footnotesize\ttfamily \label{class_manage_resource_afd09fd5fc89a3837133b558ab5660da0} 
+\mbox{\hyperlink{class_resource_atlas}{Resource\+Atlas}} \texorpdfstring{$\ast$}{*} Manage\+Resource\+::get\+\_\+atlas (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{atlas\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+获取图集 
+
+
+\begin{DoxyParams}{参数}
+{\em atlas\+\_\+name} & 图集名称 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_resource_a07c814cb2214c6fe5450b8142142f0c8}\index{ManageResource@{ManageResource}!get\_music@{get\_music}}
+\index{get\_music@{get\_music}!ManageResource@{ManageResource}}
+\doxysubsubsection{\texorpdfstring{get\_music()}{get\_music()}}
+{\footnotesize\ttfamily \label{class_manage_resource_a07c814cb2214c6fe5450b8142142f0c8} 
+Mix\+\_\+\+Music \texorpdfstring{$\ast$}{*} Manage\+Resource\+::get\+\_\+music (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{music\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+获取音乐 
+
+
+\begin{DoxyParams}{参数}
+{\em music\+\_\+name} & 音乐名称 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_resource_a055199b0b90f8cd8843d137bf7bd5138}\index{ManageResource@{ManageResource}!get\_surface@{get\_surface}}
+\index{get\_surface@{get\_surface}!ManageResource@{ManageResource}}
+\doxysubsubsection{\texorpdfstring{get\_surface()}{get\_surface()}}
+{\footnotesize\ttfamily \label{class_manage_resource_a055199b0b90f8cd8843d137bf7bd5138} 
+SDL\+\_\+\+Surface \texorpdfstring{$\ast$}{*} Manage\+Resource\+::get\+\_\+surface (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{image\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+获取表面 
+
+
+\begin{DoxyParams}{参数}
+{\em image\+\_\+name} & 表面名称 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_resource_abc5fce685a338447caae2a1c0d7374fc}\index{ManageResource@{ManageResource}!get\_surface\_info@{get\_surface\_info}}
+\index{get\_surface\_info@{get\_surface\_info}!ManageResource@{ManageResource}}
+\doxysubsubsection{\texorpdfstring{get\_surface\_info()}{get\_surface\_info()}}
+{\footnotesize\ttfamily \label{class_manage_resource_abc5fce685a338447caae2a1c0d7374fc} 
+\mbox{\hyperlink{struct_surface_info}{Surface\+Info}} \texorpdfstring{$\ast$}{*} Manage\+Resource\+::get\+\_\+surface\+\_\+info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{image\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+获取表面信息 
+
+
+\begin{DoxyParams}{参数}
+{\em image\+\_\+name} & 表面名称 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_resource_af043764b95763a1ab643bc7f0fbb2172}\index{ManageResource@{ManageResource}!get\_texture@{get\_texture}}
+\index{get\_texture@{get\_texture}!ManageResource@{ManageResource}}
+\doxysubsubsection{\texorpdfstring{get\_texture()}{get\_texture()}}
+{\footnotesize\ttfamily \label{class_manage_resource_af043764b95763a1ab643bc7f0fbb2172} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} Manage\+Resource\+::get\+\_\+texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{image\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+获取纹理 
+
+
+\begin{DoxyParams}{参数}
+{\em image\+\_\+name} & 纹理名称 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_resource_a9bb7696e73c7b53ddf9dbeced0c202af}\index{ManageResource@{ManageResource}!get\_texture\_info@{get\_texture\_info}}
+\index{get\_texture\_info@{get\_texture\_info}!ManageResource@{ManageResource}}
+\doxysubsubsection{\texorpdfstring{get\_texture\_info()}{get\_texture\_info()}}
+{\footnotesize\ttfamily \label{class_manage_resource_a9bb7696e73c7b53ddf9dbeced0c202af} 
+\mbox{\hyperlink{struct_texture_info}{Texture\+Info}} \texorpdfstring{$\ast$}{*} Manage\+Resource\+::get\+\_\+texture\+\_\+info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{image\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+获取纹理信息 
+
+
+\begin{DoxyParams}{参数}
+{\em image\+\_\+name} & 纹理名称 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_resource_a80ec6344e55cbbd81fb236f4dcc4d6ea}\index{ManageResource@{ManageResource}!init@{init}}
+\index{init@{init}!ManageResource@{ManageResource}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_manage_resource_a80ec6344e55cbbd81fb236f4dcc4d6ea} 
+void Manage\+Resource\+::init (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+初始化资源管理类，在初始化renderer之后才能初始化资源 
+
+
+\begin{DoxyParams}{参数}
+{\em renderer} & SDL渲染器 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_resource_a97eb93ac93c171667f5cf9e762335a62}\index{ManageResource@{ManageResource}!set\_window\_size@{set\_window\_size}}
+\index{set\_window\_size@{set\_window\_size}!ManageResource@{ManageResource}}
+\doxysubsubsection{\texorpdfstring{set\_window\_size()}{set\_window\_size()}}
+{\footnotesize\ttfamily \label{class_manage_resource_a97eb93ac93c171667f5cf9e762335a62} 
+void Manage\+Resource\+::set\+\_\+window\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+设置窗口大小 
+
+
+\begin{DoxyParams}{参数}
+{\em size} & 窗口大小 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/manager/manage\+\_\+resource.\+h\item 
+Client/source/manager/manage\+\_\+resource.\+cpp\end{DoxyCompactItemize}

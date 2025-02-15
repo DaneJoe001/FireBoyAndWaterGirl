@@ -7,6 +7,7 @@
 #include <scene/scene_main.h>
 #include <scene/scene_select_level.h>
 #include <scene/scene_setting.h>
+#include <scene/scene_level_teaching.h>
 
 /**
 * @class ManageScene
@@ -17,6 +18,7 @@ enum class SceneType
 	MAIN = 0,
 	SETTING = 1,
 	SELECT_LEVEL = 2,
+    LEVEL_TEACHING = 3,
 };
 
 /**

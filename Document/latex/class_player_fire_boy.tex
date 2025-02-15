@@ -1,0 +1,74 @@
+\doxysection{Player\+Fire\+Boy类 参考}
+\hypertarget{class_player_fire_boy}{}\label{class_player_fire_boy}\index{PlayerFireBoy@{PlayerFireBoy}}
+
+
+火孩角色类  
+
+
+
+
+{\ttfamily \#include $<$player\+\_\+fire\+\_\+boy.\+h$>$}
+
+类 Player\+Fire\+Boy 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player_fire_boy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_fire_boy_a3107c8e9e1c7287fefb1b48ee49293ad}\label{class_player_fire_boy_a3107c8e9e1c7287fefb1b48ee49293ad} 
+{\bfseries Player\+Fire\+Boy} ()
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_player_fire_boy_a48705fa80da3d2fff27a764a8c677eed}{init}} () override
+\begin{DoxyCompactList}\small\item\em 初始化 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_player_base}{Player\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Player\+Base} ()
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+virtual void {\bfseries load\+\_\+animation} (std\+::string name, \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ animation\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em 加载动画 \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+position} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 设置角色位置 \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+velocity} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 设置角色速度 \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+acceleration} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 设置角色加速度 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ {\bfseries get\+\_\+position} () const
+\begin{DoxyCompactList}\small\item\em 获取角色位置 \end{DoxyCompactList}\item 
+void {\bfseries add\+\_\+animation} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em 添加动画至当前动画列表 \end{DoxyCompactList}\item 
+void {\bfseries remove\+\_\+animation} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em 从当前动画列表删除动画 \end{DoxyCompactList}\item 
+void {\bfseries draw} (\mbox{\hyperlink{class_util_camera}{Util\+Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em 绘制当前动画组 \end{DoxyCompactList}\item 
+void {\bfseries update} ()
+\begin{DoxyCompactList}\small\item\em 更新角色 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+火孩角色类 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_player_fire_boy_a48705fa80da3d2fff27a764a8c677eed}\index{PlayerFireBoy@{PlayerFireBoy}!init@{init}}
+\index{init@{init}!PlayerFireBoy@{PlayerFireBoy}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_player_fire_boy_a48705fa80da3d2fff27a764a8c677eed} 
+void Player\+Fire\+Boy\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+初始化 
+
+
+
+实现了 \mbox{\hyperlink{class_player_base_a9a37384d650823a43419a1a072aa184f}{Player\+Base}}.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/player/player\+\_\+fire\+\_\+boy.\+h\item 
+Client/source/player/player\+\_\+fire\+\_\+boy.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FireBoyAndWaterGirl: SceneBase类 参考</title>
+<link rel="icon" href="document_logo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="document_logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FireBoyAndWaterGirl<span id="projectnumber">&#160;Beta 0.00</span>
+   </div>
+   <div id="projectbrief">A game project with C++!</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_scene_base.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="class_scene_base-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">SceneBase类 参考<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>场景基类，所有场景都继承于该类 需要遍历按钮列表，检查是否有按钮被触发 按钮本身和场景是关联的,所以连接函数可以 放在场景基类中但是每一个按钮都得连接一个 处理函数最好将处理函数放在按钮的类成员中 可能会存在一个问题，按钮的实现函数可能要 访问场景成员等其他内容，可能会缺少权限  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="scene__base_8h_source.html">scene_base.h</a>&gt;</code></p>
+<div class="dynheader">
+类 SceneBase 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_scene_base.png" usemap="#SceneBase_map" alt=""/>
+  <map id="SceneBase_map" name="SceneBase_map">
+<area href="class_scene_level_base.html" title="关卡场景基类" alt="SceneLevelBase" shape="rect" coords="0,56,131,80"/>
+<area href="class_scene_main.html" title="主场景类" alt="SceneMain" shape="rect" coords="141,56,272,80"/>
+<area href="class_scene_select_level.html" title="关卡选择场景" alt="SceneSelectLevel" shape="rect" coords="282,56,413,80"/>
+<area href="class_scene_setting.html" title="设置场景类" alt="SceneSetting" shape="rect" coords="423,56,554,80"/>
+<area href="class_scene_level_teaching.html" title="教学测试关卡场景" alt="SceneLevelTeaching" shape="rect" coords="0,112,131,136"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aa00206f5490223489e5a6fff6253cffd" id="r_aa00206f5490223489e5a6fff6253cffd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa00206f5490223489e5a6fff6253cffd">enter</a> ()=0</td></tr>
+<tr class="memdesc:aa00206f5490223489e5a6fff6253cffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">进入场景，初始化场景，加载资源，设置场景参数，设置场景事件  <br /></td></tr>
+<tr class="separator:aa00206f5490223489e5a6fff6253cffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66da2547dc07bce11dc082dd3d857b85" id="r_a66da2547dc07bce11dc082dd3d857b85"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66da2547dc07bce11dc082dd3d857b85">exit</a> ()=0</td></tr>
+<tr class="memdesc:a66da2547dc07bce11dc082dd3d857b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">退出场景，释放资源，清理场景参数，清理场景事件  <br /></td></tr>
+<tr class="separator:a66da2547dc07bce11dc082dd3d857b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e6edcd4ecf81e04793534f54f241e08" id="r_a7e6edcd4ecf81e04793534f54f241e08"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e6edcd4ecf81e04793534f54f241e08">update</a> ()=0</td></tr>
+<tr class="memdesc:a7e6edcd4ecf81e04793534f54f241e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新场景，更新场景参数，更新场景事件  <br /></td></tr>
+<tr class="separator:a7e6edcd4ecf81e04793534f54f241e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35b4d0d9e7babfb66c3187b169b5df34" id="r_a35b4d0d9e7babfb66c3187b169b5df34"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35b4d0d9e7babfb66c3187b169b5df34">draw</a> (<a class="el" href="class_util_camera.html">UtilCamera</a> *camera)=0</td></tr>
+<tr class="memdesc:a35b4d0d9e7babfb66c3187b169b5df34"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制场景，绘制场景参数，绘制场景事件  <br /></td></tr>
+<tr class="separator:a35b4d0d9e7babfb66c3187b169b5df34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e0748efea9c18ae9ce7a1b37a5b7c07" id="r_a1e0748efea9c18ae9ce7a1b37a5b7c07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e0748efea9c18ae9ce7a1b37a5b7c07">add_button</a> (<a class="el" href="class_button_base.html">ButtonBase</a> *button)</td></tr>
+<tr class="memdesc:a1e0748efea9c18ae9ce7a1b37a5b7c07"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加按钮，添加按钮到按钮列表中  <br /></td></tr>
+<tr class="separator:a1e0748efea9c18ae9ce7a1b37a5b7c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7808f0aafa7ed13a87a3fc58cfd1917a" id="r_a7808f0aafa7ed13a87a3fc58cfd1917a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7808f0aafa7ed13a87a3fc58cfd1917a">remove_button</a> (<a class="el" href="class_button_base.html">ButtonBase</a> *button)</td></tr>
+<tr class="memdesc:a7808f0aafa7ed13a87a3fc58cfd1917a"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除按钮，从按钮列表中删除按钮  <br /></td></tr>
+<tr class="separator:a7808f0aafa7ed13a87a3fc58cfd1917a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2175615a0f4872598b49e2fdebb014d9" id="r_a2175615a0f4872598b49e2fdebb014d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2175615a0f4872598b49e2fdebb014d9">add_keyboard_event</a> (<a class="el" href="class_event_keyboard.html">EventKeyboard</a> *key_event)</td></tr>
+<tr class="memdesc:a2175615a0f4872598b49e2fdebb014d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加键盘事件，添加键盘事件到键盘事件列表中  <br /></td></tr>
+<tr class="separator:a2175615a0f4872598b49e2fdebb014d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fbb41a29d90e1c8f04d94f9bfa51a1e" id="r_a0fbb41a29d90e1c8f04d94f9bfa51a1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fbb41a29d90e1c8f04d94f9bfa51a1e">remove_keyboard_event</a> (<a class="el" href="class_event_keyboard.html">EventKeyboard</a> *key_event)</td></tr>
+<tr class="memdesc:a0fbb41a29d90e1c8f04d94f9bfa51a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除键盘事件，从键盘事件列表中删除键盘事件  <br /></td></tr>
+<tr class="separator:a0fbb41a29d90e1c8f04d94f9bfa51a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a169e1e44c3fef8f035e1e262de9a5cff" id="r_a169e1e44c3fef8f035e1e262de9a5cff"><td class="memItemLeft" align="right" valign="top"><a id="a169e1e44c3fef8f035e1e262de9a5cff" name="a169e1e44c3fef8f035e1e262de9a5cff"></a>
+std::vector&lt; <a class="el" href="class_button_base.html">ButtonBase</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_button_list</b></td></tr>
+<tr class="separator:a169e1e44c3fef8f035e1e262de9a5cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a687be18abd9af49be59b25d64c9d4c56" id="r_a687be18abd9af49be59b25d64c9d4c56"><td class="memItemLeft" align="right" valign="top"><a id="a687be18abd9af49be59b25d64c9d4c56" name="a687be18abd9af49be59b25d64c9d4c56"></a>
+std::vector&lt; <a class="el" href="class_event_keyboard.html">EventKeyboard</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_event_list</b></td></tr>
+<tr class="separator:a687be18abd9af49be59b25d64c9d4c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>场景基类，所有场景都继承于该类 需要遍历按钮列表，检查是否有按钮被触发 按钮本身和场景是关联的,所以连接函数可以 放在场景基类中但是每一个按钮都得连接一个 处理函数最好将处理函数放在按钮的类成员中 可能会存在一个问题，按钮的实现函数可能要 访问场景成员等其他内容，可能会缺少权限 </p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="a1e0748efea9c18ae9ce7a1b37a5b7c07" name="a1e0748efea9c18ae9ce7a1b37a5b7c07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e0748efea9c18ae9ce7a1b37a5b7c07">&#9670;&#160;</a></span>add_button()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneBase::add_button </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_button_base.html">ButtonBase</a> *</td>          <td class="paramname"><span class="paramname"><em>button</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加按钮，添加按钮到按钮列表中 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">button</td><td>按钮指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2175615a0f4872598b49e2fdebb014d9" name="a2175615a0f4872598b49e2fdebb014d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2175615a0f4872598b49e2fdebb014d9">&#9670;&#160;</a></span>add_keyboard_event()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneBase::add_keyboard_event </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_event_keyboard.html">EventKeyboard</a> *</td>          <td class="paramname"><span class="paramname"><em>key_event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加键盘事件，添加键盘事件到键盘事件列表中 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key_event</td><td>键盘事件指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a35b4d0d9e7babfb66c3187b169b5df34" name="a35b4d0d9e7babfb66c3187b169b5df34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35b4d0d9e7babfb66c3187b169b5df34">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void SceneBase::draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_util_camera.html">UtilCamera</a> *</td>          <td class="paramname"><span class="paramname"><em>camera</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>绘制场景，绘制场景参数，绘制场景事件 </p>
+
+<p>在 <a class="el" href="class_scene_level_base.html#a9206e7404bb6a7ce8235e28ba037983f">SceneLevelBase</a>, <a class="el" href="class_scene_level_teaching.html#a96398ff2d19ad451b10fc684f447bf14">SceneLevelTeaching</a>, <a class="el" href="class_scene_main.html#aa01dc3b48a0f477f2423ae7ded171e97">SceneMain</a>, <a class="el" href="class_scene_select_level.html#a0b0b26c520b13f36420aabfe5004c5ae">SceneSelectLevel</a> , 以及 <a class="el" href="class_scene_setting.html#a73b86f4fec5e4b1333c2051082c449c3">SceneSetting</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="aa00206f5490223489e5a6fff6253cffd" name="aa00206f5490223489e5a6fff6253cffd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa00206f5490223489e5a6fff6253cffd">&#9670;&#160;</a></span>enter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void SceneBase::enter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>进入场景，初始化场景，加载资源，设置场景参数，设置场景事件 </p>
+
+<p>在 <a class="el" href="class_scene_level_base.html#a17fc20e57903c3190cc7698f34440ab8">SceneLevelBase</a>, <a class="el" href="class_scene_level_teaching.html#a4a34ba6e4e323151df9fec84ae5adc09">SceneLevelTeaching</a>, <a class="el" href="class_scene_main.html#ae4d962e53cededce135d44628c437919">SceneMain</a>, <a class="el" href="class_scene_select_level.html#a740f19bf13c213c105a170106428fbd5">SceneSelectLevel</a> , 以及 <a class="el" href="class_scene_setting.html#af559d5421b33ec0e3f64fdb8ea96704c">SceneSetting</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a66da2547dc07bce11dc082dd3d857b85" name="a66da2547dc07bce11dc082dd3d857b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66da2547dc07bce11dc082dd3d857b85">&#9670;&#160;</a></span>exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void SceneBase::exit </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>退出场景，释放资源，清理场景参数，清理场景事件 </p>
+
+<p>在 <a class="el" href="class_scene_level_base.html#a546549163fb872649dfcfdabe53ef7f9">SceneLevelBase</a>, <a class="el" href="class_scene_level_teaching.html#afd5229f75961c1bf7710ef83d0693fc8">SceneLevelTeaching</a>, <a class="el" href="class_scene_main.html#aeb1071833d987aa091f9ec070eb69744">SceneMain</a>, <a class="el" href="class_scene_select_level.html#a99138478a6d547e07ea13580a4b7a42d">SceneSelectLevel</a> , 以及 <a class="el" href="class_scene_setting.html#a74052fd3272c32169da3905415b2ae6c">SceneSetting</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a7808f0aafa7ed13a87a3fc58cfd1917a" name="a7808f0aafa7ed13a87a3fc58cfd1917a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7808f0aafa7ed13a87a3fc58cfd1917a">&#9670;&#160;</a></span>remove_button()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneBase::remove_button </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_button_base.html">ButtonBase</a> *</td>          <td class="paramname"><span class="paramname"><em>button</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除按钮，从按钮列表中删除按钮 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">button</td><td>按钮指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0fbb41a29d90e1c8f04d94f9bfa51a1e" name="a0fbb41a29d90e1c8f04d94f9bfa51a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fbb41a29d90e1c8f04d94f9bfa51a1e">&#9670;&#160;</a></span>remove_keyboard_event()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneBase::remove_keyboard_event </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_event_keyboard.html">EventKeyboard</a> *</td>          <td class="paramname"><span class="paramname"><em>key_event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除键盘事件，从键盘事件列表中删除键盘事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key_event</td><td>键盘事件指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7e6edcd4ecf81e04793534f54f241e08" name="a7e6edcd4ecf81e04793534f54f241e08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e6edcd4ecf81e04793534f54f241e08">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void SceneBase::update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>更新场景，更新场景参数，更新场景事件 </p>
+
+<p>在 <a class="el" href="class_scene_level_base.html#a74cbf07750df7e69d73de01084be5ec6">SceneLevelBase</a>, <a class="el" href="class_scene_level_teaching.html#a1a1a0fc14f7d361030b7ef50bd7a0320">SceneLevelTeaching</a>, <a class="el" href="class_scene_main.html#ab6b85468b6c78dabfb38c428e1688477">SceneMain</a>, <a class="el" href="class_scene_select_level.html#a31417f5a8b7bf93359530149acbf0067">SceneSelectLevel</a> , 以及 <a class="el" href="class_scene_setting.html#acb0d783e1c884c1409fe7ea9bb2d8195">SceneSetting</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>Client/include/scene/<a class="el" href="scene__base_8h_source.html">scene_base.h</a></li>
+<li>Client/source/scene/<b>scene_base.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_scene_base.html">SceneBase</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

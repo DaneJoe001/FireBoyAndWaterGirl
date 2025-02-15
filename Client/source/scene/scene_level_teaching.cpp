@@ -7,31 +7,28 @@
 
 SceneLevelTeaching::SceneLevelTeaching()
 {
-    m_animation = new UtilAnimation(
-        ManageResource::get_instance().get_atlas("water_head_idle"), true
-    );
     m_background = ManageResource::get_instance().get_texture("background_3");
-    m_animation->set_position(pos);
+    //TODO: 添加角色管理
+    m_fire_boy_player = new PlayerFireBoy();
     EventKeyboard* key_event_direct = new EventKeyboard(this, [&](SDL_Keycode key)
         {
             switch (key)
             {
             case SDLK_UP:
-                pos += UtilVector<int>(0, -5);
-                m_animation->set_position(pos);
                 break;
             case SDLK_DOWN:
-                pos += UtilVector<int>(0, 5);
-                m_animation->set_position(pos);
                 break;
             case SDLK_LEFT:
-                pos += UtilVector<int>(-5, 0);
-                m_animation->set_position(pos);
                 break;
             case SDLK_RIGHT:
-                pos += UtilVector<int>(5, 0);
-                m_animation->set_position(pos);
                 break;
+            }
+        });
+    EventKeyboard* key_event_escape = new EventKeyboard(this, [&](SDL_Keycode key)
+        {
+            if (key == SDLK_ESCAPE)
+            {
+                ManageScene::get_instance().set_current_scene(SceneType::SELECT_LEVEL);
             }
         });
 }
@@ -54,7 +51,8 @@ void SceneLevelTeaching::exit()
 
 void SceneLevelTeaching::draw(UtilCamera* camera)
 {
-    m_animation->draw_frame(camera);
+    camera->render_texture(m_background, nullptr, nullptr);
+    m_fire_boy_player->draw(camera);
     for (auto button : m_button_list)
     {
         button->draw(camera);
@@ -63,5 +61,5 @@ void SceneLevelTeaching::draw(UtilCamera* camera)
 
 void SceneLevelTeaching::update()
 {
-    m_animation->on_update();
+    
 }

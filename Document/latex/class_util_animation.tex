@@ -1,0 +1,113 @@
+\doxysection{Util\+Animation类 参考}
+\hypertarget{class_util_animation}{}\label{class_util_animation}\index{UtilAnimation@{UtilAnimation}}
+
+
+动画类，用于播放动画  
+
+
+
+
+{\ttfamily \#include $<$util\+\_\+animation.\+h$>$}
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_util_animation_a2f300110029a4b222162285cdb46adf6}{Util\+Animation}} (\mbox{\hyperlink{class_resource_atlas}{Resource\+Atlas}} \texorpdfstring{$\ast$}{*}atlas, bool loop)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\Hypertarget{class_util_animation_ac65fa5809588e633e516ae2b15b894bc}\label{class_util_animation_ac65fa5809588e633e516ae2b15b894bc} 
+bool {\bfseries is\+\_\+loop} ()
+\begin{DoxyCompactList}\small\item\em 获取是否循环播放 \end{DoxyCompactList}\item 
+\Hypertarget{class_util_animation_a7576ef4bf1577c5708d97da83466341c}\label{class_util_animation_a7576ef4bf1577c5708d97da83466341c} 
+void {\bfseries draw\+\_\+frame} (\mbox{\hyperlink{class_util_camera}{Util\+Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em 绘制当前帧 \end{DoxyCompactList}\item 
+\Hypertarget{class_util_animation_a1f6d30fd48d866096ad74ee28dafd9b0}\label{class_util_animation_a1f6d30fd48d866096ad74ee28dafd9b0} 
+void {\bfseries set\+\_\+loop} (bool loop)
+\begin{DoxyCompactList}\small\item\em 设置是否循环播放 \end{DoxyCompactList}\item 
+\Hypertarget{class_util_animation_ae28bca95dc2e56906516173755148308}\label{class_util_animation_ae28bca95dc2e56906516173755148308} 
+void {\bfseries on\+\_\+update} ()
+\begin{DoxyCompactList}\small\item\em 更新当前帧 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_util_animation_aa9d8c7a72cbef1f645a7c9e5c3182b32}{set\+\_\+position}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 设置当前动画位置 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_util_animation_a8268969e3b0303d6fc89c4cf208560e2}{set\+\_\+position}} (\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ pos)
+\begin{DoxyCompactList}\small\item\em 设置当前动画位置 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_util_animation_a866f7f7b3919ec11be28217d614abc73}{update\+\_\+position}} (\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ velocity)
+\begin{DoxyCompactList}\small\item\em 更新当前动画位置 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+动画类，用于播放动画 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_util_animation_a2f300110029a4b222162285cdb46adf6}\index{UtilAnimation@{UtilAnimation}!UtilAnimation@{UtilAnimation}}
+\index{UtilAnimation@{UtilAnimation}!UtilAnimation@{UtilAnimation}}
+\doxysubsubsection{\texorpdfstring{UtilAnimation()}{UtilAnimation()}}
+{\footnotesize\ttfamily \label{class_util_animation_a2f300110029a4b222162285cdb46adf6} 
+Util\+Animation\+::\+Util\+Animation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_resource_atlas}{Resource\+Atlas}} \texorpdfstring{$\ast$}{*}}]{atlas}{, }\item[{bool}]{loop}{}\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+
+\begin{DoxyParams}{参数}
+{\em atlas} & 动画资源指针 \\
+\hline
+{\em loop} & 是否循环播放 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_util_animation_aa9d8c7a72cbef1f645a7c9e5c3182b32}\index{UtilAnimation@{UtilAnimation}!set\_position@{set\_position}}
+\index{set\_position@{set\_position}!UtilAnimation@{UtilAnimation}}
+\doxysubsubsection{\texorpdfstring{set\_position()}{set\_position()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_util_animation_aa9d8c7a72cbef1f645a7c9e5c3182b32} 
+void Util\+Animation\+::set\+\_\+position (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+设置当前动画位置 
+
+
+\begin{DoxyParams}{参数}
+{\em x} & x坐标 \\
+\hline
+{\em y} & y坐标 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_animation_a8268969e3b0303d6fc89c4cf208560e2}\index{UtilAnimation@{UtilAnimation}!set\_position@{set\_position}}
+\index{set\_position@{set\_position}!UtilAnimation@{UtilAnimation}}
+\doxysubsubsection{\texorpdfstring{set\_position()}{set\_position()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_util_animation_a8268969e3b0303d6fc89c4cf208560e2} 
+void Util\+Animation\+::set\+\_\+position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+设置当前动画位置 
+
+
+\begin{DoxyParams}{参数}
+{\em pos} & 位置 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_animation_a866f7f7b3919ec11be28217d614abc73}\index{UtilAnimation@{UtilAnimation}!update\_position@{update\_position}}
+\index{update\_position@{update\_position}!UtilAnimation@{UtilAnimation}}
+\doxysubsubsection{\texorpdfstring{update\_position()}{update\_position()}}
+{\footnotesize\ttfamily \label{class_util_animation_a866f7f7b3919ec11be28217d614abc73} 
+void Util\+Animation\+::update\+\_\+position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$}]{velocity}{}\end{DoxyParamCaption})}
+
+
+
+更新当前动画位置 
+
+
+\begin{DoxyParams}{参数}
+{\em velocity} & 速度 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/util/util\+\_\+animation.\+h\item 
+Client/source/util/util\+\_\+animation.\+cpp\end{DoxyCompactItemize}

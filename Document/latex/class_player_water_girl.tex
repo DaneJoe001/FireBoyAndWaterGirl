@@ -1,0 +1,51 @@
+\doxysection{Player\+Water\+Girl类 参考}
+\hypertarget{class_player_water_girl}{}\label{class_player_water_girl}\index{PlayerWaterGirl@{PlayerWaterGirl}}
+
+
+ˮ����ɫ��  
+
+
+
+
+{\ttfamily \#include $<$player\+\_\+water\+\_\+girl.\+h$>$}
+
+类 Player\+Water\+Girl 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player_water_girl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{额外继承的成员函数}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_player_base}{Player\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Player\+Base} ()
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_player_base_a9a37384d650823a43419a1a072aa184f}{init}} ()=0
+\begin{DoxyCompactList}\small\item\em 初始化角色,加载动画， 设置角色位置，速度，加速度，大小等 \end{DoxyCompactList}\item 
+virtual void {\bfseries load\+\_\+animation} (std\+::string name, \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ animation\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em 加载动画 \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+position} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 设置角色位置 \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+velocity} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 设置角色速度 \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+acceleration} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 设置角色加速度 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ {\bfseries get\+\_\+position} () const
+\begin{DoxyCompactList}\small\item\em 获取角色位置 \end{DoxyCompactList}\item 
+void {\bfseries add\+\_\+animation} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em 添加动画至当前动画列表 \end{DoxyCompactList}\item 
+void {\bfseries remove\+\_\+animation} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em 从当前动画列表删除动画 \end{DoxyCompactList}\item 
+void {\bfseries draw} (\mbox{\hyperlink{class_util_camera}{Util\+Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em 绘制当前动画组 \end{DoxyCompactList}\item 
+void {\bfseries update} ()
+\begin{DoxyCompactList}\small\item\em 更新角色 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+ˮ����ɫ�� 
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/player/player\+\_\+water\+\_\+girl.\+h\end{DoxyCompactItemize}

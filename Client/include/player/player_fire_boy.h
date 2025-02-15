@@ -12,4 +12,8 @@ public:
 	* @brief 构造函数
 	**/
 	PlayerFireBoy();
+    /**
+	* @brief 初始化
+	**/
+	virtual void init()override;
 };

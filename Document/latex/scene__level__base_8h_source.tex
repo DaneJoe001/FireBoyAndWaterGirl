@@ -1,0 +1,23 @@
+\doxysection{scene\+\_\+level\+\_\+base.\+h}
+\hypertarget{scene__level__base_8h_source}{}\label{scene__level__base_8h_source}\index{Client/include/scene/scene\_level\_base.h@{Client/include/scene/scene\_level\_base.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <scene/scene\_base.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene_level_base_a39edf98468a8bc1974d4d2793d3f8f8d}{SceneLevelBase}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_scene_base}{SceneBase}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_scene_level_base_a39edf98468a8bc1974d4d2793d3f8f8d}{SceneLevelBase}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_level_base_a17fc20e57903c3190cc7698f34440ab8}{enter}}()\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_level_base_a546549163fb872649dfcfdabe53ef7f9}{exit}}()\ =\ 0;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_level_base_a74cbf07750df7e69d73de01084be5ec6}{update}}()\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_level_base_a9206e7404bb6a7ce8235e28ba037983f}{draw}}(\mbox{\hyperlink{class_util_camera}{UtilCamera}}*\ camera)\ =\ 0;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ 背景纹理指针}}
+\DoxyCodeLine{00035\ \ \ \ \ SDL\_Texture*\ m\_background=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00036\ \};}
+
+\end{DoxyCode}

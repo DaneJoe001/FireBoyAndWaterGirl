@@ -1,0 +1,52 @@
+\doxysection{button\+\_\+base.\+h}
+\hypertarget{button__base_8h_source}{}\label{button__base_8h_source}\index{Client/include/button/button\_base.h@{Client/include/button/button\_base.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_image.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <util/util\_vector.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <util/util\_camera.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//TODO:\ 添加动画类按钮}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene_base}{SceneBase}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_button_base_a38e833ca4d34bf46bc0615b3b5347c62}{ButtonBase}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_button_base_a38e833ca4d34bf46bc0615b3b5347c62}{ButtonBase}}(\mbox{\hyperlink{class_scene_base}{SceneBase}}*\ scene,\ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ pos,std::function<\textcolor{keywordtype}{void}()>call\_back);}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_button_base_a38e833ca4d34bf46bc0615b3b5347c62}{ButtonBase}}(\mbox{\hyperlink{class_scene_base}{SceneBase}}*\ scene,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_texture_info}{TextureInfo}}*\ normal\_texture\_info,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_texture_info}{TextureInfo}}*\ pressed\_texture\_info,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ pos,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}()>call\_back);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_button_base_aa8ff4df27dc4d649bc07c4fe98453d00}{\string~ButtonBase}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_base_a290eda59a5eeecfb12a9ef6f9c6ca669}{on\_press}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_base_ac456dc7e52f260ee9f2b9e4d08658aa5}{on\_release}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_base_a83164bc985141c46b9609bdd1b37f515}{is\_on\_button}}(\mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ mouse\_pos);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_base_a40a900f5067023b746f809014f859533}{is\_valid}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_base_ac200780f202733489f9eab53a71b6c64}{set\_status}}(\textcolor{keywordtype}{bool}\ status);}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_base_ade03f73846f6fb5e1c5f48e812554cdd}{draw}}(\mbox{\hyperlink{class_util_camera}{UtilCamera}}*\ camera);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ 按钮按压状态纹理}}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{struct_texture_info}{TextureInfo}}*\ m\_pressed\_texture\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ 按钮正常状态纹理}}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{struct_texture_info}{TextureInfo}}*\ m\_normal\_texture\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ 按钮位置}}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ m\_pos\ =\ \{\ 0,0\ \};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ 按钮尺寸}}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ m\_size\ =\ \{\ 100,50\ \};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ 判断按钮是否按压}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_is\_pressed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ 判断当前按钮是否处于有效状态}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_is\_valid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//\ 按钮点击回调函数}}
+\DoxyCodeLine{00092\ \ \ \ \ std::function<void()>\ m\_on\_clicked;}
+\DoxyCodeLine{00093\ \};}
+
+\end{DoxyCode}

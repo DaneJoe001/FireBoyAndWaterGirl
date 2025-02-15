@@ -1,0 +1,66 @@
+\doxysection{Player\+Base类 参考}
+\hypertarget{class_player_base}{}\label{class_player_base}\index{PlayerBase@{PlayerBase}}
+类 Player\+Base 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player_base}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_base_a183ac385d14c7e53a381848957eb181f}\label{class_player_base_a183ac385d14c7e53a381848957eb181f} 
+{\bfseries Player\+Base} ()
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_player_base_a9a37384d650823a43419a1a072aa184f}{init}} ()=0
+\begin{DoxyCompactList}\small\item\em 初始化角色,加载动画， 设置角色位置，速度，加速度，大小等 \end{DoxyCompactList}\item 
+\Hypertarget{class_player_base_a74995ee2f24188402191ec33d2110b78}\label{class_player_base_a74995ee2f24188402191ec33d2110b78} 
+virtual void {\bfseries load\+\_\+animation} (std\+::string name, \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ animation\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em 加载动画 \end{DoxyCompactList}\item 
+\Hypertarget{class_player_base_ab0e7aada192e2afeff841463ebcfc0ac}\label{class_player_base_ab0e7aada192e2afeff841463ebcfc0ac} 
+void {\bfseries set\+\_\+position} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 设置角色位置 \end{DoxyCompactList}\item 
+\Hypertarget{class_player_base_a3750900e9ff2da70aa7b786042306f32}\label{class_player_base_a3750900e9ff2da70aa7b786042306f32} 
+void {\bfseries set\+\_\+velocity} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 设置角色速度 \end{DoxyCompactList}\item 
+\Hypertarget{class_player_base_ab4ca42cbb89e6038fffcc16a551ee9d6}\label{class_player_base_ab4ca42cbb89e6038fffcc16a551ee9d6} 
+void {\bfseries set\+\_\+acceleration} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 设置角色加速度 \end{DoxyCompactList}\item 
+\Hypertarget{class_player_base_afd7c416de859677f6eb01fa98a0ce932}\label{class_player_base_afd7c416de859677f6eb01fa98a0ce932} 
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ {\bfseries get\+\_\+position} () const
+\begin{DoxyCompactList}\small\item\em 获取角色位置 \end{DoxyCompactList}\item 
+\Hypertarget{class_player_base_a13cdfcc7b9c27334cc4af08e1d526e29}\label{class_player_base_a13cdfcc7b9c27334cc4af08e1d526e29} 
+void {\bfseries add\+\_\+animation} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em 添加动画至当前动画列表 \end{DoxyCompactList}\item 
+\Hypertarget{class_player_base_a76f0665816c52e8d8f7e6248c49e8c83}\label{class_player_base_a76f0665816c52e8d8f7e6248c49e8c83} 
+void {\bfseries remove\+\_\+animation} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em 从当前动画列表删除动画 \end{DoxyCompactList}\item 
+\Hypertarget{class_player_base_ac6482f224f800c55746f2d71178b1dc2}\label{class_player_base_ac6482f224f800c55746f2d71178b1dc2} 
+void {\bfseries draw} (\mbox{\hyperlink{class_util_camera}{Util\+Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em 绘制当前动画组 \end{DoxyCompactList}\item 
+\Hypertarget{class_player_base_aa479987fe975e46c68ce03e7544be02e}\label{class_player_base_aa479987fe975e46c68ce03e7544be02e} 
+void {\bfseries update} ()
+\begin{DoxyCompactList}\small\item\em 更新角色 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_player_base_a9a37384d650823a43419a1a072aa184f}\index{PlayerBase@{PlayerBase}!init@{init}}
+\index{init@{init}!PlayerBase@{PlayerBase}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_player_base_a9a37384d650823a43419a1a072aa184f} 
+virtual void Player\+Base\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+初始化角色,加载动画， 设置角色位置，速度，加速度，大小等 
+
+
+
+在 \mbox{\hyperlink{class_player_fire_boy_a48705fa80da3d2fff27a764a8c677eed}{Player\+Fire\+Boy}} 内被实现.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/player/player\+\_\+base.\+h\item 
+Client/source/player/player\+\_\+base.\+cpp\end{DoxyCompactItemize}

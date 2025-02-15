@@ -1,0 +1,47 @@
+\doxysection{player\+\_\+base.\+h}
+\hypertarget{player__base_8h_source}{}\label{player__base_8h_source}\index{Client/include/player/player\_base.h@{Client/include/player/player\_base.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <util/util\_animation.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <util/util\_vector.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <util/util\_camera.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//TODO:\ 考虑是否添加角色速度限制。}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//TODO:\ 添加角色移动屏障限制。}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player_base_a183ac385d14c7e53a381848957eb181f}{PlayerBase}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_base_a183ac385d14c7e53a381848957eb181f}{PlayerBase}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_base_a9a37384d650823a43419a1a072aa184f}{init}}()=0;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_base_a74995ee2f24188402191ec33d2110b78}{load\_animation}}(std::string\ name,\mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ animation\_pos);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_base_ab0e7aada192e2afeff841463ebcfc0ac}{set\_position}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_base_a3750900e9ff2da70aa7b786042306f32}{set\_velocity}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_base_ab4ca42cbb89e6038fffcc16a551ee9d6}{set\_acceleration}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ \mbox{\hyperlink{class_player_base_afd7c416de859677f6eb01fa98a0ce932}{get\_position}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_base_a13cdfcc7b9c27334cc4af08e1d526e29}{add\_animation}}(std::string\ name);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_base_a76f0665816c52e8d8f7e6248c49e8c83}{remove\_animation}}(std::string\ name);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_base_ac6482f224f800c55746f2d71178b1dc2}{draw}}(\mbox{\hyperlink{class_util_camera}{UtilCamera}}*\ camera);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_base_aa479987fe975e46c68ce03e7544be02e}{update}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 与角色有关的所有动画列表}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ UtilAnimation>\ m\_animations;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 当前角色动画列表}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ UtilAnimation*>\ m\_currentAnimation;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 角色位置}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ m\_pos=\mbox{\hyperlink{class_util_vector}{UtilVector<int>}}(0,0);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 角色大小}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ m\_size=\mbox{\hyperlink{class_util_vector}{UtilVector<int>}}(0,0);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 角色速度}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ m\_velocity=\mbox{\hyperlink{class_util_vector}{UtilVector<int>}}(0,0);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 角色加速度}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ m\_acceleration=\mbox{\hyperlink{class_util_vector}{UtilVector<int>}}(0,0);}
+\DoxyCodeLine{00075\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,30 @@
+\doxysection{resource\+\_\+atlas.\+h}
+\hypertarget{resource__atlas_8h_source}{}\label{resource__atlas_8h_source}\index{Client/include/resource/resource\_atlas.h@{Client/include/resource/resource\_atlas.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ SDL\_MAIN\_HANDLED}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <SDL\_image.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{struct_atlas_frame}{AtlasFrame}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_resource_atlas_aa023c3bab9c242c37bfd45900c6d8150}{ResourceAtlas}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_resource_atlas_aa023c3bab9c242c37bfd45900c6d8150}{ResourceAtlas}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_resource_atlas_aa023c3bab9c242c37bfd45900c6d8150}{\string~ResourceAtlas}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resource_atlas_a148507a2d692b26b2551c28dff46ae11}{add\_frame\_info}}(\mbox{\hyperlink{struct_atlas_frame}{AtlasFrame}}\&\ info);}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{struct_atlas_frame}{AtlasFrame}}\ \mbox{\hyperlink{class_resource_atlas_a90d42d0cf970c54db691b301df923156}{get\_frame}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_resource_atlas_a504a0a9f35edf3aa01b63a714765ac02}{get\_frame\_quantity}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ 帧信息列表}}
+\DoxyCodeLine{00043\ \ \ \ \ std::vector<AtlasFrame>\ m\_atlas;}
+\DoxyCodeLine{00044\ \};}
+
+\end{DoxyCode}

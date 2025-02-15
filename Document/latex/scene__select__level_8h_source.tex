@@ -1,0 +1,28 @@
+\doxysection{scene\+\_\+select\+\_\+level.\+h}
+\hypertarget{scene__select__level_8h_source}{}\label{scene__select__level_8h_source}\index{Client/include/scene/scene\_select\_level.h@{Client/include/scene/scene\_select\_level.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <util/util\_vector.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_util_animation}{UtilAnimation}};}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene_select_level_a75c969a3900ef8152d8100300fa598cd}{SceneSelectLevel}}\ :\textcolor{keyword}{public}\ \mbox{\hyperlink{class_scene_base}{SceneBase}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_scene_select_level_a75c969a3900ef8152d8100300fa598cd}{SceneSelectLevel}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_scene_select_level_af1b2bcddcadadc98e4e4ac8a88faaa0e}{\string~SceneSelectLevel}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_select_level_a0b0b26c520b13f36420aabfe5004c5ae}{draw}}(\mbox{\hyperlink{class_util_camera}{UtilCamera}}*\ camera)\textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_select_level_a740f19bf13c213c105a170106428fbd5}{enter}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_select_level_a99138478a6d547e07ea13580a4b7a42d}{exit}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_select_level_a31417f5a8b7bf93359530149acbf0067}{update}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ 背景图纹理指针}}
+\DoxyCodeLine{00041\ \ \ \ \ SDL\_Texture*\ m\_background\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ 背景板动画指针}}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_util_animation}{UtilAnimation}}*\ m\_board\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00044\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,50 @@
+\doxysection{game\+\_\+structure.\+h}
+\hypertarget{game__structure_8h_source}{}\label{game__structure_8h_source}\index{Client/include/main/game\_structure.h@{Client/include/main/game\_structure.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_image.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_ttf.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_mixer.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <manager/manage\_resource.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <manager/manage\_scene.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <manager/manage\_button.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <util/util\_camera.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <util/util\_timer.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_structure_a4231a6ba88e3731c6cdb4df7f63313ab}{GameStructure}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_game_structure_a4231a6ba88e3731c6cdb4df7f63313ab}{GameStructure}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_game_structure_ae3cc28a5120bd9ab64b501f9b08cd25f}{\string~GameStructure}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_structure_aa1584deb313e31fcf53b71f076c902d6}{init}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_structure_a391c2df228777a552c46bec66bba8349}{quit}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_structure_a03012d49296c9a58a0e72f7c7a1a2a74}{circle}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_structure_ab31b61aeb109fe7937c8a51e9c44424f}{update}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_structure_aacc8ca104fd57659c1f96584950fcf2c}{render}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ 游戏主摄像机}}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_util_camera}{UtilCamera}}*\ m\_camera\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ 游戏窗口指针}}
+\DoxyCodeLine{00056\ \ \ \ \ SDL\_Window*\ m\_window\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ 游戏渲染器指针}}
+\DoxyCodeLine{00058\ \ \ \ \ SDL\_Renderer*\ m\_renderer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ 游戏图标指针}}
+\DoxyCodeLine{00060\ \ \ \ \ SDL\_Surface*\ m\_icon\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ 游戏事件}}
+\DoxyCodeLine{00062\ \ \ \ \ SDL\_Event\ m\_event\ =\ SDL\_Event();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ 游戏标题}}
+\DoxyCodeLine{00064\ \ \ \ \ std::string\ m\_title\ =\ u8\textcolor{stringliteral}{"{}新·森林冰火人"{}};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ 游戏帧率控制器}}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_util_timer}{UtilTimer}}\ m\_frame\_rate\_control;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ 游戏是否正在运行}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_running\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00069\ \};}
+
+\end{DoxyCode}

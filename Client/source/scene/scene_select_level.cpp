@@ -24,7 +24,7 @@ SceneSelectLevel::SceneSelectLevel()
         ManageResource::get_instance().get_texture_info("FinishStone0021"),
         { 120,180 }, [&]()
         {
-           /* ManageScene::get_instance().set_current_scene(SceneType::LEVEL_TEACHING);*/
+           ManageScene::get_instance().set_current_scene(SceneType::LEVEL_TEACHING);
             std::cout<<"enter level teaching"<<std::endl;
         });
     EventKeyboard* key_event_esc = new EventKeyboard(this, [&](SDL_Keycode key)

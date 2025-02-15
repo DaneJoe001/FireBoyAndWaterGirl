@@ -1,0 +1,40 @@
+\doxysection{util\+\_\+animation.\+h}
+\hypertarget{util__animation_8h_source}{}\label{util__animation_8h_source}\index{Client/include/util/util\_animation.h@{Client/include/util/util\_animation.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <util/util\_vector.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_util_timer}{UtilTimer}};}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_util_camera}{UtilCamera}};}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_resource_atlas}{ResourceAtlas}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_util_animation_a2f300110029a4b222162285cdb46adf6}{UtilAnimation}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_util_animation_a2f300110029a4b222162285cdb46adf6}{UtilAnimation}}(\mbox{\hyperlink{class_resource_atlas}{ResourceAtlas}}*\ atlas,\ \textcolor{keywordtype}{bool}\ loop);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_util_animation_ac65fa5809588e633e516ae2b15b894bc}{is\_loop}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_animation_a7576ef4bf1577c5708d97da83466341c}{draw\_frame}}(\mbox{\hyperlink{class_util_camera}{UtilCamera}}*\ camera);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_animation_a1f6d30fd48d866096ad74ee28dafd9b0}{set\_loop}}(\textcolor{keywordtype}{bool}\ loop);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_animation_ae28bca95dc2e56906516173755148308}{on\_update}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_animation_aa9d8c7a72cbef1f645a7c9e5c3182b32}{set\_position}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_animation_aa9d8c7a72cbef1f645a7c9e5c3182b32}{set\_position}}(\mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ pos);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_animation_a866f7f7b3919ec11be28217d614abc73}{update\_position}}(\mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ velocity);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ 是否循环播放}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_is\_loop\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ 动画资源指针}}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_resource_atlas}{ResourceAtlas}}*\ m\_atlas=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ 时间计时器}}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{class_util_timer}{UtilTimer}}*\ m\_timer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ 当前位置}}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ m\_pos\ =\ \mbox{\hyperlink{class_util_vector}{UtilVector}}(0,0);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ 当前帧序号}}
+\DoxyCodeLine{00067\ \ \ \ \ std::size\_t\ m\_current\_index\ =\ 0;}
+\DoxyCodeLine{00068\ \};}
+
+\end{DoxyCode}

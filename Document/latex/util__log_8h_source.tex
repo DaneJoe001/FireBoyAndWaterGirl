@@ -1,0 +1,42 @@
+\doxysection{util\+\_\+log.\+h}
+\hypertarget{util__log_8h_source}{}\label{util__log_8h_source}\index{Client/include/util/util\_log.h@{Client/include/util/util\_log.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <util/util\_danejoe.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{enum\ class}\ LogLevel}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ USER,}
+\DoxyCodeLine{00017\ \ \ \ \ DEVELOPPER}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }UtilLog}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_log_a8370cfa1dd900892827ec45919523c3a}{set\_log\_path}}(LogLevel\ level,\ std::string\ path);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_log_afa805d86e750f9c6d63e146ca340c516}{log}}(LogLevel\ level,\ std::string\ info);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_log_a9f7a819bf63ba0dca60d8ff69f6dfe93}{clear\_log}}(LogLevel\ level);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ \ \ UtilLog()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00047\ \ \ \ \ \string~UtilLog()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00048\ \ \ \ \ UtilLog(\textcolor{keyword}{const}\ UtilLog\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00049\ \ \ \ \ UtilLog\&\ operator=(\textcolor{keyword}{const}\ UtilLog\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ 开发者日志路径}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ m\_developer\_log\_path;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ 用户日志路径}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ m\_user\_log\_path;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ 互斥锁}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ std::mutex\ m\_mutex;}
+\DoxyCodeLine{00058\ \};}
+
+\end{DoxyCode}

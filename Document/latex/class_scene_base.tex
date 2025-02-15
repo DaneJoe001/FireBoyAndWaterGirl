@@ -1,0 +1,173 @@
+\doxysection{Scene\+Base类 参考}
+\hypertarget{class_scene_base}{}\label{class_scene_base}\index{SceneBase@{SceneBase}}
+
+
+场景基类，所有场景都继承于该类 需要遍历按钮列表，检查是否有按钮被触发 按钮本身和场景是关联的,所以连接函数可以 放在场景基类中但是每一个按钮都得连接一个 处理函数最好将处理函数放在按钮的类成员中 可能会存在一个问题，按钮的实现函数可能要 访问场景成员等其他内容，可能会缺少权限  
+
+
+
+
+{\ttfamily \#include $<$scene\+\_\+base.\+h$>$}
+
+类 Scene\+Base 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_scene_base}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_scene_base_aa00206f5490223489e5a6fff6253cffd}{enter}} ()=0
+\begin{DoxyCompactList}\small\item\em 进入场景，初始化场景，加载资源，设置场景参数，设置场景事件 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_scene_base_a66da2547dc07bce11dc082dd3d857b85}{exit}} ()=0
+\begin{DoxyCompactList}\small\item\em 退出场景，释放资源，清理场景参数，清理场景事件 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_scene_base_a7e6edcd4ecf81e04793534f54f241e08}{update}} ()=0
+\begin{DoxyCompactList}\small\item\em 更新场景，更新场景参数，更新场景事件 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_scene_base_a35b4d0d9e7babfb66c3187b169b5df34}{draw}} (\mbox{\hyperlink{class_util_camera}{Util\+Camera}} \texorpdfstring{$\ast$}{*}camera)=0
+\begin{DoxyCompactList}\small\item\em 绘制场景，绘制场景参数，绘制场景事件 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_base_a1e0748efea9c18ae9ce7a1b37a5b7c07}{add\+\_\+button}} (\mbox{\hyperlink{class_button_base}{Button\+Base}} \texorpdfstring{$\ast$}{*}button)
+\begin{DoxyCompactList}\small\item\em 添加按钮，添加按钮到按钮列表中 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_base_a7808f0aafa7ed13a87a3fc58cfd1917a}{remove\+\_\+button}} (\mbox{\hyperlink{class_button_base}{Button\+Base}} \texorpdfstring{$\ast$}{*}button)
+\begin{DoxyCompactList}\small\item\em 删除按钮，从按钮列表中删除按钮 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_base_a2175615a0f4872598b49e2fdebb014d9}{add\+\_\+keyboard\+\_\+event}} (\mbox{\hyperlink{class_event_keyboard}{Event\+Keyboard}} \texorpdfstring{$\ast$}{*}key\+\_\+event)
+\begin{DoxyCompactList}\small\item\em 添加键盘事件，添加键盘事件到键盘事件列表中 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_base_a0fbb41a29d90e1c8f04d94f9bfa51a1e}{remove\+\_\+keyboard\+\_\+event}} (\mbox{\hyperlink{class_event_keyboard}{Event\+Keyboard}} \texorpdfstring{$\ast$}{*}key\+\_\+event)
+\begin{DoxyCompactList}\small\item\em 删除键盘事件，从键盘事件列表中删除键盘事件 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_scene_base_a169e1e44c3fef8f035e1e262de9a5cff}\label{class_scene_base_a169e1e44c3fef8f035e1e262de9a5cff} 
+std\+::vector$<$ \mbox{\hyperlink{class_button_base}{Button\+Base}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+\_\+button\+\_\+list}
+\item 
+\Hypertarget{class_scene_base_a687be18abd9af49be59b25d64c9d4c56}\label{class_scene_base_a687be18abd9af49be59b25d64c9d4c56} 
+std\+::vector$<$ \mbox{\hyperlink{class_event_keyboard}{Event\+Keyboard}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+\_\+event\+\_\+list}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+场景基类，所有场景都继承于该类 需要遍历按钮列表，检查是否有按钮被触发 按钮本身和场景是关联的,所以连接函数可以 放在场景基类中但是每一个按钮都得连接一个 处理函数最好将处理函数放在按钮的类成员中 可能会存在一个问题，按钮的实现函数可能要 访问场景成员等其他内容，可能会缺少权限 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_scene_base_a1e0748efea9c18ae9ce7a1b37a5b7c07}\index{SceneBase@{SceneBase}!add\_button@{add\_button}}
+\index{add\_button@{add\_button}!SceneBase@{SceneBase}}
+\doxysubsubsection{\texorpdfstring{add\_button()}{add\_button()}}
+{\footnotesize\ttfamily \label{class_scene_base_a1e0748efea9c18ae9ce7a1b37a5b7c07} 
+void Scene\+Base\+::add\+\_\+button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_button_base}{Button\+Base}} \texorpdfstring{$\ast$}{*}}]{button}{}\end{DoxyParamCaption})}
+
+
+
+添加按钮，添加按钮到按钮列表中 
+
+
+\begin{DoxyParams}{参数}
+{\em button} & 按钮指针 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_base_a2175615a0f4872598b49e2fdebb014d9}\index{SceneBase@{SceneBase}!add\_keyboard\_event@{add\_keyboard\_event}}
+\index{add\_keyboard\_event@{add\_keyboard\_event}!SceneBase@{SceneBase}}
+\doxysubsubsection{\texorpdfstring{add\_keyboard\_event()}{add\_keyboard\_event()}}
+{\footnotesize\ttfamily \label{class_scene_base_a2175615a0f4872598b49e2fdebb014d9} 
+void Scene\+Base\+::add\+\_\+keyboard\+\_\+event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_event_keyboard}{Event\+Keyboard}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+event}{}\end{DoxyParamCaption})}
+
+
+
+添加键盘事件，添加键盘事件到键盘事件列表中 
+
+
+\begin{DoxyParams}{参数}
+{\em key\+\_\+event} & 键盘事件指针 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_base_a35b4d0d9e7babfb66c3187b169b5df34}\index{SceneBase@{SceneBase}!draw@{draw}}
+\index{draw@{draw}!SceneBase@{SceneBase}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_scene_base_a35b4d0d9e7babfb66c3187b169b5df34} 
+virtual void Scene\+Base\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_util_camera}{Util\+Camera}} \texorpdfstring{$\ast$}{*}}]{camera}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+绘制场景，绘制场景参数，绘制场景事件 
+
+
+
+在 \mbox{\hyperlink{class_scene_level_base_a9206e7404bb6a7ce8235e28ba037983f}{Scene\+Level\+Base}}, \mbox{\hyperlink{class_scene_level_teaching_a96398ff2d19ad451b10fc684f447bf14}{Scene\+Level\+Teaching}}, \mbox{\hyperlink{class_scene_main_aa01dc3b48a0f477f2423ae7ded171e97}{Scene\+Main}}, \mbox{\hyperlink{class_scene_select_level_a0b0b26c520b13f36420aabfe5004c5ae}{Scene\+Select\+Level}} , 以及 \mbox{\hyperlink{class_scene_setting_a73b86f4fec5e4b1333c2051082c449c3}{Scene\+Setting}} 内被实现.
+
+\Hypertarget{class_scene_base_aa00206f5490223489e5a6fff6253cffd}\index{SceneBase@{SceneBase}!enter@{enter}}
+\index{enter@{enter}!SceneBase@{SceneBase}}
+\doxysubsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily \label{class_scene_base_aa00206f5490223489e5a6fff6253cffd} 
+virtual void Scene\+Base\+::enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+进入场景，初始化场景，加载资源，设置场景参数，设置场景事件 
+
+
+
+在 \mbox{\hyperlink{class_scene_level_base_a17fc20e57903c3190cc7698f34440ab8}{Scene\+Level\+Base}}, \mbox{\hyperlink{class_scene_level_teaching_a4a34ba6e4e323151df9fec84ae5adc09}{Scene\+Level\+Teaching}}, \mbox{\hyperlink{class_scene_main_ae4d962e53cededce135d44628c437919}{Scene\+Main}}, \mbox{\hyperlink{class_scene_select_level_a740f19bf13c213c105a170106428fbd5}{Scene\+Select\+Level}} , 以及 \mbox{\hyperlink{class_scene_setting_af559d5421b33ec0e3f64fdb8ea96704c}{Scene\+Setting}} 内被实现.
+
+\Hypertarget{class_scene_base_a66da2547dc07bce11dc082dd3d857b85}\index{SceneBase@{SceneBase}!exit@{exit}}
+\index{exit@{exit}!SceneBase@{SceneBase}}
+\doxysubsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily \label{class_scene_base_a66da2547dc07bce11dc082dd3d857b85} 
+virtual void Scene\+Base\+::exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+退出场景，释放资源，清理场景参数，清理场景事件 
+
+
+
+在 \mbox{\hyperlink{class_scene_level_base_a546549163fb872649dfcfdabe53ef7f9}{Scene\+Level\+Base}}, \mbox{\hyperlink{class_scene_level_teaching_afd5229f75961c1bf7710ef83d0693fc8}{Scene\+Level\+Teaching}}, \mbox{\hyperlink{class_scene_main_aeb1071833d987aa091f9ec070eb69744}{Scene\+Main}}, \mbox{\hyperlink{class_scene_select_level_a99138478a6d547e07ea13580a4b7a42d}{Scene\+Select\+Level}} , 以及 \mbox{\hyperlink{class_scene_setting_a74052fd3272c32169da3905415b2ae6c}{Scene\+Setting}} 内被实现.
+
+\Hypertarget{class_scene_base_a7808f0aafa7ed13a87a3fc58cfd1917a}\index{SceneBase@{SceneBase}!remove\_button@{remove\_button}}
+\index{remove\_button@{remove\_button}!SceneBase@{SceneBase}}
+\doxysubsubsection{\texorpdfstring{remove\_button()}{remove\_button()}}
+{\footnotesize\ttfamily \label{class_scene_base_a7808f0aafa7ed13a87a3fc58cfd1917a} 
+void Scene\+Base\+::remove\+\_\+button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_button_base}{Button\+Base}} \texorpdfstring{$\ast$}{*}}]{button}{}\end{DoxyParamCaption})}
+
+
+
+删除按钮，从按钮列表中删除按钮 
+
+
+\begin{DoxyParams}{参数}
+{\em button} & 按钮指针 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_base_a0fbb41a29d90e1c8f04d94f9bfa51a1e}\index{SceneBase@{SceneBase}!remove\_keyboard\_event@{remove\_keyboard\_event}}
+\index{remove\_keyboard\_event@{remove\_keyboard\_event}!SceneBase@{SceneBase}}
+\doxysubsubsection{\texorpdfstring{remove\_keyboard\_event()}{remove\_keyboard\_event()}}
+{\footnotesize\ttfamily \label{class_scene_base_a0fbb41a29d90e1c8f04d94f9bfa51a1e} 
+void Scene\+Base\+::remove\+\_\+keyboard\+\_\+event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_event_keyboard}{Event\+Keyboard}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+event}{}\end{DoxyParamCaption})}
+
+
+
+删除键盘事件，从键盘事件列表中删除键盘事件 
+
+
+\begin{DoxyParams}{参数}
+{\em key\+\_\+event} & 键盘事件指针 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_base_a7e6edcd4ecf81e04793534f54f241e08}\index{SceneBase@{SceneBase}!update@{update}}
+\index{update@{update}!SceneBase@{SceneBase}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_scene_base_a7e6edcd4ecf81e04793534f54f241e08} 
+virtual void Scene\+Base\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+更新场景，更新场景参数，更新场景事件 
+
+
+
+在 \mbox{\hyperlink{class_scene_level_base_a74cbf07750df7e69d73de01084be5ec6}{Scene\+Level\+Base}}, \mbox{\hyperlink{class_scene_level_teaching_a1a1a0fc14f7d361030b7ef50bd7a0320}{Scene\+Level\+Teaching}}, \mbox{\hyperlink{class_scene_main_ab6b85468b6c78dabfb38c428e1688477}{Scene\+Main}}, \mbox{\hyperlink{class_scene_select_level_a31417f5a8b7bf93359530149acbf0067}{Scene\+Select\+Level}} , 以及 \mbox{\hyperlink{class_scene_setting_acb0d783e1c884c1409fe7ea9bb2d8195}{Scene\+Setting}} 内被实现.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/scene/scene\+\_\+base.\+h\item 
+Client/source/scene/scene\+\_\+base.\+cpp\end{DoxyCompactItemize}

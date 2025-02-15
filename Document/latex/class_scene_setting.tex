@@ -1,0 +1,120 @@
+\doxysection{Scene\+Setting类 参考}
+\hypertarget{class_scene_setting}{}\label{class_scene_setting}\index{SceneSetting@{SceneSetting}}
+
+
+设置场景类  
+
+
+
+
+{\ttfamily \#include $<$scene\+\_\+setting.\+h$>$}
+
+类 Scene\+Setting 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_scene_setting}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_scene_setting_af559d5421b33ec0e3f64fdb8ea96704c}{enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入场景 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_setting_a74052fd3272c32169da3905415b2ae6c}{exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出场景 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_setting_acb0d783e1c884c1409fe7ea9bb2d8195}{update}} () override
+\begin{DoxyCompactList}\small\item\em 更新场景 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_setting_a73b86f4fec5e4b1333c2051082c449c3}{draw}} (\mbox{\hyperlink{class_util_camera}{Util\+Camera}} \texorpdfstring{$\ast$}{*}camera) override
+\begin{DoxyCompactList}\small\item\em 绘制场景 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_scene_base}{Scene\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_scene_base_a1e0748efea9c18ae9ce7a1b37a5b7c07}{add\+\_\+button}} (\mbox{\hyperlink{class_button_base}{Button\+Base}} \texorpdfstring{$\ast$}{*}button)
+\begin{DoxyCompactList}\small\item\em 添加按钮，添加按钮到按钮列表中 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_base_a7808f0aafa7ed13a87a3fc58cfd1917a}{remove\+\_\+button}} (\mbox{\hyperlink{class_button_base}{Button\+Base}} \texorpdfstring{$\ast$}{*}button)
+\begin{DoxyCompactList}\small\item\em 删除按钮，从按钮列表中删除按钮 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_base_a2175615a0f4872598b49e2fdebb014d9}{add\+\_\+keyboard\+\_\+event}} (\mbox{\hyperlink{class_event_keyboard}{Event\+Keyboard}} \texorpdfstring{$\ast$}{*}key\+\_\+event)
+\begin{DoxyCompactList}\small\item\em 添加键盘事件，添加键盘事件到键盘事件列表中 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_base_a0fbb41a29d90e1c8f04d94f9bfa51a1e}{remove\+\_\+keyboard\+\_\+event}} (\mbox{\hyperlink{class_event_keyboard}{Event\+Keyboard}} \texorpdfstring{$\ast$}{*}key\+\_\+event)
+\begin{DoxyCompactList}\small\item\em 删除键盘事件，从键盘事件列表中删除键盘事件 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{额外继承的成员函数}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_scene_base}{Scene\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_button_base}{Button\+Base}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+\_\+button\+\_\+list}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_event_keyboard}{Event\+Keyboard}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+\_\+event\+\_\+list}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+设置场景类 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_scene_setting_a73b86f4fec5e4b1333c2051082c449c3}\index{SceneSetting@{SceneSetting}!draw@{draw}}
+\index{draw@{draw}!SceneSetting@{SceneSetting}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_scene_setting_a73b86f4fec5e4b1333c2051082c449c3} 
+void Scene\+Setting\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_util_camera}{Util\+Camera}} \texorpdfstring{$\ast$}{*}}]{camera}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+绘制场景 
+
+
+\begin{DoxyParams}{参数}
+{\em camera} & 相机 \\
+\hline
+\end{DoxyParams}
+
+
+实现了 \mbox{\hyperlink{class_scene_base_a35b4d0d9e7babfb66c3187b169b5df34}{Scene\+Base}}.
+
+\Hypertarget{class_scene_setting_af559d5421b33ec0e3f64fdb8ea96704c}\index{SceneSetting@{SceneSetting}!enter@{enter}}
+\index{enter@{enter}!SceneSetting@{SceneSetting}}
+\doxysubsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily \label{class_scene_setting_af559d5421b33ec0e3f64fdb8ea96704c} 
+void Scene\+Setting\+::enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入场景 
+
+
+
+实现了 \mbox{\hyperlink{class_scene_base_aa00206f5490223489e5a6fff6253cffd}{Scene\+Base}}.
+
+\Hypertarget{class_scene_setting_a74052fd3272c32169da3905415b2ae6c}\index{SceneSetting@{SceneSetting}!exit@{exit}}
+\index{exit@{exit}!SceneSetting@{SceneSetting}}
+\doxysubsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily \label{class_scene_setting_a74052fd3272c32169da3905415b2ae6c} 
+void Scene\+Setting\+::exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出场景 
+
+
+
+实现了 \mbox{\hyperlink{class_scene_base_a66da2547dc07bce11dc082dd3d857b85}{Scene\+Base}}.
+
+\Hypertarget{class_scene_setting_acb0d783e1c884c1409fe7ea9bb2d8195}\index{SceneSetting@{SceneSetting}!update@{update}}
+\index{update@{update}!SceneSetting@{SceneSetting}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_scene_setting_acb0d783e1c884c1409fe7ea9bb2d8195} 
+void Scene\+Setting\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新场景 
+
+
+
+实现了 \mbox{\hyperlink{class_scene_base_a7e6edcd4ecf81e04793534f54f241e08}{Scene\+Base}}.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/scene/scene\+\_\+setting.\+h\item 
+Client/source/scene/scene\+\_\+setting.\+cpp\end{DoxyCompactItemize}

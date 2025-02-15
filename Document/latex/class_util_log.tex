@@ -1,0 +1,83 @@
+\doxysection{Util\+Log类 参考}
+\hypertarget{class_util_log}{}\label{class_util_log}\index{UtilLog@{UtilLog}}
+
+
+日志角色  
+
+
+
+
+{\ttfamily \#include $<$util\+\_\+log.\+h$>$}
+
+\doxysubsubsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_util_log_a8370cfa1dd900892827ec45919523c3a}{set\+\_\+log\+\_\+path}} (Log\+Level level, std\+::string path)
+\begin{DoxyCompactList}\small\item\em 设置日志路径 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_util_log_afa805d86e750f9c6d63e146ca340c516}{log}} (Log\+Level level, std\+::string info)
+\begin{DoxyCompactList}\small\item\em 写入日志 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_util_log_a9f7a819bf63ba0dca60d8ff69f6dfe93}{clear\+\_\+log}} (Log\+Level level)
+\begin{DoxyCompactList}\small\item\em 清空日志 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+日志角色 
+
+日志类 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_util_log_a9f7a819bf63ba0dca60d8ff69f6dfe93}\index{UtilLog@{UtilLog}!clear\_log@{clear\_log}}
+\index{clear\_log@{clear\_log}!UtilLog@{UtilLog}}
+\doxysubsubsection{\texorpdfstring{clear\_log()}{clear\_log()}}
+{\footnotesize\ttfamily \label{class_util_log_a9f7a819bf63ba0dca60d8ff69f6dfe93} 
+void Util\+Log\+::clear\+\_\+log (\begin{DoxyParamCaption}\item[{Log\+Level}]{level}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+清空日志 
+
+
+\begin{DoxyParams}{参数}
+{\em level} & 日志所属角色 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_log_afa805d86e750f9c6d63e146ca340c516}\index{UtilLog@{UtilLog}!log@{log}}
+\index{log@{log}!UtilLog@{UtilLog}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily \label{class_util_log_afa805d86e750f9c6d63e146ca340c516} 
+void Util\+Log\+::log (\begin{DoxyParamCaption}\item[{Log\+Level}]{level}{, }\item[{std\+::string}]{info}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+写入日志 
+
+
+\begin{DoxyParams}{参数}
+{\em level} & 日志所属角色 \\
+\hline
+{\em info} & 日志内容 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_log_a8370cfa1dd900892827ec45919523c3a}\index{UtilLog@{UtilLog}!set\_log\_path@{set\_log\_path}}
+\index{set\_log\_path@{set\_log\_path}!UtilLog@{UtilLog}}
+\doxysubsubsection{\texorpdfstring{set\_log\_path()}{set\_log\_path()}}
+{\footnotesize\ttfamily \label{class_util_log_a8370cfa1dd900892827ec45919523c3a} 
+void Util\+Log\+::set\+\_\+log\+\_\+path (\begin{DoxyParamCaption}\item[{Log\+Level}]{level}{, }\item[{std\+::string}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+设置日志路径 
+
+
+\begin{DoxyParams}{参数}
+{\em level} & 日志所属角色 \\
+\hline
+{\em path} & 日志路径 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/util/util\+\_\+log.\+h\item 
+Client/source/util/util\+\_\+log.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,270 @@
+\doxysection{Util\+Vector\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} 模板类 参考}
+\hypertarget{class_util_vector}{}\label{class_util_vector}\index{UtilVector$<$ T $>$@{UtilVector$<$ T $>$}}
+
+
+二维向量基类  
+
+
+
+
+{\ttfamily \#include $<$util\+\_\+vector.\+h$>$}
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_util_vector_a599d4a94dc00dc0c242f5afc5c21433a}\label{class_util_vector_a599d4a94dc00dc0c242f5afc5c21433a} 
+{\bfseries Util\+Vector} ()
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_util_vector_a0faec61d1ed6d557d7d943fe1a03e339}{Util\+Vector}} (T x, T y)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_util_vector_ab570aca726894d7970aa8d519fa1c496}{set\+\_\+vector}} (T x, T y)
+\begin{DoxyCompactList}\small\item\em 设置坐标 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_util_vector_a77a3644e838e9dce0bdc4ed8614b782c}{get\+\_\+distance}} (const \mbox{\hyperlink{class_util_vector}{Util\+Vector}} \&other) const
+\begin{DoxyCompactList}\small\item\em 获取距离 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_util_vector_a27cdcb4aab4f4edfa6ffb08679dff972}{is\+\_\+within}} (const \mbox{\hyperlink{class_util_vector}{Util\+Vector}} \&begin, const \mbox{\hyperlink{class_util_vector}{Util\+Vector}} \&end)
+\begin{DoxyCompactList}\small\item\em 判断是否在矩形内 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \mbox{\hyperlink{class_util_vector_a83ae6dbb5a0fc4a0080b389e1c7a3d45}{operator+}} (const \mbox{\hyperlink{class_util_vector}{Util\+Vector}} \&other) const
+\begin{DoxyCompactList}\small\item\em 重载+运算符 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \mbox{\hyperlink{class_util_vector_a8d3a1aa6dc3a3891d09e7b1ba654f514}{operator-\/}} (const \mbox{\hyperlink{class_util_vector}{Util\+Vector}} \&other) const
+\begin{DoxyCompactList}\small\item\em 重载-\/运算符 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \mbox{\hyperlink{class_util_vector_a2969f328d73fb5e5522a6b04517e380f}{operator\texorpdfstring{$\ast$}{*}}} (const T \&other) const
+\begin{DoxyCompactList}\small\item\em 重载\texorpdfstring{$\ast$}{*}运算符 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \mbox{\hyperlink{class_util_vector_abb078196708131dafe04cf7e59224c73}{operator/}} (const T \&other) const
+\begin{DoxyCompactList}\small\item\em 重载/运算符 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \& \mbox{\hyperlink{class_util_vector_a22e8ad7e69615531f2a1b926a1de9d9b}{operator+=}} (const \mbox{\hyperlink{class_util_vector}{Util\+Vector}} \&other)
+\begin{DoxyCompactList}\small\item\em 重载+=运算符 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \& \mbox{\hyperlink{class_util_vector_a9f1329992272ff4fb2a4e3c97a5d60f8}{operator-\/=}} (const \mbox{\hyperlink{class_util_vector}{Util\+Vector}} \&other)
+\begin{DoxyCompactList}\small\item\em 重载-\/=运算符 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \& \mbox{\hyperlink{class_util_vector_a0e44e78e7bca16489be445997197d046}{operator\texorpdfstring{$\ast$}{*}=}} (const \mbox{\hyperlink{class_util_vector}{Util\+Vector}} \&other)
+\begin{DoxyCompactList}\small\item\em 重载\texorpdfstring{$\ast$}{*}=运算符 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \& \mbox{\hyperlink{class_util_vector_a92183d5ce3ae2eed20f477c75359ecc1}{operator/=}} (const \mbox{\hyperlink{class_util_vector}{Util\+Vector}} \&other)
+\begin{DoxyCompactList}\small\item\em 重载/=运算符 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_util_vector_aec090f9f1c88267c7b832443cb4a10e4}\label{class_util_vector_aec090f9f1c88267c7b832443cb4a10e4} 
+T {\bfseries x}
+\item 
+\Hypertarget{class_util_vector_aeeaadbfa4f563a9c1e5d2bc3f5b5575f}\label{class_util_vector_aeeaadbfa4f563a9c1e5d2bc3f5b5575f} 
+T {\bfseries y}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+\subsubsection*{template$<$class T$>$\newline
+class Util\+Vector$<$ T $>$}
+二维向量基类 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_util_vector_a0faec61d1ed6d557d7d943fe1a03e339}\index{UtilVector$<$ T $>$@{UtilVector$<$ T $>$}!UtilVector@{UtilVector}}
+\index{UtilVector@{UtilVector}!UtilVector$<$ T $>$@{UtilVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{UtilVector()}{UtilVector()}}
+{\footnotesize\ttfamily \label{class_util_vector_a0faec61d1ed6d557d7d943fe1a03e339} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$\mbox{\hyperlink{class_util_vector}{\+::\+Util\+Vector}} (\begin{DoxyParamCaption}\item[{T}]{x}{, }\item[{T}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+构造函数 
+
+
+\begin{DoxyParams}{参数}
+{\em x} & x坐标 \\
+\hline
+{\em y} & y坐标 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_util_vector_a77a3644e838e9dce0bdc4ed8614b782c}\index{UtilVector$<$ T $>$@{UtilVector$<$ T $>$}!get\_distance@{get\_distance}}
+\index{get\_distance@{get\_distance}!UtilVector$<$ T $>$@{UtilVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_distance()}{get\_distance()}}
+{\footnotesize\ttfamily \label{class_util_vector_a77a3644e838e9dce0bdc4ed8614b782c} 
+template$<$class T$>$ \\
+double \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$\+::get\+\_\+distance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取距离 
+
+
+\begin{DoxyParams}{参数}
+{\em other} & 另一个坐标 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+距离 
+\end{DoxyReturn}
+\Hypertarget{class_util_vector_a27cdcb4aab4f4edfa6ffb08679dff972}\index{UtilVector$<$ T $>$@{UtilVector$<$ T $>$}!is\_within@{is\_within}}
+\index{is\_within@{is\_within}!UtilVector$<$ T $>$@{UtilVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{is\_within()}{is\_within()}}
+{\footnotesize\ttfamily \label{class_util_vector_a27cdcb4aab4f4edfa6ffb08679dff972} 
+template$<$class T$>$ \\
+bool \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$\+::is\+\_\+within (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$ \&}]{begin}{, }\item[{const \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$ \&}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+判断是否在矩形内 
+
+
+\begin{DoxyParams}{参数}
+{\em begin} & 矩形左下角坐标 \\
+\hline
+{\em end} & 矩形右上角坐标 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+是否在矩形内 
+\end{DoxyReturn}
+\Hypertarget{class_util_vector_a2969f328d73fb5e5522a6b04517e380f}\index{UtilVector$<$ T $>$@{UtilVector$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!UtilVector$<$ T $>$@{UtilVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{class_util_vector_a2969f328d73fb5e5522a6b04517e380f} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const T \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+重载\texorpdfstring{$\ast$}{*}运算符 
+
+
+\begin{DoxyParams}{参数}
+{\em other} & 另一个坐标 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_vector_a0e44e78e7bca16489be445997197d046}\index{UtilVector$<$ T $>$@{UtilVector$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!UtilVector$<$ T $>$@{UtilVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}}
+{\footnotesize\ttfamily \label{class_util_vector_a0e44e78e7bca16489be445997197d046} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \& \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+重载\texorpdfstring{$\ast$}{*}=运算符 
+
+
+\begin{DoxyParams}{参数}
+{\em other} & 另一个坐标 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_vector_a83ae6dbb5a0fc4a0080b389e1c7a3d45}\index{UtilVector$<$ T $>$@{UtilVector$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!UtilVector$<$ T $>$@{UtilVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{class_util_vector_a83ae6dbb5a0fc4a0080b389e1c7a3d45} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+重载+运算符 
+
+
+\begin{DoxyParams}{参数}
+{\em other} & 另一个坐标 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_vector_a22e8ad7e69615531f2a1b926a1de9d9b}\index{UtilVector$<$ T $>$@{UtilVector$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!UtilVector$<$ T $>$@{UtilVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \label{class_util_vector_a22e8ad7e69615531f2a1b926a1de9d9b} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \& \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+重载+=运算符 
+
+
+\begin{DoxyParams}{参数}
+{\em other} & 另一个坐标 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_vector_a8d3a1aa6dc3a3891d09e7b1ba654f514}\index{UtilVector$<$ T $>$@{UtilVector$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!UtilVector$<$ T $>$@{UtilVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{class_util_vector_a8d3a1aa6dc3a3891d09e7b1ba654f514} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+重载-\/运算符 
+
+
+\begin{DoxyParams}{参数}
+{\em other} & 另一个坐标 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_vector_a9f1329992272ff4fb2a4e3c97a5d60f8}\index{UtilVector$<$ T $>$@{UtilVector$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!UtilVector$<$ T $>$@{UtilVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \label{class_util_vector_a9f1329992272ff4fb2a4e3c97a5d60f8} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \& \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+重载-\/=运算符 
+
+
+\begin{DoxyParams}{参数}
+{\em other} & 另一个坐标 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_vector_abb078196708131dafe04cf7e59224c73}\index{UtilVector$<$ T $>$@{UtilVector$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!UtilVector$<$ T $>$@{UtilVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \label{class_util_vector_abb078196708131dafe04cf7e59224c73} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const T \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+重载/运算符 
+
+
+\begin{DoxyParams}{参数}
+{\em other} & 另一个坐标 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_vector_a92183d5ce3ae2eed20f477c75359ecc1}\index{UtilVector$<$ T $>$@{UtilVector$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!UtilVector$<$ T $>$@{UtilVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \label{class_util_vector_a92183d5ce3ae2eed20f477c75359ecc1} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}} \& \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+重载/=运算符 
+
+
+\begin{DoxyParams}{参数}
+{\em other} & 另一个坐标 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_util_vector_ab570aca726894d7970aa8d519fa1c496}\index{UtilVector$<$ T $>$@{UtilVector$<$ T $>$}!set\_vector@{set\_vector}}
+\index{set\_vector@{set\_vector}!UtilVector$<$ T $>$@{UtilVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_vector()}{set\_vector()}}
+{\footnotesize\ttfamily \label{class_util_vector_ab570aca726894d7970aa8d519fa1c496} 
+template$<$class T$>$ \\
+void \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ T $>$\+::set\+\_\+vector (\begin{DoxyParamCaption}\item[{T}]{x}{, }\item[{T}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+设置坐标 
+
+
+\begin{DoxyParams}{参数}
+{\em x} & x坐标 \\
+\hline
+{\em y} & y坐标 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/util/util\+\_\+vector.\+h\end{DoxyCompactItemize}

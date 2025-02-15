@@ -5,7 +5,10 @@
 
 #include <util/util_animation.h>
 #include <util/util_vector.h>
+#include <util/util_camera.h>
 
+//TODO: 考虑是否添加角色速度限制。
+//TODO: 添加角色移动屏障限制。
 
 class PlayerBase
 {
@@ -15,13 +18,14 @@ class PlayerBase
         **/
         PlayerBase();
         /**
-        * @brief 析构函数
+        * @brief 初始化角色,加载动画，
+        * 设置角色位置，速度，加速度，大小等
         **/
-        ~PlayerBase();
+        virtual void init()=0;
         /**
-        * @brief 初始化角色
+        * @brief 加载动画
         **/
-        void init();
+        virtual void load_animation(std::string name,UtilVector<int> animation_pos);
         /**
         * @brief 设置角色位置
         **/
@@ -30,6 +34,10 @@ class PlayerBase
         * @brief 设置角色速度
         **/
         void set_velocity(int x, int y);
+        /**
+        * @brief 设置角色加速度
+        **/
+        void set_acceleration(int x, int y);
         /**
         * @brief 获取角色位置
         **/
@@ -42,12 +50,20 @@ class PlayerBase
          *@brief 从当前动画列表删除动画
         **/
         void remove_animation(std::string name);
+        /**
+         *@brief 绘制当前动画组
+        **/
+        void draw(UtilCamera* camera);
+        /**
+         *@brief 更新角色
+        **/
+        void update();
 
     private:
         // 与角色有关的所有动画列表
         std::unordered_map<std::string, UtilAnimation> m_animations;
         // 当前角色动画列表
-        std::unordered_map<std::string, UtilAnimation&> m_currentAnimation;
+        std::unordered_map<std::string, UtilAnimation*> m_currentAnimation;
         // 角色位置
         UtilVector<int> m_pos=UtilVector<int>(0,0);
         // 角色大小
@@ -56,6 +72,4 @@ class PlayerBase
         UtilVector<int> m_velocity=UtilVector<int>(0,0);
         // 角色加速度
         UtilVector<int> m_acceleration=UtilVector<int>(0,0);
-
-        float m_maxVelocityX;
 };

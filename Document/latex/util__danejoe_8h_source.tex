@@ -1,0 +1,87 @@
+\doxysection{util\+\_\+danejoe.\+h}
+\hypertarget{util__danejoe_8h_source}{}\label{util__danejoe_8h_source}\index{Client/include/util/util\_danejoe.h@{Client/include/util/util\_danejoe.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ FUNCTION\_INFO\ \_\_FUNCSIG\_\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ FUNCTION\_INFO\ \_\_PRETTY\_FUNCTION\_\_}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ DANEJOE\_TIME\ (DaneJoeUtil::get\_time\_str())}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ LOG\_STR(type,\ info)\ (std::ostringstream()\ \(\backslash\)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\ \ \ \ <<\ "{}[\ TIME\ ]:\ "{}<<\ DANEJOE\_TIME\ \(\backslash\)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ <<\ "{}[\ FILE\ ]:\ "{}\ <<\ \_\_FILE\_\_\ <<\ "{}\(\backslash\)n"{}\ \(\backslash\)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ <<\ "{}[\ LINE\ ]:\ "{}\ <<\ \_\_LINE\_\_\ <<\ "{}\(\backslash\)n"{}\ \(\backslash\)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ <<\ "{}[\ FUNCTION\ ]:\ "{}\ <<\ FUNCTION\_INFO\ <<\ "{}\(\backslash\)n"{}\ \(\backslash\)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ <<\ "{}[\ "{}\ <<\ type\ <<\ "{}\ ]:\ "{}\ <<\ info\ <<\ "{}\(\backslash\)n"{}).str()}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ DANEJOE\_LOG(stream,type,info)(stream\(\backslash\)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ LOG\_STR(type,\ info))}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }DaneJoeUtil}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)||(\_\_clang\_\_)}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ get\_type\_name(T\ data)}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ std::string\ pretty\_function\ =\ \_\_PRETTY\_FUNCTION\_\_;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pos\_begin\ =\ pretty\_function.find(\textcolor{stringliteral}{"{}T\ =\ "{}});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\_begin\ ==\ std::string::npos)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ pos\_begin\ +=\ 4;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pos\_end\ =\ pretty\_function.find(\textcolor{stringliteral}{"{};"{}});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\_end\ ==\ std::string::npos)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ pos\_end\ =\ pretty\_function.find(\textcolor{stringliteral}{"{}]"{}});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\_end\ ==\ std::string::npos)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ std::string\ result\ =\ pretty\_function.substr(pos\_begin,\ pos\_end\ -\/\ pos\_begin);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ print\_array(std::ostream\&\ os,\ \textcolor{keyword}{const}\ T\&\ array,\ \textcolor{keyword}{const}\ std::string\ tip\ =\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tip\ ==\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Values\ in\ container:\ \{\ "{}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ tip\ <<\ \textcolor{stringliteral}{"{}:\ \{\ "{}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ std::size\_t\ index\ =\ 0;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ std::size\_t\ max\_index\ =\ array.size()\ -\/\ 1;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ it\ :\ array)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ index++;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ it;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <=\ max\_index)}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{charliteral}{','};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}\ \}"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ get\_time\_str()}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ now\ =\ std::chrono::system\_clock::now();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ in\_time\_t\ =\ std::chrono::system\_clock::to\_time\_t(now);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::ctime(\&in\_time\_t);}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \};}
+
+\end{DoxyCode}

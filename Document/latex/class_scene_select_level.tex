@@ -1,0 +1,121 @@
+\doxysection{Scene\+Select\+Level类 参考}
+\hypertarget{class_scene_select_level}{}\label{class_scene_select_level}\index{SceneSelectLevel@{SceneSelectLevel}}
+
+
+关卡选择场景  
+
+
+
+
+{\ttfamily \#include $<$scene\+\_\+select\+\_\+level.\+h$>$}
+
+类 Scene\+Select\+Level 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_scene_select_level}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_scene_select_level_a75c969a3900ef8152d8100300fa598cd}\label{class_scene_select_level_a75c969a3900ef8152d8100300fa598cd} 
+{\bfseries Scene\+Select\+Level} ()
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\Hypertarget{class_scene_select_level_af1b2bcddcadadc98e4e4ac8a88faaa0e}\label{class_scene_select_level_af1b2bcddcadadc98e4e4ac8a88faaa0e} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Scene\+Select\+Level} ()
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_select_level_a0b0b26c520b13f36420aabfe5004c5ae}{draw}} (\mbox{\hyperlink{class_util_camera}{Util\+Camera}} \texorpdfstring{$\ast$}{*}camera) override
+\begin{DoxyCompactList}\small\item\em 绘制场景 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_select_level_a740f19bf13c213c105a170106428fbd5}{enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入场景 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_select_level_a99138478a6d547e07ea13580a4b7a42d}{exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出场景 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_select_level_a31417f5a8b7bf93359530149acbf0067}{update}} () override
+\begin{DoxyCompactList}\small\item\em 更新场景 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_scene_base}{Scene\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_scene_base_a1e0748efea9c18ae9ce7a1b37a5b7c07}{add\+\_\+button}} (\mbox{\hyperlink{class_button_base}{Button\+Base}} \texorpdfstring{$\ast$}{*}button)
+\begin{DoxyCompactList}\small\item\em 添加按钮，添加按钮到按钮列表中 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_base_a7808f0aafa7ed13a87a3fc58cfd1917a}{remove\+\_\+button}} (\mbox{\hyperlink{class_button_base}{Button\+Base}} \texorpdfstring{$\ast$}{*}button)
+\begin{DoxyCompactList}\small\item\em 删除按钮，从按钮列表中删除按钮 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_base_a2175615a0f4872598b49e2fdebb014d9}{add\+\_\+keyboard\+\_\+event}} (\mbox{\hyperlink{class_event_keyboard}{Event\+Keyboard}} \texorpdfstring{$\ast$}{*}key\+\_\+event)
+\begin{DoxyCompactList}\small\item\em 添加键盘事件，添加键盘事件到键盘事件列表中 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_base_a0fbb41a29d90e1c8f04d94f9bfa51a1e}{remove\+\_\+keyboard\+\_\+event}} (\mbox{\hyperlink{class_event_keyboard}{Event\+Keyboard}} \texorpdfstring{$\ast$}{*}key\+\_\+event)
+\begin{DoxyCompactList}\small\item\em 删除键盘事件，从键盘事件列表中删除键盘事件 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{额外继承的成员函数}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_scene_base}{Scene\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_button_base}{Button\+Base}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+\_\+button\+\_\+list}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_event_keyboard}{Event\+Keyboard}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+\_\+event\+\_\+list}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+关卡选择场景 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_scene_select_level_a0b0b26c520b13f36420aabfe5004c5ae}\index{SceneSelectLevel@{SceneSelectLevel}!draw@{draw}}
+\index{draw@{draw}!SceneSelectLevel@{SceneSelectLevel}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_scene_select_level_a0b0b26c520b13f36420aabfe5004c5ae} 
+void Scene\+Select\+Level\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_util_camera}{Util\+Camera}} \texorpdfstring{$\ast$}{*}}]{camera}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+绘制场景 
+
+
+
+实现了 \mbox{\hyperlink{class_scene_base_a35b4d0d9e7babfb66c3187b169b5df34}{Scene\+Base}}.
+
+\Hypertarget{class_scene_select_level_a740f19bf13c213c105a170106428fbd5}\index{SceneSelectLevel@{SceneSelectLevel}!enter@{enter}}
+\index{enter@{enter}!SceneSelectLevel@{SceneSelectLevel}}
+\doxysubsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily \label{class_scene_select_level_a740f19bf13c213c105a170106428fbd5} 
+void Scene\+Select\+Level\+::enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入场景 
+
+
+
+实现了 \mbox{\hyperlink{class_scene_base_aa00206f5490223489e5a6fff6253cffd}{Scene\+Base}}.
+
+\Hypertarget{class_scene_select_level_a99138478a6d547e07ea13580a4b7a42d}\index{SceneSelectLevel@{SceneSelectLevel}!exit@{exit}}
+\index{exit@{exit}!SceneSelectLevel@{SceneSelectLevel}}
+\doxysubsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily \label{class_scene_select_level_a99138478a6d547e07ea13580a4b7a42d} 
+void Scene\+Select\+Level\+::exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出场景 
+
+
+
+实现了 \mbox{\hyperlink{class_scene_base_a66da2547dc07bce11dc082dd3d857b85}{Scene\+Base}}.
+
+\Hypertarget{class_scene_select_level_a31417f5a8b7bf93359530149acbf0067}\index{SceneSelectLevel@{SceneSelectLevel}!update@{update}}
+\index{update@{update}!SceneSelectLevel@{SceneSelectLevel}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_scene_select_level_a31417f5a8b7bf93359530149acbf0067} 
+void Scene\+Select\+Level\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新场景 
+
+
+
+实现了 \mbox{\hyperlink{class_scene_base_a7e6edcd4ecf81e04793534f54f241e08}{Scene\+Base}}.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/scene/scene\+\_\+select\+\_\+level.\+h\item 
+Client/source/scene/scene\+\_\+select\+\_\+level.\+cpp\end{DoxyCompactItemize}

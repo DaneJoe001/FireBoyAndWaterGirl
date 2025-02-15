@@ -14,6 +14,7 @@ void ManageScene::init()
 	create_scene(SceneType::MAIN);
 	create_scene(SceneType::SETTING);
 	create_scene(SceneType::SELECT_LEVEL);
+    create_scene(SceneType::LEVEL_TEACHING);
 }
 
 ManageScene::ManageScene() {}
@@ -52,6 +53,11 @@ SceneBase* ManageScene::create_scene(SceneType type)
 	case SceneType::SELECT_LEVEL:
 		m_scene_map[type] = new SceneSelectLevel();
 		return m_scene_map[type];
+        break;
+    case SceneType::LEVEL_TEACHING:
+        m_scene_map[type] = new SceneLevelTeaching();
+        return m_scene_map[type];
+        break;
 	default:
 		return nullptr;
 		break;

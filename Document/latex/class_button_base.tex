@@ -1,0 +1,183 @@
+\doxysection{Button\+Base类 参考}
+\hypertarget{class_button_base}{}\label{class_button_base}\index{ButtonBase@{ButtonBase}}
+
+
+按钮基类,按钮在场景类中实现绘制,在管理类中实现点击事件  
+
+
+
+
+{\ttfamily \#include $<$button\+\_\+base.\+h$>$}
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_button_base_a38e833ca4d34bf46bc0615b3b5347c62}{Button\+Base}} (\mbox{\hyperlink{class_scene_base}{Scene\+Base}} \texorpdfstring{$\ast$}{*}scene, \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ pos, std\+::function$<$ void()$>$call\+\_\+back)
+\begin{DoxyCompactList}\small\item\em 使用默认按钮构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_button_base_aa7cb61ded007d0ff6cd805539a72d5cf}{Button\+Base}} (\mbox{\hyperlink{class_scene_base}{Scene\+Base}} \texorpdfstring{$\ast$}{*}scene, \mbox{\hyperlink{struct_texture_info}{Texture\+Info}} \texorpdfstring{$\ast$}{*}normal\+\_\+texture\+\_\+info, \mbox{\hyperlink{struct_texture_info}{Texture\+Info}} \texorpdfstring{$\ast$}{*}pressed\+\_\+texture\+\_\+info, \mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ pos, std\+::function$<$ void()$>$call\+\_\+back)
+\begin{DoxyCompactList}\small\item\em 使用自定义按钮构造函数 \end{DoxyCompactList}\item 
+\Hypertarget{class_button_base_aa8ff4df27dc4d649bc07c4fe98453d00}\label{class_button_base_aa8ff4df27dc4d649bc07c4fe98453d00} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Button\+Base} ()
+\begin{DoxyCompactList}\small\item\em 按钮析构函数 \end{DoxyCompactList}\item 
+\Hypertarget{class_button_base_a290eda59a5eeecfb12a9ef6f9c6ca669}\label{class_button_base_a290eda59a5eeecfb12a9ef6f9c6ca669} 
+virtual void {\bfseries on\+\_\+press} ()
+\begin{DoxyCompactList}\small\item\em 按钮点击事件 \end{DoxyCompactList}\item 
+\Hypertarget{class_button_base_ac456dc7e52f260ee9f2b9e4d08658aa5}\label{class_button_base_ac456dc7e52f260ee9f2b9e4d08658aa5} 
+virtual void {\bfseries on\+\_\+release} ()
+\begin{DoxyCompactList}\small\item\em 按钮释放事件 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_base_a83164bc985141c46b9609bdd1b37f515}{is\+\_\+on\+\_\+button}} (\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ mouse\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em 判断鼠标是否在按钮上 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_base_a40a900f5067023b746f809014f859533}{is\+\_\+valid}} ()
+\begin{DoxyCompactList}\small\item\em 判断按钮是否有效 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_base_ac200780f202733489f9eab53a71b6c64}{set\+\_\+status}} (bool status)
+\begin{DoxyCompactList}\small\item\em 设置按钮状态 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_base_ade03f73846f6fb5e1c5f48e812554cdd}{draw}} (\mbox{\hyperlink{class_util_camera}{Util\+Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em 绘制按钮 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_button_base_a23001547dca2231f7e09ae3c5b39cd35}\label{class_button_base_a23001547dca2231f7e09ae3c5b39cd35} 
+\mbox{\hyperlink{struct_texture_info}{Texture\+Info}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+pressed\+\_\+texture} = nullptr
+\item 
+\Hypertarget{class_button_base_ab1be1cdc84efec79145f5fb5875448e1}\label{class_button_base_ab1be1cdc84efec79145f5fb5875448e1} 
+\mbox{\hyperlink{struct_texture_info}{Texture\+Info}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+normal\+\_\+texture} = nullptr
+\item 
+\Hypertarget{class_button_base_a71655bf46e8ec796077086cefcb9be12}\label{class_button_base_a71655bf46e8ec796077086cefcb9be12} 
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ {\bfseries m\+\_\+pos} = \{ 0,0 \}
+\item 
+\Hypertarget{class_button_base_a5cc00170cba3c3a470af47272146277a}\label{class_button_base_a5cc00170cba3c3a470af47272146277a} 
+\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ {\bfseries m\+\_\+size} = \{ 100,50 \}
+\item 
+\Hypertarget{class_button_base_a92b1d3b96797dceb31df6673921f3055}\label{class_button_base_a92b1d3b96797dceb31df6673921f3055} 
+bool {\bfseries m\+\_\+is\+\_\+pressed} = false
+\item 
+\Hypertarget{class_button_base_a48dee7b65e2df23492c5c498182c049f}\label{class_button_base_a48dee7b65e2df23492c5c498182c049f} 
+bool {\bfseries m\+\_\+is\+\_\+valid} = false
+\item 
+\Hypertarget{class_button_base_ae3663f503087b16e61d766da3a97978d}\label{class_button_base_ae3663f503087b16e61d766da3a97978d} 
+std\+::function$<$ void()$>$ {\bfseries m\+\_\+on\+\_\+clicked}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+按钮基类,按钮在场景类中实现绘制,在管理类中实现点击事件 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_button_base_a38e833ca4d34bf46bc0615b3b5347c62}\index{ButtonBase@{ButtonBase}!ButtonBase@{ButtonBase}}
+\index{ButtonBase@{ButtonBase}!ButtonBase@{ButtonBase}}
+\doxysubsubsection{\texorpdfstring{ButtonBase()}{ButtonBase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_button_base_a38e833ca4d34bf46bc0615b3b5347c62} 
+Button\+Base\+::\+Button\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scene_base}{Scene\+Base}} \texorpdfstring{$\ast$}{*}}]{scene}{, }\item[{\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$}]{pos}{, }\item[{std\+::function$<$ void()$>$}]{call\+\_\+back}{}\end{DoxyParamCaption})}
+
+
+
+使用默认按钮构造函数 
+
+
+\begin{DoxyParams}{参数}
+{\em scene} & 按钮场景归属 \\
+\hline
+{\em pos} & 设置动画绘制位置 \\
+\hline
+{\em call\+\_\+back} & 回调函数执行按钮逻辑 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_button_base_aa7cb61ded007d0ff6cd805539a72d5cf}\index{ButtonBase@{ButtonBase}!ButtonBase@{ButtonBase}}
+\index{ButtonBase@{ButtonBase}!ButtonBase@{ButtonBase}}
+\doxysubsubsection{\texorpdfstring{ButtonBase()}{ButtonBase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_button_base_aa7cb61ded007d0ff6cd805539a72d5cf} 
+Button\+Base\+::\+Button\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scene_base}{Scene\+Base}} \texorpdfstring{$\ast$}{*}}]{scene}{, }\item[{\mbox{\hyperlink{struct_texture_info}{Texture\+Info}} \texorpdfstring{$\ast$}{*}}]{normal\+\_\+texture\+\_\+info}{, }\item[{\mbox{\hyperlink{struct_texture_info}{Texture\+Info}} \texorpdfstring{$\ast$}{*}}]{pressed\+\_\+texture\+\_\+info}{, }\item[{\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$}]{pos}{, }\item[{std\+::function$<$ void()$>$}]{call\+\_\+back}{}\end{DoxyParamCaption})}
+
+
+
+使用自定义按钮构造函数 
+
+
+\begin{DoxyParams}{参数}
+{\em scene} & 按钮场景归属 \\
+\hline
+{\em normal\+\_\+texture\+\_\+info} & 正常状态按钮纹理 \\
+\hline
+{\em pressed\+\_\+texture\+\_\+info} & 按下状态按钮纹理 \\
+\hline
+{\em pos} & 设置动画绘制位置 \\
+\hline
+{\em call\+\_\+back} & 回调函数执行按钮逻辑 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_button_base_ade03f73846f6fb5e1c5f48e812554cdd}\index{ButtonBase@{ButtonBase}!draw@{draw}}
+\index{draw@{draw}!ButtonBase@{ButtonBase}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_button_base_ade03f73846f6fb5e1c5f48e812554cdd} 
+void Button\+Base\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_util_camera}{Util\+Camera}} \texorpdfstring{$\ast$}{*}}]{camera}{}\end{DoxyParamCaption})}
+
+
+
+绘制按钮 
+
+
+\begin{DoxyParams}{参数}
+{\em camera} & 绘制按钮的相机 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_button_base_a83164bc985141c46b9609bdd1b37f515}\index{ButtonBase@{ButtonBase}!is\_on\_button@{is\_on\_button}}
+\index{is\_on\_button@{is\_on\_button}!ButtonBase@{ButtonBase}}
+\doxysubsubsection{\texorpdfstring{is\_on\_button()}{is\_on\_button()}}
+{\footnotesize\ttfamily \label{class_button_base_a83164bc985141c46b9609bdd1b37f515} 
+bool Button\+Base\+::is\+\_\+on\+\_\+button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$}]{mouse\+\_\+pos}{}\end{DoxyParamCaption})}
+
+
+
+判断鼠标是否在按钮上 
+
+
+\begin{DoxyParams}{参数}
+{\em mouse\+\_\+pos} & 鼠标位置 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+true 在按钮上 
+
+false 不在按钮上 
+\end{DoxyReturn}
+\Hypertarget{class_button_base_a40a900f5067023b746f809014f859533}\index{ButtonBase@{ButtonBase}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!ButtonBase@{ButtonBase}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{class_button_base_a40a900f5067023b746f809014f859533} 
+bool Button\+Base\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+判断按钮是否有效 
+
+\begin{DoxyReturn}{返回}
+true 有效 
+
+false 无效 
+\end{DoxyReturn}
+\Hypertarget{class_button_base_ac200780f202733489f9eab53a71b6c64}\index{ButtonBase@{ButtonBase}!set\_status@{set\_status}}
+\index{set\_status@{set\_status}!ButtonBase@{ButtonBase}}
+\doxysubsubsection{\texorpdfstring{set\_status()}{set\_status()}}
+{\footnotesize\ttfamily \label{class_button_base_ac200780f202733489f9eab53a71b6c64} 
+void Button\+Base\+::set\+\_\+status (\begin{DoxyParamCaption}\item[{bool}]{status}{}\end{DoxyParamCaption})}
+
+
+
+设置按钮状态 
+
+
+\begin{DoxyParams}{参数}
+{\em status} & true 按钮可点击状态 \\
+\hline
+{\em status} & false 按钮不可点击状态 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/button/button\+\_\+base.\+h\item 
+Client/source/button/button\+\_\+base.\+cpp\end{DoxyCompactItemize}

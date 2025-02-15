@@ -1,0 +1,24 @@
+\doxysection{util\+\_\+parse\+\_\+json.\+h}
+\hypertarget{util__parse__json_8h_source}{}\label{util__parse__json_8h_source}\index{Client/include/util/util\_parse\_json.h@{Client/include/util/util\_parse\_json.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_util_parse_json_a52854ecd0e5161207568c68debc0e3b8}{UtilParseJson}}\ }
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_util_parse_json_a52854ecd0e5161207568c68debc0e3b8}{UtilParseJson}}(std::string\ file\_path)\ :\ file\_path(file\_path)\ \{\}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ T\ \mbox{\hyperlink{class_util_parse_json_a3c55cfe2a432d04e2f88a3193035ca89}{parse\_data}}()\ =\ 0;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ 文件路径}}
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ file\_path;}
+\DoxyCodeLine{00029\ \};}
+
+\end{DoxyCode}

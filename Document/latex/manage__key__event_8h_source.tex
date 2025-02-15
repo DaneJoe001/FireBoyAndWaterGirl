@@ -1,0 +1,26 @@
+\doxysection{manage\+\_\+key\+\_\+event.\+h}
+\hypertarget{manage__key__event_8h_source}{}\label{manage__key__event_8h_source}\index{Client/include/manager/manage\_key\_event.h@{Client/include/manager/manage\_key\_event.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event_keyboard}{EventKeyboard}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_manage_key_event}{ManageKeyEvent}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_manage_key_event}{ManageKeyEvent}}\&\ \mbox{\hyperlink{class_manage_key_event_a5854371e559ae18e68e5a8055849577c}{get\_instance}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_manage_key_event_a89706e3092b32cd80a3044ffa7800547}{add\_key\_event}}(\mbox{\hyperlink{class_event_keyboard}{EventKeyboard}}*\ key\_event);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_manage_key_event_afc21a9247c6c3a28b41d412b3d8954eb}{check\_key\_press}}(SDL\_Keycode\ key);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_manage_key_event_aec363dd50eb869fd5d329d20a9ad0895}{check\_key\_release}}(SDL\_Keycode\ key);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ 键盘事件列表}}
+\DoxyCodeLine{00038\ \ \ \ \ std::list<EventKeyboard*>\ m\_key\_event\_list;}
+\DoxyCodeLine{00039\ \};}
+
+\end{DoxyCode}

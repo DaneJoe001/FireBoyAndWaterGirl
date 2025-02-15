@@ -1,0 +1,97 @@
+\doxysection{Event\+Keyboard类 参考}
+\hypertarget{class_event_keyboard}{}\label{class_event_keyboard}\index{EventKeyboard@{EventKeyboard}}
+
+
+键盘事件类  
+
+
+
+
+{\ttfamily \#include $<$event\+\_\+keyboard.\+h$>$}
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_event_keyboard_a14881b463045f9a3d346be64c807511a}{Event\+Keyboard}} (\mbox{\hyperlink{class_scene_base}{Scene\+Base}} \texorpdfstring{$\ast$}{*}scene, std\+::function$<$ void(SDL\+\_\+\+Keycode)$>$ \mbox{\hyperlink{class_event_keyboard_ae26c41ef43993222901e164f92ec6c4e}{on\+\_\+press}})
+\begin{DoxyCompactList}\small\item\em 键盘事件 \end{DoxyCompactList}\item 
+\Hypertarget{class_event_keyboard_a9b4eb8f0d7d65eb5c9da10c508f28b75}\label{class_event_keyboard_a9b4eb8f0d7d65eb5c9da10c508f28b75} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Event\+Keyboard} ()=default
+\begin{DoxyCompactList}\small\item\em 键盘事件析构函数 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_event_keyboard_ae26c41ef43993222901e164f92ec6c4e}{on\+\_\+press}} (SDL\+\_\+\+Keycode key)
+\begin{DoxyCompactList}\small\item\em 处理键盘按下事件 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_event_keyboard_a0f727c755da2131ad93f68a59ec529f2}{on\+\_\+release}} (SDL\+\_\+\+Keycode key)
+\begin{DoxyCompactList}\small\item\em 处理键盘松开事件 \end{DoxyCompactList}\item 
+\Hypertarget{class_event_keyboard_a9f1fb5a1b72c9842429efa8ec2944519}\label{class_event_keyboard_a9f1fb5a1b72c9842429efa8ec2944519} 
+bool {\bfseries is\+\_\+active} ()
+\begin{DoxyCompactList}\small\item\em 判断当前键盘事件是否处于激活状态 \end{DoxyCompactList}\item 
+\Hypertarget{class_event_keyboard_a1148146515d73bf63054c4bf42e58cdf}\label{class_event_keyboard_a1148146515d73bf63054c4bf42e58cdf} 
+bool {\bfseries is\+\_\+set\+\_\+on\+\_\+press} ()
+\begin{DoxyCompactList}\small\item\em 判断是否设置了按下事件 \end{DoxyCompactList}\item 
+\Hypertarget{class_event_keyboard_af5a5bb4da8f21adecd92f6f7b84db0c9}\label{class_event_keyboard_af5a5bb4da8f21adecd92f6f7b84db0c9} 
+bool {\bfseries is\+\_\+set\+\_\+on\+\_\+release} ()
+\begin{DoxyCompactList}\small\item\em 判断是否设置了松开事件 \end{DoxyCompactList}\item 
+\Hypertarget{class_event_keyboard_a87a9ac986507bbd9440b85392df96358}\label{class_event_keyboard_a87a9ac986507bbd9440b85392df96358} 
+void {\bfseries set\+\_\+status} (bool status)
+\begin{DoxyCompactList}\small\item\em 设置当前键盘事件是否处于激活状态 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+键盘事件类 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_event_keyboard_a14881b463045f9a3d346be64c807511a}\index{EventKeyboard@{EventKeyboard}!EventKeyboard@{EventKeyboard}}
+\index{EventKeyboard@{EventKeyboard}!EventKeyboard@{EventKeyboard}}
+\doxysubsubsection{\texorpdfstring{EventKeyboard()}{EventKeyboard()}}
+{\footnotesize\ttfamily \label{class_event_keyboard_a14881b463045f9a3d346be64c807511a} 
+Event\+Keyboard\+::\+Event\+Keyboard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scene_base}{Scene\+Base}} \texorpdfstring{$\ast$}{*}}]{scene}{, }\item[{std\+::function$<$ void(SDL\+\_\+\+Keycode)$>$}]{on\+\_\+press}{}\end{DoxyParamCaption})}
+
+
+
+键盘事件 
+
+
+\begin{DoxyParams}{参数}
+{\em scene} & 绑定的场景 \\
+\hline
+{\em on\+\_\+press} & 按下事件 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_event_keyboard_ae26c41ef43993222901e164f92ec6c4e}\index{EventKeyboard@{EventKeyboard}!on\_press@{on\_press}}
+\index{on\_press@{on\_press}!EventKeyboard@{EventKeyboard}}
+\doxysubsubsection{\texorpdfstring{on\_press()}{on\_press()}}
+{\footnotesize\ttfamily \label{class_event_keyboard_ae26c41ef43993222901e164f92ec6c4e} 
+void Event\+Keyboard\+::on\+\_\+press (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Keycode}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+处理键盘按下事件 
+
+
+\begin{DoxyParams}{参数}
+{\em key} & 按键编号 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_event_keyboard_a0f727c755da2131ad93f68a59ec529f2}\index{EventKeyboard@{EventKeyboard}!on\_release@{on\_release}}
+\index{on\_release@{on\_release}!EventKeyboard@{EventKeyboard}}
+\doxysubsubsection{\texorpdfstring{on\_release()}{on\_release()}}
+{\footnotesize\ttfamily \label{class_event_keyboard_a0f727c755da2131ad93f68a59ec529f2} 
+void Event\+Keyboard\+::on\+\_\+release (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Keycode}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+处理键盘松开事件 
+
+
+\begin{DoxyParams}{参数}
+{\em key} & 按键编号 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/event/event\+\_\+keyboard.\+h\item 
+Client/source/event/event\+\_\+keyborad.\+cpp\end{DoxyCompactItemize}

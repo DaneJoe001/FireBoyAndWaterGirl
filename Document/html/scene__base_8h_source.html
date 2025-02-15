@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FireBoyAndWaterGirl: Client/include/scene/scene_base.h 源文件</title>
+<link rel="icon" href="document_logo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="document_logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FireBoyAndWaterGirl<span id="projectnumber">&#160;Beta 0.00</span>
+   </div>
+   <div id="projectbrief">A game project with C++!</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('scene__base_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">scene_base.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;manager/manage_resource.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;util/util_camera.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//TODO: 写一个连接管理类，连接信号与槽</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="class_button_base.html">ButtonBase</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span><a class="code hl_class" href="class_event_keyboard.html">EventKeyboard</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_scene_base.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="class_scene_base.html">SceneBase</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_class" href="class_scene_base.html">~SceneBase</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_scene_base.html#aa00206f5490223489e5a6fff6253cffd">   29</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene_base.html#aa00206f5490223489e5a6fff6253cffd">enter</a>() = 0;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_scene_base.html#a66da2547dc07bce11dc082dd3d857b85">   33</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene_base.html#a66da2547dc07bce11dc082dd3d857b85">exit</a>() = 0;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_scene_base.html#a7e6edcd4ecf81e04793534f54f241e08">   37</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene_base.html#a7e6edcd4ecf81e04793534f54f241e08">update</a>() = 0;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_scene_base.html#a35b4d0d9e7babfb66c3187b169b5df34">   41</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene_base.html#a35b4d0d9e7babfb66c3187b169b5df34">draw</a>(<a class="code hl_class" href="class_util_camera.html">UtilCamera</a>* camera) = 0;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene_base.html#a1e0748efea9c18ae9ce7a1b37a5b7c07">add_button</a>(<a class="code hl_class" href="class_button_base.html">ButtonBase</a>* button);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene_base.html#a7808f0aafa7ed13a87a3fc58cfd1917a">remove_button</a>(<a class="code hl_class" href="class_button_base.html">ButtonBase</a>* button);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene_base.html#a2175615a0f4872598b49e2fdebb014d9">add_keyboard_event</a>(<a class="code hl_class" href="class_event_keyboard.html">EventKeyboard</a>* key_event);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene_base.html#a0fbb41a29d90e1c8f04d94f9bfa51a1e">remove_keyboard_event</a>(<a class="code hl_class" href="class_event_keyboard.html">EventKeyboard</a>* key_event);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment">// 按钮列表</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    std::vector&lt;ButtonBase*&gt; m_button_list;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">// 键盘事件列表</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    std::vector&lt;EventKeyboard*&gt; m_event_list;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
+</div>
+<div class="ttc" id="aclass_button_base_html"><div class="ttname"><a href="class_button_base.html">ButtonBase</a></div><div class="ttdoc">按钮基类,按钮在场景类中实现绘制,在管理类中实现点击事件</div><div class="ttdef"><b>定义</b> button_base.h:19</div></div>
+<div class="ttc" id="aclass_event_keyboard_html"><div class="ttname"><a href="class_event_keyboard.html">EventKeyboard</a></div><div class="ttdoc">键盘事件类</div><div class="ttdef"><b>定义</b> event_keyboard.h:14</div></div>
+<div class="ttc" id="aclass_scene_base_html"><div class="ttname"><a href="class_scene_base.html">SceneBase</a></div><div class="ttdoc">场景基类，所有场景都继承于该类 需要遍历按钮列表，检查是否有按钮被触发 按钮本身和场景是关联的,所以连接函数可以 放在场景基类中但是每一个按钮都得连接一个 处理函数最好将处理函数放在按钮的类成员中 可能...</div><div class="ttdef"><b>定义</b> scene_base.h:23</div></div>
+<div class="ttc" id="aclass_scene_base_html_a0fbb41a29d90e1c8f04d94f9bfa51a1e"><div class="ttname"><a href="class_scene_base.html#a0fbb41a29d90e1c8f04d94f9bfa51a1e">SceneBase::remove_keyboard_event</a></div><div class="ttdeci">void remove_keyboard_event(EventKeyboard *key_event)</div><div class="ttdoc">删除键盘事件，从键盘事件列表中删除键盘事件</div><div class="ttdef"><b>定义</b> scene_base.cpp:53</div></div>
+<div class="ttc" id="aclass_scene_base_html_a1e0748efea9c18ae9ce7a1b37a5b7c07"><div class="ttname"><a href="class_scene_base.html#a1e0748efea9c18ae9ce7a1b37a5b7c07">SceneBase::add_button</a></div><div class="ttdeci">void add_button(ButtonBase *button)</div><div class="ttdoc">添加按钮，添加按钮到按钮列表中</div><div class="ttdef"><b>定义</b> scene_base.cpp:28</div></div>
+<div class="ttc" id="aclass_scene_base_html_a2175615a0f4872598b49e2fdebb014d9"><div class="ttname"><a href="class_scene_base.html#a2175615a0f4872598b49e2fdebb014d9">SceneBase::add_keyboard_event</a></div><div class="ttdeci">void add_keyboard_event(EventKeyboard *key_event)</div><div class="ttdoc">添加键盘事件，添加键盘事件到键盘事件列表中</div><div class="ttdef"><b>定义</b> scene_base.cpp:45</div></div>
+<div class="ttc" id="aclass_scene_base_html_a35b4d0d9e7babfb66c3187b169b5df34"><div class="ttname"><a href="class_scene_base.html#a35b4d0d9e7babfb66c3187b169b5df34">SceneBase::draw</a></div><div class="ttdeci">virtual void draw(UtilCamera *camera)=0</div><div class="ttdoc">绘制场景，绘制场景参数，绘制场景事件</div></div>
+<div class="ttc" id="aclass_scene_base_html_a66da2547dc07bce11dc082dd3d857b85"><div class="ttname"><a href="class_scene_base.html#a66da2547dc07bce11dc082dd3d857b85">SceneBase::exit</a></div><div class="ttdeci">virtual void exit()=0</div><div class="ttdoc">退出场景，释放资源，清理场景参数，清理场景事件</div></div>
+<div class="ttc" id="aclass_scene_base_html_a7808f0aafa7ed13a87a3fc58cfd1917a"><div class="ttname"><a href="class_scene_base.html#a7808f0aafa7ed13a87a3fc58cfd1917a">SceneBase::remove_button</a></div><div class="ttdeci">void remove_button(ButtonBase *button)</div><div class="ttdoc">删除按钮，从按钮列表中删除按钮</div><div class="ttdef"><b>定义</b> scene_base.cpp:36</div></div>
+<div class="ttc" id="aclass_scene_base_html_a7e6edcd4ecf81e04793534f54f241e08"><div class="ttname"><a href="class_scene_base.html#a7e6edcd4ecf81e04793534f54f241e08">SceneBase::update</a></div><div class="ttdeci">virtual void update()=0</div><div class="ttdoc">更新场景，更新场景参数，更新场景事件</div></div>
+<div class="ttc" id="aclass_scene_base_html_aa00206f5490223489e5a6fff6253cffd"><div class="ttname"><a href="class_scene_base.html#aa00206f5490223489e5a6fff6253cffd">SceneBase::enter</a></div><div class="ttdeci">virtual void enter()=0</div><div class="ttdoc">进入场景，初始化场景，加载资源，设置场景参数，设置场景事件</div></div>
+<div class="ttc" id="aclass_util_camera_html"><div class="ttname"><a href="class_util_camera.html">UtilCamera</a></div><div class="ttdoc">摄像机类</div><div class="ttdef"><b>定义</b> util_camera.h:20</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_922c588100a187620fdc1533bc178f73.html">Client</a></li><li class="navelem"><a class="el" href="dir_e93d5f3671a8729ca6e797e9a8fbc34c.html">include</a></li><li class="navelem"><a class="el" href="dir_410ab7f99c31f5cc058b845e93e797b3.html">scene</a></li><li class="navelem"><b>scene_base.h</b></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

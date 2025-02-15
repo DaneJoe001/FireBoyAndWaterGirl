@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FireBoyAndWaterGirl: Client/include/util/util_animation.h 源文件</title>
+<link rel="icon" href="document_logo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="document_logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FireBoyAndWaterGirl<span id="projectnumber">&#160;Beta 0.00</span>
+   </div>
+   <div id="projectbrief">A game project with C++!</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('util__animation_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">util_animation.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;util/util_vector.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class </span><a class="code hl_class" href="class_util_timer.html">UtilTimer</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span><a class="code hl_class" href="class_util_camera.html">UtilCamera</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="class_resource_atlas.html">ResourceAtlas</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_util_animation.html">   15</a></span><span class="keyword">class </span><a class="code hl_function" href="class_util_animation.html#a2f300110029a4b222162285cdb46adf6">UtilAnimation</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_function" href="class_util_animation.html#a2f300110029a4b222162285cdb46adf6">UtilAnimation</a>(<a class="code hl_class" href="class_resource_atlas.html">ResourceAtlas</a>* atlas, <span class="keywordtype">bool</span> loop);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_util_animation.html#ac65fa5809588e633e516ae2b15b894bc">is_loop</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_util_animation.html#a7576ef4bf1577c5708d97da83466341c">draw_frame</a>(<a class="code hl_class" href="class_util_camera.html">UtilCamera</a>* camera);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_util_animation.html#a1f6d30fd48d866096ad74ee28dafd9b0">set_loop</a>(<span class="keywordtype">bool</span> loop);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_util_animation.html#ae28bca95dc2e56906516173755148308">on_update</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_util_animation.html#aa9d8c7a72cbef1f645a7c9e5c3182b32">set_position</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_util_animation.html#aa9d8c7a72cbef1f645a7c9e5c3182b32">set_position</a>(<a class="code hl_class" href="class_util_vector.html">UtilVector&lt;int&gt;</a> pos);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_util_animation.html#a866f7f7b3919ec11be28217d614abc73">update_position</a>(<a class="code hl_class" href="class_util_vector.html">UtilVector&lt;int&gt;</a> velocity);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">// 是否循环播放</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">bool</span> m_is_loop = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">// 动画资源指针</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_class" href="class_resource_atlas.html">ResourceAtlas</a>* m_atlas=<span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">// 时间计时器</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_class" href="class_util_timer.html">UtilTimer</a>* m_timer = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment">// 当前位置</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_class" href="class_util_vector.html">UtilVector&lt;int&gt;</a> m_pos = <a class="code hl_class" href="class_util_vector.html">UtilVector</a>(0,0);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">// 当前帧序号</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    std::size_t m_current_index = 0;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+</div>
+<div class="ttc" id="aclass_resource_atlas_html"><div class="ttname"><a href="class_resource_atlas.html">ResourceAtlas</a></div><div class="ttdoc">图集资源类</div><div class="ttdef"><b>定义</b> resource_atlas.h:17</div></div>
+<div class="ttc" id="aclass_util_animation_html_a1f6d30fd48d866096ad74ee28dafd9b0"><div class="ttname"><a href="class_util_animation.html#a1f6d30fd48d866096ad74ee28dafd9b0">UtilAnimation::set_loop</a></div><div class="ttdeci">void set_loop(bool loop)</div><div class="ttdoc">设置是否循环播放</div><div class="ttdef"><b>定义</b> util_animation.cpp:18</div></div>
+<div class="ttc" id="aclass_util_animation_html_a2f300110029a4b222162285cdb46adf6"><div class="ttname"><a href="class_util_animation.html#a2f300110029a4b222162285cdb46adf6">UtilAnimation::UtilAnimation</a></div><div class="ttdeci">UtilAnimation(ResourceAtlas *atlas, bool loop)</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> util_animation.cpp:7</div></div>
+<div class="ttc" id="aclass_util_animation_html_a7576ef4bf1577c5708d97da83466341c"><div class="ttname"><a href="class_util_animation.html#a7576ef4bf1577c5708d97da83466341c">UtilAnimation::draw_frame</a></div><div class="ttdeci">void draw_frame(UtilCamera *camera)</div><div class="ttdoc">绘制当前帧</div><div class="ttdef"><b>定义</b> util_animation.cpp:23</div></div>
+<div class="ttc" id="aclass_util_animation_html_a866f7f7b3919ec11be28217d614abc73"><div class="ttname"><a href="class_util_animation.html#a866f7f7b3919ec11be28217d614abc73">UtilAnimation::update_position</a></div><div class="ttdeci">void update_position(UtilVector&lt; int &gt; velocity)</div><div class="ttdoc">更新当前动画位置</div><div class="ttdef"><b>定义</b> util_animation.cpp:59</div></div>
+<div class="ttc" id="aclass_util_animation_html_aa9d8c7a72cbef1f645a7c9e5c3182b32"><div class="ttname"><a href="class_util_animation.html#aa9d8c7a72cbef1f645a7c9e5c3182b32">UtilAnimation::set_position</a></div><div class="ttdeci">void set_position(int x, int y)</div><div class="ttdoc">设置当前动画位置</div><div class="ttdef"><b>定义</b> util_animation.cpp:49</div></div>
+<div class="ttc" id="aclass_util_animation_html_ac65fa5809588e633e516ae2b15b894bc"><div class="ttname"><a href="class_util_animation.html#ac65fa5809588e633e516ae2b15b894bc">UtilAnimation::is_loop</a></div><div class="ttdeci">bool is_loop()</div><div class="ttdoc">获取是否循环播放</div><div class="ttdef"><b>定义</b> util_animation.cpp:13</div></div>
+<div class="ttc" id="aclass_util_animation_html_ae28bca95dc2e56906516173755148308"><div class="ttname"><a href="class_util_animation.html#ae28bca95dc2e56906516173755148308">UtilAnimation::on_update</a></div><div class="ttdeci">void on_update()</div><div class="ttdoc">更新当前帧</div><div class="ttdef"><b>定义</b> util_animation.cpp:36</div></div>
+<div class="ttc" id="aclass_util_camera_html"><div class="ttname"><a href="class_util_camera.html">UtilCamera</a></div><div class="ttdoc">摄像机类</div><div class="ttdef"><b>定义</b> util_camera.h:20</div></div>
+<div class="ttc" id="aclass_util_timer_html"><div class="ttname"><a href="class_util_timer.html">UtilTimer</a></div><div class="ttdoc">计时器类</div><div class="ttdef"><b>定义</b> util_timer.h:11</div></div>
+<div class="ttc" id="aclass_util_vector_html"><div class="ttname"><a href="class_util_vector.html">UtilVector</a></div><div class="ttdoc">二维向量基类</div><div class="ttdef"><b>定义</b> util_vector.h:11</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_922c588100a187620fdc1533bc178f73.html">Client</a></li><li class="navelem"><a class="el" href="dir_e93d5f3671a8729ca6e797e9a8fbc34c.html">include</a></li><li class="navelem"><a class="el" href="dir_7e756f08724e5cc2b01f5b4d4782861b.html">util</a></li><li class="navelem"><b>util_animation.h</b></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

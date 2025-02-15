@@ -1,0 +1,37 @@
+\doxysection{util\+\_\+camera.\+h}
+\hypertarget{util__camera_8h_source}{}\label{util__camera_8h_source}\index{Client/include/util/util\_camera.h@{Client/include/util/util\_camera.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_image.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <util/util\_vector.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <resource/resource\_definition.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//TODO:添加开发者模式，展示碰撞箱信息,在渲染素材时，绘制边框}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//TODO:\ void\ set\_camera\_position(UtilVector\ pos);}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//TODO:\ void\ set\_camera\_position(SDL\_Rect\ rect);}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//TODO:\ void\ set\_camera\_position(SDL\_Point\ point);}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//TODO:\ void\ set\_camera\_position(SDL\_FPoint\ point);}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_util_camera_a6a805e2b968b81de37aef2cece812c87}{UtilCamera}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_util_camera_a6a805e2b968b81de37aef2cece812c87}{UtilCamera}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_camera_aed71d86138c9531379bdd97c348d4c74}{init}}(SDL\_Renderer*\ renderer);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_camera_a391901d61d7edb941cf2bb3981efe0a4}{render\_texture}}(SDL\_Texture*\ texture,\ \textcolor{keyword}{const}\ SDL\_Rect*\ src\_rect,\ \textcolor{keyword}{const}\ SDL\_Rect*\ dst\_rect);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_camera_a14c274d695035ecf15ed6e6920c5ff8e}{adaptive\_render\_texture}}(\mbox{\hyperlink{struct_texture_info}{TextureInfo}}*\ texture\_info,\ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ pos);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_camera_a1e096d0e793d0e22f145bd6cfdd8d46e}{switch\_development\_mode}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ 渲染器指针}}
+\DoxyCodeLine{00051\ \ \ \ \ SDL\_Renderer*\ m\_renderer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ 摄像机位置}}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ m\_camera\_position;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ 开发者模式开关}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_is\_development\_mode\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00056\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FireBoyAndWaterGirl: Client/include/manager/manage_button.h 源文件</title>
+<link rel="icon" href="document_logo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="document_logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FireBoyAndWaterGirl<span id="projectnumber">&#160;Beta 0.00</span>
+   </div>
+   <div id="projectbrief">A game project with C++!</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('manage__button_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">manage_button.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;util/util_vector.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">class </span><a class="code hl_class" href="class_button_base.html">ButtonBase</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_manage_button.html">   12</a></span><span class="keyword">class </span>ManageButton</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">static</span> ManageButton&amp; <a class="code hl_function" href="class_manage_button.html#a4297dbe97119f0cee7e4169342a38dbc">get_instance</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_manage_button.html#a94a06631c09606ad57cdffd1331b40fb">add_button</a>(<a class="code hl_class" href="class_button_base.html">ButtonBase</a>* button);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_manage_button.html#a97ad76e8f744af9504d4cc2922254846">check_press</a>(<a class="code hl_class" href="class_util_vector.html">UtilVector&lt;int&gt;</a> mouse_pos);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_manage_button.html#a5714a1ca80570ede7706bc5d8d656865">check_release</a>(<a class="code hl_class" href="class_util_vector.html">UtilVector&lt;int&gt;</a> mouse_pos);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    ManageButton() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    ~ManageButton() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    ManageButton(<span class="keyword">const</span> ManageButton&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    ManageButton(<span class="keyword">const</span> ManageButton&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    ManageButton&amp; operator=(<span class="keyword">const</span> ManageButton&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    ManageButton&amp; operator=(<span class="keyword">const</span> ManageButton&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">// 按钮列表</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::list&lt;ButtonBase*&gt; m_button_list;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+</div>
+<div class="ttc" id="aclass_button_base_html"><div class="ttname"><a href="class_button_base.html">ButtonBase</a></div><div class="ttdoc">按钮基类,按钮在场景类中实现绘制,在管理类中实现点击事件</div><div class="ttdef"><b>定义</b> button_base.h:19</div></div>
+<div class="ttc" id="aclass_manage_button_html_a4297dbe97119f0cee7e4169342a38dbc"><div class="ttname"><a href="class_manage_button.html#a4297dbe97119f0cee7e4169342a38dbc">ManageButton::get_instance</a></div><div class="ttdeci">static ManageButton &amp; get_instance()</div><div class="ttdoc">获取按钮管理类单例引用</div><div class="ttdef"><b>定义</b> manage_button.cpp:4</div></div>
+<div class="ttc" id="aclass_manage_button_html_a5714a1ca80570ede7706bc5d8d656865"><div class="ttname"><a href="class_manage_button.html#a5714a1ca80570ede7706bc5d8d656865">ManageButton::check_release</a></div><div class="ttdeci">void check_release(UtilVector&lt; int &gt; mouse_pos)</div><div class="ttdoc">检查鼠标释放</div><div class="ttdef"><b>定义</b> manage_button.cpp:33</div></div>
+<div class="ttc" id="aclass_manage_button_html_a94a06631c09606ad57cdffd1331b40fb"><div class="ttname"><a href="class_manage_button.html#a94a06631c09606ad57cdffd1331b40fb">ManageButton::add_button</a></div><div class="ttdeci">void add_button(ButtonBase *button)</div><div class="ttdoc">添加按钮</div><div class="ttdef"><b>定义</b> manage_button.cpp:10</div></div>
+<div class="ttc" id="aclass_manage_button_html_a97ad76e8f744af9504d4cc2922254846"><div class="ttname"><a href="class_manage_button.html#a97ad76e8f744af9504d4cc2922254846">ManageButton::check_press</a></div><div class="ttdeci">void check_press(UtilVector&lt; int &gt; mouse_pos)</div><div class="ttdoc">检查鼠标按下</div><div class="ttdef"><b>定义</b> manage_button.cpp:18</div></div>
+<div class="ttc" id="aclass_util_vector_html"><div class="ttname"><a href="class_util_vector.html">UtilVector</a></div><div class="ttdoc">二维向量基类</div><div class="ttdef"><b>定义</b> util_vector.h:11</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_922c588100a187620fdc1533bc178f73.html">Client</a></li><li class="navelem"><a class="el" href="dir_e93d5f3671a8729ca6e797e9a8fbc34c.html">include</a></li><li class="navelem"><a class="el" href="dir_0559bd09086fedd647aad8a0bd3f3066.html">manager</a></li><li class="navelem"><b>manage_button.h</b></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

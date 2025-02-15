@@ -48,6 +48,11 @@ public:
 	* @param pos 位置
 	**/
 	void set_position(UtilVector<int> pos);
+    /**
+	* @brief 更新当前动画位置
+	* @param velocity 速度
+	**/
+	void update_position(UtilVector<int> velocity);
 
 private:
 	// 是否循环播放

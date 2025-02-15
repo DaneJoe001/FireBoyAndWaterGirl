@@ -1,0 +1,37 @@
+\doxysection{scene\+\_\+base.\+h}
+\hypertarget{scene__base_8h_source}{}\label{scene__base_8h_source}\index{Client/include/scene/scene\_base.h@{Client/include/scene/scene\_base.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <manager/manage\_resource.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <util/util\_camera.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//TODO:\ 写一个连接管理类，连接信号与槽}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_button_base}{ButtonBase}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event_keyboard}{EventKeyboard}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene_base}{SceneBase}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_scene_base}{\string~SceneBase}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_base_aa00206f5490223489e5a6fff6253cffd}{enter}}()\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_base_a66da2547dc07bce11dc082dd3d857b85}{exit}}()\ =\ 0;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_base_a7e6edcd4ecf81e04793534f54f241e08}{update}}()\ =\ 0;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_base_a35b4d0d9e7babfb66c3187b169b5df34}{draw}}(\mbox{\hyperlink{class_util_camera}{UtilCamera}}*\ camera)\ =\ 0;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_base_a1e0748efea9c18ae9ce7a1b37a5b7c07}{add\_button}}(\mbox{\hyperlink{class_button_base}{ButtonBase}}*\ button);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_base_a7808f0aafa7ed13a87a3fc58cfd1917a}{remove\_button}}(\mbox{\hyperlink{class_button_base}{ButtonBase}}*\ button);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_base_a2175615a0f4872598b49e2fdebb014d9}{add\_keyboard\_event}}(\mbox{\hyperlink{class_event_keyboard}{EventKeyboard}}*\ key\_event);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_base_a0fbb41a29d90e1c8f04d94f9bfa51a1e}{remove\_keyboard\_event}}(\mbox{\hyperlink{class_event_keyboard}{EventKeyboard}}*\ key\_event);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ 按钮列表}}
+\DoxyCodeLine{00065\ \ \ \ \ std::vector<ButtonBase*>\ m\_button\_list;}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ 键盘事件列表}}
+\DoxyCodeLine{00067\ \ \ \ \ std::vector<EventKeyboard*>\ m\_event\_list;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \};}
+
+\end{DoxyCode}

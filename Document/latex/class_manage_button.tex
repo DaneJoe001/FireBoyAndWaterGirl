@@ -1,0 +1,95 @@
+\doxysection{Manage\+Button类 参考}
+\hypertarget{class_manage_button}{}\label{class_manage_button}\index{ManageButton@{ManageButton}}
+
+
+按钮管理类  
+
+
+
+
+{\ttfamily \#include $<$manage\+\_\+button.\+h$>$}
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_manage_button_a94a06631c09606ad57cdffd1331b40fb}{add\+\_\+button}} (\mbox{\hyperlink{class_button_base}{Button\+Base}} \texorpdfstring{$\ast$}{*}button)
+\begin{DoxyCompactList}\small\item\em 添加按钮 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_manage_button_a97ad76e8f744af9504d4cc2922254846}{check\+\_\+press}} (\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ mouse\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em 检查鼠标按下 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_manage_button_a5714a1ca80570ede7706bc5d8d656865}{check\+\_\+release}} (\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$ mouse\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em 检查鼠标释放 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_manage_button}{Manage\+Button}} \& \mbox{\hyperlink{class_manage_button_a4297dbe97119f0cee7e4169342a38dbc}{get\+\_\+instance}} ()
+\begin{DoxyCompactList}\small\item\em 获取按钮管理类单例引用 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+按钮管理类 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_manage_button_a94a06631c09606ad57cdffd1331b40fb}\index{ManageButton@{ManageButton}!add\_button@{add\_button}}
+\index{add\_button@{add\_button}!ManageButton@{ManageButton}}
+\doxysubsubsection{\texorpdfstring{add\_button()}{add\_button()}}
+{\footnotesize\ttfamily \label{class_manage_button_a94a06631c09606ad57cdffd1331b40fb} 
+void Manage\+Button\+::add\+\_\+button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_button_base}{Button\+Base}} \texorpdfstring{$\ast$}{*}}]{button}{}\end{DoxyParamCaption})}
+
+
+
+添加按钮 
+
+
+\begin{DoxyParams}{参数}
+{\em button} & 按钮指针 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_button_a97ad76e8f744af9504d4cc2922254846}\index{ManageButton@{ManageButton}!check\_press@{check\_press}}
+\index{check\_press@{check\_press}!ManageButton@{ManageButton}}
+\doxysubsubsection{\texorpdfstring{check\_press()}{check\_press()}}
+{\footnotesize\ttfamily \label{class_manage_button_a97ad76e8f744af9504d4cc2922254846} 
+void Manage\+Button\+::check\+\_\+press (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$}]{mouse\+\_\+pos}{}\end{DoxyParamCaption})}
+
+
+
+检查鼠标按下 
+
+
+\begin{DoxyParams}{参数}
+{\em mouse\+\_\+pos} & 鼠标坐标 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_button_a5714a1ca80570ede7706bc5d8d656865}\index{ManageButton@{ManageButton}!check\_release@{check\_release}}
+\index{check\_release@{check\_release}!ManageButton@{ManageButton}}
+\doxysubsubsection{\texorpdfstring{check\_release()}{check\_release()}}
+{\footnotesize\ttfamily \label{class_manage_button_a5714a1ca80570ede7706bc5d8d656865} 
+void Manage\+Button\+::check\+\_\+release (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_util_vector}{Util\+Vector}}$<$ int $>$}]{mouse\+\_\+pos}{}\end{DoxyParamCaption})}
+
+
+
+检查鼠标释放 
+
+
+\begin{DoxyParams}{参数}
+{\em mouse\+\_\+pos} & 鼠标坐标 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_button_a4297dbe97119f0cee7e4169342a38dbc}\index{ManageButton@{ManageButton}!get\_instance@{get\_instance}}
+\index{get\_instance@{get\_instance}!ManageButton@{ManageButton}}
+\doxysubsubsection{\texorpdfstring{get\_instance()}{get\_instance()}}
+{\footnotesize\ttfamily \label{class_manage_button_a4297dbe97119f0cee7e4169342a38dbc} 
+\mbox{\hyperlink{class_manage_button}{Manage\+Button}} \& Manage\+Button\+::get\+\_\+instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+获取按钮管理类单例引用 
+
+\begin{DoxyReturn}{返回}
+\doxylink{class_manage_button}{Manage\+Button}\& 单例 
+\end{DoxyReturn}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/manager/manage\+\_\+button.\+h\item 
+Client/source/manager/manage\+\_\+button.\+cpp\end{DoxyCompactItemize}

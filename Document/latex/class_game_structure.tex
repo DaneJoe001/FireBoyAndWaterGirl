@@ -1,0 +1,44 @@
+\doxysection{Game\+Structure类 参考}
+\hypertarget{class_game_structure}{}\label{class_game_structure}\index{GameStructure@{GameStructure}}
+
+
+游戏主框架。  
+
+
+
+
+{\ttfamily \#include $<$game\+\_\+structure.\+h$>$}
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_structure_a4231a6ba88e3731c6cdb4df7f63313ab}\label{class_game_structure_a4231a6ba88e3731c6cdb4df7f63313ab} 
+{\bfseries Game\+Structure} ()
+\begin{DoxyCompactList}\small\item\em 构造函数，初始化游戏主摄像机。 \end{DoxyCompactList}\item 
+\Hypertarget{class_game_structure_ae3cc28a5120bd9ab64b501f9b08cd25f}\label{class_game_structure_ae3cc28a5120bd9ab64b501f9b08cd25f} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Game\+Structure} ()
+\begin{DoxyCompactList}\small\item\em 析构函数，释放游戏主摄像机。 \end{DoxyCompactList}\item 
+\Hypertarget{class_game_structure_aa1584deb313e31fcf53b71f076c902d6}\label{class_game_structure_aa1584deb313e31fcf53b71f076c902d6} 
+bool {\bfseries init} ()
+\begin{DoxyCompactList}\small\item\em 初始化游戏，设置游戏窗口，游戏图标，游戏标题，游戏渲染器，游戏帧率。 \end{DoxyCompactList}\item 
+\Hypertarget{class_game_structure_a391c2df228777a552c46bec66bba8349}\label{class_game_structure_a391c2df228777a552c46bec66bba8349} 
+void {\bfseries quit} ()
+\begin{DoxyCompactList}\small\item\em 退出游戏，释放游戏资源，关闭游戏窗口，关闭游戏渲染器，关闭游戏帧率控制器。 \end{DoxyCompactList}\item 
+\Hypertarget{class_game_structure_a03012d49296c9a58a0e72f7c7a1a2a74}\label{class_game_structure_a03012d49296c9a58a0e72f7c7a1a2a74} 
+void {\bfseries circle} ()
+\begin{DoxyCompactList}\small\item\em 游戏主循环，在循环中执行事务处理，绘制，帧率设置。 \end{DoxyCompactList}\item 
+\Hypertarget{class_game_structure_ab31b61aeb109fe7937c8a51e9c44424f}\label{class_game_structure_ab31b61aeb109fe7937c8a51e9c44424f} 
+void {\bfseries update} ()
+\begin{DoxyCompactList}\small\item\em 更新游戏状态，更新游戏按钮状态，更新游戏场景状态，更新游戏资源状态。 \end{DoxyCompactList}\item 
+\Hypertarget{class_game_structure_aacc8ca104fd57659c1f96584950fcf2c}\label{class_game_structure_aacc8ca104fd57659c1f96584950fcf2c} 
+void {\bfseries render} ()
+\begin{DoxyCompactList}\small\item\em 绘制游戏，绘制游戏按钮，绘制游戏场景，绘制游戏资源。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+游戏主框架。 
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/main/game\+\_\+structure.\+h\item 
+Client/source/main/game\+\_\+structure.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,111 @@
+\doxysection{Manage\+Scene类 参考}
+\hypertarget{class_manage_scene}{}\label{class_manage_scene}\index{ManageScene@{ManageScene}}
+
+
+场景枚举类  
+
+
+
+
+{\ttfamily \#include $<$manage\+\_\+scene.\+h$>$}
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_manage_scene_ab7317521aa27ca4a785881b09d7f0703}\label{class_manage_scene_ab7317521aa27ca4a785881b09d7f0703} 
+void {\bfseries init} ()
+\begin{DoxyCompactList}\small\item\em 初始化场景管理类 \end{DoxyCompactList}\item 
+\Hypertarget{class_manage_scene_ae4fc60105675386c8e6a942390c0a46c}\label{class_manage_scene_ae4fc60105675386c8e6a942390c0a46c} 
+void {\bfseries check\+\_\+scene} ()
+\begin{DoxyCompactList}\small\item\em 检查场景 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scene_base}{Scene\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_manage_scene_a81e5b6250d8c5847013dacfce75b7375}{create\+\_\+scene}} (Scene\+Type type)
+\begin{DoxyCompactList}\small\item\em 创建场景 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scene_base}{Scene\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_manage_scene_a7c7964840ccea8545ffd8a46b902ffed}{get\+\_\+scene}} (Scene\+Type type)
+\begin{DoxyCompactList}\small\item\em 获取场景 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_manage_scene_a582846a9a878a1ca3f8c5b253a56481c}{set\+\_\+current\+\_\+scene}} (\mbox{\hyperlink{class_scene_base}{Scene\+Base}} \texorpdfstring{$\ast$}{*}scene)
+\begin{DoxyCompactList}\small\item\em 设置当前场景 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_manage_scene_ad91ac2609f8d77755ba3a3d2d32c2f02}{set\+\_\+current\+\_\+scene}} (Scene\+Type type)
+\begin{DoxyCompactList}\small\item\em 设置当前场景 \end{DoxyCompactList}\item 
+\Hypertarget{class_manage_scene_a393fe797a9d0fc08cf5c67ab4ffacf14}\label{class_manage_scene_a393fe797a9d0fc08cf5c67ab4ffacf14} 
+\mbox{\hyperlink{class_scene_base}{Scene\+Base}} \texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+current\+\_\+scene} ()
+\begin{DoxyCompactList}\small\item\em 获取当前场景 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_manage_scene_af176e6a26f26a3ea4e12f6dbe0df3a4e}\label{class_manage_scene_af176e6a26f26a3ea4e12f6dbe0df3a4e} 
+static \mbox{\hyperlink{class_manage_scene}{Manage\+Scene}} \& {\bfseries get\+\_\+instance} ()
+\begin{DoxyCompactList}\small\item\em 获取场景管理类单例引用 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+场景枚举类 
+
+场景管理类 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_manage_scene_a81e5b6250d8c5847013dacfce75b7375}\index{ManageScene@{ManageScene}!create\_scene@{create\_scene}}
+\index{create\_scene@{create\_scene}!ManageScene@{ManageScene}}
+\doxysubsubsection{\texorpdfstring{create\_scene()}{create\_scene()}}
+{\footnotesize\ttfamily \label{class_manage_scene_a81e5b6250d8c5847013dacfce75b7375} 
+\mbox{\hyperlink{class_scene_base}{Scene\+Base}} \texorpdfstring{$\ast$}{*} Manage\+Scene\+::create\+\_\+scene (\begin{DoxyParamCaption}\item[{Scene\+Type}]{type}{}\end{DoxyParamCaption})}
+
+
+
+创建场景 
+
+
+\begin{DoxyParams}{参数}
+{\em type} & 场景类型 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_scene_a7c7964840ccea8545ffd8a46b902ffed}\index{ManageScene@{ManageScene}!get\_scene@{get\_scene}}
+\index{get\_scene@{get\_scene}!ManageScene@{ManageScene}}
+\doxysubsubsection{\texorpdfstring{get\_scene()}{get\_scene()}}
+{\footnotesize\ttfamily \label{class_manage_scene_a7c7964840ccea8545ffd8a46b902ffed} 
+\mbox{\hyperlink{class_scene_base}{Scene\+Base}} \texorpdfstring{$\ast$}{*} Manage\+Scene\+::get\+\_\+scene (\begin{DoxyParamCaption}\item[{Scene\+Type}]{type}{}\end{DoxyParamCaption})}
+
+
+
+获取场景 
+
+
+\begin{DoxyParams}{参数}
+{\em type} & 场景类型 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_scene_a582846a9a878a1ca3f8c5b253a56481c}\index{ManageScene@{ManageScene}!set\_current\_scene@{set\_current\_scene}}
+\index{set\_current\_scene@{set\_current\_scene}!ManageScene@{ManageScene}}
+\doxysubsubsection{\texorpdfstring{set\_current\_scene()}{set\_current\_scene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_manage_scene_a582846a9a878a1ca3f8c5b253a56481c} 
+void Manage\+Scene\+::set\+\_\+current\+\_\+scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scene_base}{Scene\+Base}} \texorpdfstring{$\ast$}{*}}]{scene}{}\end{DoxyParamCaption})}
+
+
+
+设置当前场景 
+
+
+\begin{DoxyParams}{参数}
+{\em scene} & 场景 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_scene_ad91ac2609f8d77755ba3a3d2d32c2f02}\index{ManageScene@{ManageScene}!set\_current\_scene@{set\_current\_scene}}
+\index{set\_current\_scene@{set\_current\_scene}!ManageScene@{ManageScene}}
+\doxysubsubsection{\texorpdfstring{set\_current\_scene()}{set\_current\_scene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_manage_scene_ad91ac2609f8d77755ba3a3d2d32c2f02} 
+void Manage\+Scene\+::set\+\_\+current\+\_\+scene (\begin{DoxyParamCaption}\item[{Scene\+Type}]{type}{}\end{DoxyParamCaption})}
+
+
+
+设置当前场景 
+
+
+\begin{DoxyParams}{参数}
+{\em type} & 场景类型 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/manager/manage\+\_\+scene.\+h\item 
+Client/source/manager/manage\+\_\+scene.\+cpp\end{DoxyCompactItemize}

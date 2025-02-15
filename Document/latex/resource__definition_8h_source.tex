@@ -1,0 +1,106 @@
+\doxysection{resource\+\_\+definition.\+h}
+\hypertarget{resource__definition_8h_source}{}\label{resource__definition_8h_source}\index{Client/include/resource/resource\_definition.h@{Client/include/resource/resource\_definition.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_image.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <util/util\_vector.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//TODO:\ 添加按钮图组(非连续动画，只存储开关两种状态)}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_image_area}{ImageArea}}\ }
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ 帧图起始位置}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ pos;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ 帧尺寸}}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ size;}
+\DoxyCodeLine{00027\ \ \ \ \ SDL\_Rect\ \mbox{\hyperlink{struct_image_area_ae41c5cf1754fe76d1651dc2324b05950}{to\_rect}}()}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\{\ pos.x,pos.y,size.x,size.y\ \};}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_frame_info}{FrameInfo}}\ }
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ 帧图名}}
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ filename;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ 帧图位置及尺寸}}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{struct_image_area}{ImageArea}}\ frame;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ 旋转}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ rotated;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ 裁剪}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ trimmed;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ 帧尺寸}}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{struct_image_area}{ImageArea}}\ spriteSourceSize;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ 源尺寸}}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ sourceSize;\ }
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_meta}{Meta}}\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ 工具}}
+\DoxyCodeLine{00059\ \ \ \ \ std::string\ app;}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ 版本}}
+\DoxyCodeLine{00061\ \ \ \ \ std::string\ version;\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ 图片名}}
+\DoxyCodeLine{00063\ \ \ \ \ std::string\ image;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ 图片格式}}
+\DoxyCodeLine{00065\ \ \ \ \ std::string\ format;}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ 图片尺寸}}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{struct_image_area}{ImageArea}}\ size;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ 缩放}}
+\DoxyCodeLine{00069\ \ \ \ \ std::string\ scale;}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{struct\ }SpriteSheet}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ SpriteSheet()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ 帧图信息列表}}
+\DoxyCodeLine{00080\ \ \ \ \ std::vector<FrameInfo>\ frames;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ 元信息}}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{struct_meta}{Meta}}\ meta;}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_texture_info}{TextureInfo}}}
+\DoxyCodeLine{00090\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//\ 纹理指针}}
+\DoxyCodeLine{00092\ \ \ \ \ SDL\_Texture*\ texture;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{comment}{//\ 纹理源帧图位置及尺寸}}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{struct_image_area}{ImageArea}}\ src;}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ 目标帧图位置及尺寸}}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{struct_image_area}{ImageArea}}\ dst;}
+\DoxyCodeLine{00097\ \};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_surface_info}{SurfaceInfo}}}
+\DoxyCodeLine{00104\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\ 表面指针}}
+\DoxyCodeLine{00106\ \ \ \ \ SDL\_Surface*\ surface;}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//\ 纹理源帧图位置及尺寸}}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{struct_image_area}{ImageArea}}\ src;}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{comment}{//\ 目标帧图位置及尺寸}}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{struct_image_area}{ImageArea}}\ dst;}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_button_image_set}{ButtonImageSet}}}
+\DoxyCodeLine{00118\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//\ 普通状态纹理指针}}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{struct_texture_info}{TextureInfo}}*\ normal;}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//\ 按下状态纹理指针}}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{struct_texture_info}{TextureInfo}}*\ pressed;}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_atlas_frame}{AtlasFrame}}}
+\DoxyCodeLine{00130\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{comment}{//\ 纹理信息}}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{struct_texture_info}{TextureInfo}}\ texture;}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{comment}{//\ 纹理序号}}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{int}\ index;}
+\DoxyCodeLine{00135\ \};}
+\DoxyCodeLine{00136\ }
+
+\end{DoxyCode}

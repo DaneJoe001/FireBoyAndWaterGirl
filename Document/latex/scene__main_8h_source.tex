@@ -1,0 +1,31 @@
+\doxysection{scene\+\_\+main.\+h}
+\hypertarget{scene__main_8h_source}{}\label{scene__main_8h_source}\index{Client/include/scene/scene\_main.h@{Client/include/scene/scene\_main.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <scene/scene\_base.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene_main_a6171cfdd2ca2b294cfbf3d2638a8c372}{SceneMain}}\ :\textcolor{keyword}{public}\ \mbox{\hyperlink{class_scene_base}{SceneBase}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_scene_main_a6171cfdd2ca2b294cfbf3d2638a8c372}{SceneMain}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_scene_main_a70e0d2b2e3fb692ee0c44747c56db3e7}{\string~SceneMain}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_main_ae4d962e53cededce135d44628c437919}{enter}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_main_aeb1071833d987aa091f9ec070eb69744}{exit}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_main_ab6b85468b6c78dabfb38c428e1688477}{update}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_main_aa01dc3b48a0f477f2423ae7ded171e97}{draw}}(\mbox{\hyperlink{class_util_camera}{UtilCamera}}*\ camera)\textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ 背景纹理指针}}
+\DoxyCodeLine{00039\ \ \ \ \ SDL\_Texture*\ m\_background\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ 标题纹理指针}}
+\DoxyCodeLine{00041\ \ \ \ \ SDL\_Texture*\ m\_title\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ 光束纹理指针}}
+\DoxyCodeLine{00043\ \ \ \ \ SDL\_Texture*\ m\_beam\_cone\_shaped\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ 开始按钮纹理指针}}
+\DoxyCodeLine{00045\ \ \ \ \ SDL\_Texture*\ m\_start\_button\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ 开始按钮图标信息}}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{struct_texture_info}{TextureInfo}}*\ m\_start\_icon\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00048\ \};}
+
+\end{DoxyCode}

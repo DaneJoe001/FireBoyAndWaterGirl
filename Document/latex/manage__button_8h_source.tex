@@ -1,0 +1,33 @@
+\doxysection{manage\+\_\+button.\+h}
+\hypertarget{manage__button_8h_source}{}\label{manage__button_8h_source}\index{Client/include/manager/manage\_button.h@{Client/include/manager/manage\_button.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <util/util\_vector.h>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_button_base}{ButtonBase}};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }ManageButton}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ ManageButton\&\ \mbox{\hyperlink{class_manage_button_a4297dbe97119f0cee7e4169342a38dbc}{get\_instance}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_manage_button_a94a06631c09606ad57cdffd1331b40fb}{add\_button}}(\mbox{\hyperlink{class_button_base}{ButtonBase}}*\ button);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_manage_button_a97ad76e8f744af9504d4cc2922254846}{check\_press}}(\mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ mouse\_pos);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_manage_button_a5714a1ca80570ede7706bc5d8d656865}{check\_release}}(\mbox{\hyperlink{class_util_vector}{UtilVector<int>}}\ mouse\_pos);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ ManageButton()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00038\ \ \ \ \ \string~ManageButton()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00039\ \ \ \ \ ManageButton(\textcolor{keyword}{const}\ ManageButton\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00040\ \ \ \ \ ManageButton(\textcolor{keyword}{const}\ ManageButton\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00041\ \ \ \ \ ManageButton\&\ operator=(\textcolor{keyword}{const}\ ManageButton\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00042\ \ \ \ \ ManageButton\&\ operator=(\textcolor{keyword}{const}\ ManageButton\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ 按钮列表}}
+\DoxyCodeLine{00046\ \ \ \ \ std::list<ButtonBase*>\ m\_button\_list;}
+\DoxyCodeLine{00047\ \};}
+
+\end{DoxyCode}

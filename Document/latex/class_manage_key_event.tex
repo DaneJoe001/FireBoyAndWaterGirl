@@ -1,0 +1,83 @@
+\doxysection{Manage\+Key\+Event类 参考}
+\hypertarget{class_manage_key_event}{}\label{class_manage_key_event}\index{ManageKeyEvent@{ManageKeyEvent}}
+
+
+管理键盘事件  
+
+
+
+
+{\ttfamily \#include $<$manage\+\_\+key\+\_\+event.\+h$>$}
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_manage_key_event_a89706e3092b32cd80a3044ffa7800547}{add\+\_\+key\+\_\+event}} (\mbox{\hyperlink{class_event_keyboard}{Event\+Keyboard}} \texorpdfstring{$\ast$}{*}key\+\_\+event)
+\begin{DoxyCompactList}\small\item\em 添加键盘事件 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_manage_key_event_afc21a9247c6c3a28b41d412b3d8954eb}{check\+\_\+key\+\_\+press}} (SDL\+\_\+\+Keycode key)
+\begin{DoxyCompactList}\small\item\em 检查按键按下 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_manage_key_event_aec363dd50eb869fd5d329d20a9ad0895}{check\+\_\+key\+\_\+release}} (SDL\+\_\+\+Keycode key)
+\begin{DoxyCompactList}\small\item\em 检查按键抬起 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_manage_key_event_a5854371e559ae18e68e5a8055849577c}\label{class_manage_key_event_a5854371e559ae18e68e5a8055849577c} 
+static \mbox{\hyperlink{class_manage_key_event}{Manage\+Key\+Event}} \& {\bfseries get\+\_\+instance} ()
+\begin{DoxyCompactList}\small\item\em 获取按键管理单例引用 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+管理键盘事件 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_manage_key_event_a89706e3092b32cd80a3044ffa7800547}\index{ManageKeyEvent@{ManageKeyEvent}!add\_key\_event@{add\_key\_event}}
+\index{add\_key\_event@{add\_key\_event}!ManageKeyEvent@{ManageKeyEvent}}
+\doxysubsubsection{\texorpdfstring{add\_key\_event()}{add\_key\_event()}}
+{\footnotesize\ttfamily \label{class_manage_key_event_a89706e3092b32cd80a3044ffa7800547} 
+void Manage\+Key\+Event\+::add\+\_\+key\+\_\+event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_event_keyboard}{Event\+Keyboard}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+event}{}\end{DoxyParamCaption})}
+
+
+
+添加键盘事件 
+
+
+\begin{DoxyParams}{参数}
+{\em key\+\_\+event} & 键盘事件 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_key_event_afc21a9247c6c3a28b41d412b3d8954eb}\index{ManageKeyEvent@{ManageKeyEvent}!check\_key\_press@{check\_key\_press}}
+\index{check\_key\_press@{check\_key\_press}!ManageKeyEvent@{ManageKeyEvent}}
+\doxysubsubsection{\texorpdfstring{check\_key\_press()}{check\_key\_press()}}
+{\footnotesize\ttfamily \label{class_manage_key_event_afc21a9247c6c3a28b41d412b3d8954eb} 
+void Manage\+Key\+Event\+::check\+\_\+key\+\_\+press (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Keycode}]{key}{}\end{DoxyParamCaption})}
+
+
+
+检查按键按下 
+
+
+\begin{DoxyParams}{参数}
+{\em key} & 键值 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_manage_key_event_aec363dd50eb869fd5d329d20a9ad0895}\index{ManageKeyEvent@{ManageKeyEvent}!check\_key\_release@{check\_key\_release}}
+\index{check\_key\_release@{check\_key\_release}!ManageKeyEvent@{ManageKeyEvent}}
+\doxysubsubsection{\texorpdfstring{check\_key\_release()}{check\_key\_release()}}
+{\footnotesize\ttfamily \label{class_manage_key_event_aec363dd50eb869fd5d329d20a9ad0895} 
+void Manage\+Key\+Event\+::check\+\_\+key\+\_\+release (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Keycode}]{key}{}\end{DoxyParamCaption})}
+
+
+
+检查按键抬起 
+
+
+\begin{DoxyParams}{参数}
+{\em key} & 键值 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/manager/manage\+\_\+key\+\_\+event.\+h\item 
+Client/source/manager/manage\+\_\+key\+\_\+event.\+cpp\end{DoxyCompactItemize}

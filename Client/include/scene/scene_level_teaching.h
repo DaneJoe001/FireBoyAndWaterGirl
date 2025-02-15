@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <scene/scene_level_base.h>
+#include <player/player_fire_boy.h>
 
 class UtilAnimation;
 
@@ -18,24 +19,23 @@ public:
 	/**
 	* @brief 进入场景
 	**/
-	void enter();
+	void enter()override;
     /**
 	* @brief 退出场景
 	**/
-	void exit();
+	void exit()override;
 	/**
 	* @brief 更新场景
 	**/
-	void update();
+	void update()override;
     /**
 	* @brief 绘制场景
 	* @param camera 相机
 	**/
-	void draw(UtilCamera* camera);
+	void draw(UtilCamera* camera)override;
 
 private:
-	// 动画指针
-    UtilAnimation* m_animation=nullptr;
-	// 位置
-	UtilVector<int> pos{ 50,50 };
+    // 玩家指针
+    PlayerFireBoy* m_fire_boy_player=nullptr;
+
 };

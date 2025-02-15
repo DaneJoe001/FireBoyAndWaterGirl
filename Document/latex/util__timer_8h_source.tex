@@ -1,0 +1,29 @@
+\doxysection{util\+\_\+timer.\+h}
+\hypertarget{util__timer_8h_source}{}\label{util__timer_8h_source}\index{Client/include/util/util\_timer.h@{Client/include/util/util\_timer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once\ }}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_util_timer}{UtilTimer}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_timer_a011615df10d1e3e26793dba7ce9bf7ca}{set\_fps}}(std::size\_t\ fps);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_util_timer_abddae7063899eef87c212178df57a366}{wait\_update}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_util_timer_a432e233713f11b6a3df2253a472681b5}{can\_update}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ std::chrono::nanoseconds\ get\_real\_interval();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ 帧率，默认设置12}}
+\DoxyCodeLine{00037\ \ \ \ \ std::size\_t\ m\_fps\ =\ 12;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ 帧间隔}}
+\DoxyCodeLine{00039\ \ \ \ \ std::chrono::nanoseconds\ m\_interval\ =\ std::chrono::nanoseconds(1000000000\ /\ 12);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ 上一帧时间}}
+\DoxyCodeLine{00041\ \ \ \ \ std::chrono::steady\_clock::time\_point\ m\_last\_time\ =\ std::chrono::steady\_clock::now();}
+\DoxyCodeLine{00042\ \};}
+
+\end{DoxyCode}
