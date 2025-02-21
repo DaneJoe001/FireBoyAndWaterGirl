@@ -26,11 +26,11 @@ public:
 	/**
 	* @brief 进入场景，初始化场景，加载资源，设置场景参数，设置场景事件
 	**/
-	virtual void enter() = 0;
+	virtual void enter();
     /**
 	* @brief 退出场景，释放资源，清理场景参数，清理场景事件
 	**/
-	virtual void exit() = 0;
+	virtual void exit();
     /**
 	* @brief 更新场景，更新场景参数，更新场景事件
 	**/

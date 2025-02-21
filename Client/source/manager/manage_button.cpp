@@ -19,7 +19,7 @@ void ManageButton::check_press(UtilVector<int> mouse_pos)
 {
     for (auto button : m_button_list)
     {
-        if (!button->is_valid())
+        if (!button->is_enable())
         {
             continue;
         }
@@ -34,7 +34,7 @@ void ManageButton::check_release(UtilVector<int> mouse_pos)
 {
     for (auto button : m_button_list)
     {
-        if (!button->is_valid())
+        if (!button->is_enable())
         {
             continue;
         }

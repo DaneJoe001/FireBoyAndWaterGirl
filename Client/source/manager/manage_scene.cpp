@@ -73,6 +73,7 @@ void ManageScene::set_current_scene(SceneBase* scene)
 {
 	if (scene != get_current_scene())
 	{
+		std::cout << "set current scene" << std::endl;
 		m_current_scene->exit();
 		m_current_scene = scene;
 	}
@@ -80,6 +81,10 @@ void ManageScene::set_current_scene(SceneBase* scene)
 
 void ManageScene::set_current_scene(SceneType type)
 {
+	if (m_current_scene != nullptr)
+	{
+		m_current_scene->exit();
+	}
 	m_current_scene = m_scene_map.at(type);
 }
 

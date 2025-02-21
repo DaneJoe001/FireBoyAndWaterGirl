@@ -27,7 +27,7 @@ SceneSelectLevel::SceneSelectLevel()
            ManageScene::get_instance().set_current_scene(SceneType::LEVEL_TEACHING);
             std::cout<<"enter level teaching"<<std::endl;
         });
-    EventKeyboard* key_event_esc = new EventKeyboard(this, [&](SDL_Keycode key)
+    EventKeyboard* key_event_esc = new EventKeyboard(this, EventKeyboardType::PRESS,[&](SDL_Keycode key)
         {
             if (key == SDLK_ESCAPE)
             {
@@ -58,18 +58,12 @@ void SceneSelectLevel::draw(UtilCamera* camera)
 
 void SceneSelectLevel::enter()
 {
-    for (auto& button : m_button_list)
-    {
-        button->set_status(true);
-    }
+    SceneBase::enter();
 }
 
 void SceneSelectLevel::exit()
 {
-    for (auto& button : m_button_list)
-    {
-        button->set_status(false);
-    }
+    SceneBase::exit();
 }
 
 void SceneSelectLevel::update()

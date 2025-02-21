@@ -6,6 +6,12 @@
 
 class SceneBase;
 
+enum class EventKeyboardType
+{
+    PRESS,
+    RELEASE
+};
+
 /**
 * @class EventKeyboard
 * @brief 键盘事件类
@@ -18,7 +24,7 @@ public:
      * @param scene 绑定的场景
      * @param on_press 按下事件
      **/
-    EventKeyboard(SceneBase* scene,std::function<void(SDL_Keycode)> on_press);
+    EventKeyboard(SceneBase* scene, EventKeyboardType type,std::function<void(SDL_Keycode)> callback);
     /**
      * @brief 键盘事件析构函数
      **/
@@ -36,7 +42,7 @@ public:
     /**
      * @brief 判断当前键盘事件是否处于激活状态
      **/
-    bool is_active();
+    bool is_enable();
     /**
      * @brief 判断是否设置了按下事件
      **/
@@ -48,11 +54,11 @@ public:
     /**
      * @brief 设置当前键盘事件是否处于激活状态
      **/
-    void set_status(bool status);
+    void set_enable(bool enable);
 
 private:
     // 是否处于激活状态
-    bool m_is_active = false;
+    bool m_is_enable = false;
     // 是否设置了按下事件
     bool m_is_set_on_press = false;
     // 是否设置了松开事件

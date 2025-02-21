@@ -18,9 +18,16 @@ void PlayerBase::set_position(int x, int y)
 	m_pos={x,y};
 }
 
-void PlayerBase::set_velocity(int x, int y)
+void PlayerBase::set_velocity(const int* x,const int* y)
 {
-	m_velocity={x,y};
+	if (x != nullptr)
+	{
+		m_velocity.x = *x;
+	}
+    if (y != nullptr)
+    {
+        m_velocity.y = *y;
+    }
 }
 
 void PlayerBase::set_acceleration(int x, int y)
@@ -65,8 +72,58 @@ void PlayerBase::draw(UtilCamera* camera)
 
 void PlayerBase::update()
 {
+	int y= m_is_down-m_is_up;
+	int x=m_is_right-m_is_left;
+    //m_velocity.x=x*m_acceleration.x;
+    //m_velocity.y=y*m_acceleration.y;
+	m_velocity = { x,y };
     for (auto& i : m_currentAnimation)
     {
-		i.second->update_position(m_velocity);
+		i.second->update_position(m_velocity*6);
+		i.second->on_update();
+    }
+}
+
+void PlayerBase::event_keyboad(EventKeyboardType type, SDL_Keycode key)
+{
+    if (type == EventKeyboardType::PRESS)
+    {
+        switch (key)
+        {
+        case SDLK_UP:
+            m_is_up = true;
+            break;
+        case SDLK_DOWN:
+            m_is_down = true;
+            break;
+        case SDLK_LEFT:
+            m_is_left = true;
+            break;
+        case SDLK_RIGHT:
+            m_is_right = true;
+            break;
+        default:
+            break;
+        }
+    }
+    else if (type == EventKeyboardType::RELEASE)
+    {
+        switch (key)
+        {
+        case SDLK_UP:
+            m_is_up = false;
+            break;
+        case SDLK_DOWN:
+            m_is_down = false;
+            break;
+        case SDLK_LEFT:
+            m_is_left = false;
+            break;
+        case SDLK_RIGHT:
+            m_is_right = false;
+            break;
+        default:
+            break;
+        }
     }
 }

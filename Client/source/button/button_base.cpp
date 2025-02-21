@@ -52,14 +52,14 @@ bool ButtonBase::is_on_button(UtilVector<int> mouse_pos)
     return mouse_pos.is_within(m_pos, m_pos + m_size);
 }
 
-bool ButtonBase::is_valid()
+bool ButtonBase::is_enable()
 {
-    return m_is_valid;
+    return m_is_enable;
 }
 
-void ButtonBase::set_status(bool is_valid)
+void ButtonBase::set_enable(bool is_valid)
 {
-    m_is_valid = is_valid;
+    m_is_enable = is_valid;
 }
 
 void ButtonBase::draw(UtilCamera* camera)

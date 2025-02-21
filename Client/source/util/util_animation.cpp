@@ -35,7 +35,7 @@ void UtilAnimation::draw_frame(UtilCamera* camera)
 
 void UtilAnimation::on_update()
 {
-	if (m_current_index < m_atlas->get_frame_quantity())
+	if (m_current_index < m_atlas->get_frame_quantity()-1)
 	{
 		m_current_index++;
 		return;

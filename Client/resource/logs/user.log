@@ -1,10 +1,10 @@
-[ TIME ]: Sat Feb 15 13:45:02 2025
+[ TIME ]: Fri Feb 21 21:32:38 2025
 [ FILE ]: E:\CodingProject\C++Game\FireBoyAndWaterGirl\Client\source\manager\manage_resource.cpp
 [ LINE ]: 296
 [ FUNCTION ]: void __cdecl ManageResource::load_music(const class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,const class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)
 [ ERROR ]: Not an Ogg Vorbis audio stream
 
-[ TIME ]: Sat Feb 15 13:45:02 2025
+[ TIME ]: Fri Feb 21 21:32:38 2025
 [ FILE ]: E:\CodingProject\C++Game\FireBoyAndWaterGirl\Client\source\manager\manage_resource.cpp
 [ LINE ]: 296
 [ FUNCTION ]: void __cdecl ManageResource::load_music(const class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,const class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)

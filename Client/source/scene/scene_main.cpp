@@ -26,19 +26,12 @@ SceneMain::~SceneMain(){}
 
 void SceneMain::enter()
 {
-	for (auto& button : m_button_list)
-	{
-		button->set_status(true);
-	}
+	SceneBase::enter();
 }
 
 void SceneMain::exit()
 {
-	for (auto& button : m_button_list)
-	{
-		button->set_status(false);
-	}
-	std::cout << "Exit the main scene!" << std::endl;
+	SceneBase::exit();
 }
 
 void SceneMain::update()

@@ -25,6 +25,47 @@ SceneBase::~SceneBase()
     }
 }
 
+void SceneBase::enter()
+{
+    for (auto& button : m_button_list)
+    {
+        if (button != nullptr)
+        {
+            button->set_enable(true);
+        }
+        continue;
+    }
+    for (auto& event : m_event_list)
+    {
+        if (event != nullptr)
+        {
+            event->set_enable(true);
+        }
+        continue;
+    }
+}
+
+void SceneBase::exit()
+{
+    for (auto& button : m_button_list)
+    {
+        if (button != nullptr)
+        {
+            button->set_enable(false);
+        }
+        continue;
+    }
+    for (auto& event : m_event_list)
+    {
+        if (event != nullptr)
+        {
+            event->set_enable(false);
+        }
+        continue;
+    }
+
+}
+
 void SceneBase::add_button(ButtonBase* button)
 {
     if (button != nullptr)

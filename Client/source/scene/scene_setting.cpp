@@ -4,12 +4,12 @@
 
 void SceneSetting::enter()
 {
-	std::cout << "Enter the setting scene!" << std::endl;
+	SceneBase::enter();
 }
 
 void SceneSetting::exit()
 {
-	std::cout << "Exit the setting scene!" << std::endl;
+	SceneBase::exit();
 }
 
 void SceneSetting::update()

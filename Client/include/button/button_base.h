@@ -62,13 +62,13 @@ public:
 	 * @return true 有效
 	 * @return false 无效
 	 */
-	bool is_valid();
+	bool is_enable();
 	/**
 	 * @brief 设置按钮状态
-	 * @param status true 按钮可点击状态
-	 * @param status false 按钮不可点击状态
+	 * @param enable true 按钮可点击状态
+	 * @param enable false 按钮不可点击状态
 	 */
-	void set_status(bool status);
+	void set_enable(bool enable);
 	/**
 	 * @brief 绘制按钮
 	 * @param camera 绘制按钮的相机
@@ -87,7 +87,7 @@ protected:
 	// 判断按钮是否按压
 	bool m_is_pressed = false;
 	// 判断当前按钮是否处于有效状态
-	bool m_is_valid = false;
+	bool m_is_enable = false;
     // 按钮点击回调函数
 	std::function<void()> m_on_clicked;
 };

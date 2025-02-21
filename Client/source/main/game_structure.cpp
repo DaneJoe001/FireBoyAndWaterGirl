@@ -107,7 +107,6 @@ void GameStructure::circle()
                 }
                 break;
             case SDL_KEYDOWN:
-                std::cout << "key down" << std::endl;
                 if (m_event.key.keysym.sym == SDLK_F4)
                 {
                     m_camera->switch_development_mode();

@@ -16,11 +16,11 @@ public:
 	/**
 	* @brief 进入关卡场景
 	**/
-	virtual void enter() = 0;
+	virtual void enter()override;
     /**
 	* @brief 退出关卡场景
 	**/
-	virtual void exit() = 0;
+	virtual void exit()override;
     /**
 	* @brief 更新关卡场景
 	**/

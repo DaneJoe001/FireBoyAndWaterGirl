@@ -22,7 +22,7 @@ void ManageKeyEvent::check_key_press(SDL_Keycode key)
 {
 	for (auto& key_event : m_key_event_list)
 	{
-		if (key_event->is_active())
+		if (key_event->is_enable())
 		{
 			key_event->on_press(key);
 		}
@@ -33,7 +33,7 @@ void ManageKeyEvent::check_key_release(SDL_Keycode key)
 {
 	for (auto& key_event : m_key_event_list)
     {
-        if (key_event->is_active())
+        if (key_event->is_enable())
         {
             key_event->on_release(key);
         }

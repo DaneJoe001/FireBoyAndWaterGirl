@@ -6,10 +6,21 @@
 #include <util/util_animation.h>
 #include <util/util_vector.h>
 #include <util/util_camera.h>
+#include <event/event_keyboard.h>
 
 //TODO: 考虑是否添加角色速度限制。
 //TODO: 添加角色移动屏障限制。
 
+/**
+* @class PlayerBase
+* @brief 角色基类
+* 角色的速度实现存在缺陷
+* 键盘控制事件我觉得还是得像按钮一样
+* 在构造函数进行键盘事件注册，而不是
+* 维持一个键盘事件函数，我现在只实现
+* 了场景中注册事件和按钮，没有在玩家
+* 类中添加实现
+**/
 class PlayerBase
 {
     public:
@@ -27,13 +38,17 @@ class PlayerBase
         **/
         virtual void load_animation(std::string name,UtilVector<int> animation_pos);
         /**
+        * @brief 角色事件处理
+        **/
+        virtual void event_keyboad(EventKeyboardType type, SDL_Keycode key);
+        /**
         * @brief 设置角色位置
         **/
         void set_position(int x, int y);
         /**
         * @brief 设置角色速度
         **/
-        void set_velocity(int x, int y);
+        void set_velocity(const int* x, const int* y);
         /**
         * @brief 设置角色加速度
         **/
@@ -58,6 +73,13 @@ class PlayerBase
          *@brief 更新角色
         **/
         void update();
+
+    protected:
+        // 角色是否正在移动
+        bool m_is_up = false;
+        bool m_is_down = false;
+        bool m_is_left = false;
+        bool m_is_right = false;
 
     private:
         // 与角色有关的所有动画列表

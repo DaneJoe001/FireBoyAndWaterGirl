@@ -21,3 +21,8 @@ void PlayerFireBoy::init()
     load_animation("fire_stairs", { 0,0 });
 
 }
+
+void PlayerFireBoy::event_keyboad(EventKeyboardType type, SDL_Keycode key)
+{
+    PlayerBase::event_keyboad(type, key);
+}
